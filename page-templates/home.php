@@ -14,8 +14,8 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
-                    <h1>Leading by experience.</h1>
-                    <a href="#" class="btn">Learn More</a>
+                    <h1><?php the_field('main_headline') ?></h1>
+                    <a href="<?php the_field('call_to_action_link'); ?>" class="btn"><?php the_field('call_to_action_text'); ?></a>
                 </div>
             </div>
         </div>
@@ -24,38 +24,42 @@ get_header(); ?>
         <div class="container introduction-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2 introduction">
-                    <h2>Professionals in Community Management</h2>
-                    <p>Forth Group specializes in Chicago community management in the city and nearby neighbourhoods. Our staff is comprised of seasoned professionals and our services are based on the latest web access technology for condominium and community associations. We utilize best practices within the community association industry to deliver excellent service at fixed rates.</p>
-                </div>
+                    <h2><?php the_field('subheadline'); ?></h2>
+					<?php the_field('introduction'); ?>
+	                </div>
             </div>
+            <?php
+	        	$icon_group = get_field('icon_group');
+	        	if($icon_group):
+	        ?>
             <div class="row">
+	            <?php foreach($icon_group as $icon): ?>
                 <figure class="col-md-3">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-leading.png" alt="">
-                    <figcaption>Leading by experience</figcaption>
+                    <img src="<?php echo $icon['icon']['url']; ?>" alt="">
+                    <figcaption><?php echo $icon['caption']; ?></figcaption>
                 </figure>
-                <figure class="col-md-3">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-tech.png" alt="">
-                    <figcaption>Commitment <br> to Technology</figcaption>
-                </figure>
-                <figure class="col-md-3">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-dedication.png" alt="">
-                    <figcaption>Dedication <br> to Service</figcaption>
-                </figure>
-                <figure class="col-md-3">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-investment.png" alt="">                
-                    <figcaption>Adding value to your Investment</figcaption>
-                </figure>
+                <?php endforeach; ?>
             </div>
+            <?php endif; ?>
         </div>
     </div>
     <div class="content-wrapper bg-light-green">
         <div class="container testimonial-wrapper">
             <div class="row">
                 <div class="col-md-7">
+				<?php
+	        		$testimonials = get_field('testimonials');
+	        		if($testimonials):
+	        			foreach($testimonials as $test):
+	        	?>
                     <blockquote>
-                        <p>Our building is managed by the Forth Group and they've been wonderful. Very responsive and honest. There were several incidents at our building that required thier response in the middle of the night and they have not failed us. Plus they are so close by they often respond within minutes. Thanks guys. Two thumbs up!</p>
-                        <footer>Sam Y., Chicago</footer>
+                        <p><?php echo $test['testimonial_copy']; ?></p>
+                        <footer><?php echo $test['testimonial_author']; ?></footer>
                     </blockquote>
+                <?php 
+	            		endforeach;
+	            	endif;
+	            ?> 
                 </div>
                 <div class="col-md-5">
                     <?php // video goes here ?>
