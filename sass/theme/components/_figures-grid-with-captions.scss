@@ -1,0 +1,30 @@
+.figures-grid-with-captions {
+	text-align: center;
+	padding: 40px 0;
+	figure {
+		padding-top: 30px;
+		img {
+			display: block;
+			margin: 0 auto 30px auto;
+		}
+		figcaption {
+			padding: 0 30px;
+			text-align: center;
+			h3 {
+				@include bree;
+				font-size: 18px;
+				color: $dark;
+				text-transform: uppercase;
+				@include line-after($green, 20px);
+			}
+			p {
+				font-size: 16px;
+				line-height: 24px;
+				a {
+					color: $purple;
+					text-decoration: underline;
+				}
+			}
+		}		
+	}
+}

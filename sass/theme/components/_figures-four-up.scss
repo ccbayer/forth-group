@@ -1,0 +1,48 @@
+.figures-four-up-wrapper {
+	padding: 60px 0;
+	div {
+		padding: 0 2%;
+	}
+	.headline {		
+		background: $dark-blue;
+		padding: 5px 0;
+		height: 60px;
+	}
+	h3 { 
+		@include bree;
+		color: $white;
+		font-size: 18px;
+		line-height: 22px;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 0;
+		vertical-align: middle;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	figure {
+		background-color: $white;
+		text-align: center;
+		img {
+			padding: 5px 0;
+		}
+		figcaption {
+			margin-top: 10px;
+			padding-top: 20px;
+			text-align: left;
+			background: $light-green;
+			color: $dark;
+			font-size: 16px;
+			line-height: 24px;
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style-position: outside;
+				li {
+					padding: 0;
+				}
+			}
+		}
+	}
+}

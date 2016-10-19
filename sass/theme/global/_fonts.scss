@@ -1,0 +1,23 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:400,400i,700';
+
+$raleway: 'Raleway', sans-serif;
+.raleway {
+	font-family: $raleway;
+}
+
+@mixin raleway($weight: 'normal') {
+	font-family: $raleway;
+	font-weight: $weight;	
+}
+
+$bree: "bree-serif", serif;
+
+.bree-serif {
+	font-family: "bree-serif";
+}
+
+
+@mixin bree($weight: 'normal') {
+	font-family: $bree;
+	font-weight: $weight;	
+}

@@ -1,0 +1,42 @@
+.introduction-wrapper {
+	padding: 35px 0 65px 0;
+	.introduction {
+		h1,
+		h2 {
+			@include bree;
+			color: $green;
+			font-size: 34px;
+			text-align: center;
+			@include line-after;
+		}
+		h1 {
+			text-transform: uppercase;
+		}
+		p {
+			color: $dark;
+			font-size: 18px;
+			line-height: 26px;
+			text-align: center;
+		}
+	}
+	figure {
+		margin-top: 40px;
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: 140px;
+			height: auto;
+		}
+		figcaption {
+			@include bree;
+			max-width: 166px;
+			margin: 0 auto;
+			display: block;
+			text-transform: uppercase;
+			color: $dark;
+			font-size: 18px;
+			line-height: 20px;
+			padding-top: 20px;
+		}
+	}
+}

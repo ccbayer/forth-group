@@ -1,0 +1,84 @@
+.side-tabbed-content-wrapper {
+	// intro
+	padding: 30px 0;
+	.intro {
+		padding-bottom: 40px;
+		h2,
+		p {
+			text-align: center;
+		}
+	}
+	// nav
+	.side-nav {
+		ul {
+			margin-bottom: 30px;
+			padding: 0 15px;
+			list-style-type: none;
+			li {
+				padding: 35px 0;
+				border-bottom: 1px solid $green;
+				&:first-of-type {
+					border-top: 1px solid $green;
+				}
+				padding-left: 45px;
+				span {
+					display: none;
+				}
+				&.active {
+					background: $white;
+					position: relative;
+					span {
+						display: block;
+						position: absolute;
+						right: 10px;
+						color: $green;
+						border: 2px solid $green;
+						width: 30px;
+						height: 30px;
+						top: 50%;
+						margin-top: -15px;
+						border-radius: 100%;
+						padding: 6px 8px;
+					}
+				}				
+				a {
+					@include bree;
+					font-size: 18px;
+					color: $dark;
+					text-decoration: none;
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	.content-wrapper {
+		border: 1px solid $green;
+		background: $white;
+		padding: 0 15px;
+		transition: height .5s ease-in-out;
+		.content-item {
+			display: none;
+			padding: 30px 50px;
+			&.active {
+				display: block;
+			}
+		}
+	}
+	// faqs
+	.faq-item {
+		h3 {
+			@include raleway(300);
+			font-size: 18px;
+			color: $dark;
+			margin-bottom: 15px;
+		}
+		.answer,
+		.answer p {
+			@include raleway(300);
+			font-size: 16px;
+			line-height: 24px;
+			color: $dark;
+		}
+	}
+}

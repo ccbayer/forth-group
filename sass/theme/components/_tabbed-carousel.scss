@@ -1,0 +1,21 @@
+@import "forth-slider";
+
+.tabbed-carousel-wrapper {
+	h2 {
+		text-align: center;
+	}
+	.intro-content {
+		text-align: center;
+	}
+	.tab-pane {
+		padding: 100px 0 0 0;
+		.owl-carousel.forth-slider {
+			display: none;
+		}
+		&.active {
+			.owl-carousel.forth-slider {
+				display: block;
+			}
+		}
+	}
+}

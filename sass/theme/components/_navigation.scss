@@ -1,0 +1,55 @@
+.navbar {
+	padding: 0;
+	#main-menu {
+		float: right;
+		margin: {
+			top: 30px;
+			bottom: 15px;
+		}
+		li {
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				background-color: $green;
+				width: 0;
+				height: 3px;
+				bottom: -15px;
+				left: 0;
+				right: 0;
+				margin-left: 50%;
+				transition: all .25s ease-out;
+			}
+			a {
+				@include raleway(bold);
+				color: $white;
+				font-size: 16px;
+				text-transform: uppercase;
+				letter-spacing: -.005em;
+			}
+			padding: {
+				left: 20px;
+				right: 20px;
+			}
+			&:last-of-type {
+				padding-right: 0;
+			}
+			&:hover,
+			&.current-menu-item,
+			&.active {
+				position: relative;
+				a {
+					color: $green;
+				}
+				&:after {
+					width: 100%;
+					margin-left: 0;
+					transition: all .25s ease-out;
+				}
+			}
+		}
+	}
+	.navbar-brand {
+		padding-top: 14px;
+	}
+}

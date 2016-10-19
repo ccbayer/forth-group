@@ -1,0 +1,82 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder. 
+// Just copy a variable from /sass/bootstrap/_variables.scss, paste it here and edit the value.
+// As example you find one of the most important Bootstrap variable below: $brand-primary.
+// Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
+// Just add your color code here, compile the theme.scss file to change this color everywhere
+
+$brand-primary:         #895cd1; //#ff6d5a
+
+$green: #80AE37;
+$purple: #062467;
+$mid-grey: #333;
+$white: #FFF;
+$black: #000;
+$dark: $mid-grey; 
+$light-green: #E5EEE4;
+$dark-blue: #062467;
+
+$background-color: $white;
+
+
+// Basics of a navbar
+$navbar-height:                    140px;
+$navbar-margin-bottom:             0px;
+$navbar-border-radius:             0px;
+
+
+// bootstrap overrides
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1280px
+);
+
+
+/* BREAKPOINTS */
+$phone-min: 320px;
+$phone-max: 480px;
+$tablet-min: 768px;
+$tablet-max: 1024px;
+$desktop-min: $tablet-max + 1;
+$desktop-max: map-get($container-max-widths, xl);
+$phablet-min: $phone-max + 1;
+$phablet-max: $tablet-min - 1;
+
+$desktop: (
+	min: $desktop-min,
+	max: max-width $desktop-max,
+	lessthan: max-width $desktop-min,
+	morethan: $desktop-max
+);	
+
+$tablet: (
+	range: $tablet-min $tablet-max,
+	min: $tablet-min,
+	max: max-width $tablet-max,
+	lessthan: max-width $tablet-min,
+	morethan: $tablet-max
+);	
+
+$phablet: (
+	range: $phablet-min $phablet-max,
+	min: $phablet-min,
+	max: max-width $phablet-max,
+	lessthan: max-width $phablet-min,
+	morethan: $phablet-max
+);	
+
+
+$phone: (
+	range: $phone-min $phone-max,
+	min: $phone-min,
+	max: max-width $phone-max,
+	lessthan: max-width $phone-min,
+	morethan: $phone-max
+);	
+
+
+@function screen($device, $param) {
+	@return map-get($device, $param)
+}

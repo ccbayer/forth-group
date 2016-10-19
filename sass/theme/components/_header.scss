@@ -1,0 +1,31 @@
+header.site-header {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	background: rgba($black, .4);
+	border-bottom: 1px solid $white;
+	a[href^="tel:"] {
+		color: $white;
+	}
+	// header btns
+	.header-btn-wrapper {
+		float: right;
+		ul {
+			li {
+				a.nav-link {
+					@include raleway(bold);
+					text-transform: uppercase; 
+					background: $green;
+					color: $white;
+					font-size: 14px;
+					display: block;
+					line-height: 42px;
+					padding: {
+						left: 24px;
+						right: 24px;
+					}
+				}
+			}
+		}
+	}
+}

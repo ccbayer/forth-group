@@ -1,0 +1,10 @@
+@mixin line-after($color: #000, $margin: 30px ) {
+	&:after {
+		content: "";
+		display: block;
+		margin: $margin auto;
+		width: 65px;
+		height: 2px;
+		background: $color;
+	}
+}

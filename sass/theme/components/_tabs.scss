@@ -1,0 +1,114 @@
+
+$tabwidth: 33.33333%;
+
+.tabs-wrapper,
+.tabbed-carousel-wrapper {
+	padding: 30px;
+	@include breakpoint(map-get($tablet, lessthan)) {
+		padding: 15px 0;
+	}
+	h2 {
+		@include bree;
+		text-align: center;
+		color: $dark;
+		font-size: 30px;
+	}
+	ul.nav.nav-tabs {
+		padding-top: 30px;
+		border-bottom: 1px solid $black;
+		list-style-type: none;
+		&.count-4 {
+			li {
+				width: 25% !important;
+				@include breakpoint(map-get($tablet, lessthan)) {
+					width: 100%;
+				}
+			}
+		}
+		li {
+			@include bree;
+			font-size: 20px;
+			display: block;
+			float: left;
+			width: $tabwidth;
+			@include breakpoint(screen($tablet, lessthan)) {
+				width: 100%;
+			}
+			a {
+				background: $light-green;
+				display: block;
+				max-width: 250px;
+				padding: 10px 20px;
+				margin: 0 auto;
+				color: $dark;
+				text-decoration: none;
+				text-transform: uppercase;
+				text-align: center;
+				position: relative;
+				@include breakpoint(screen($tablet, 'lessthan')) {
+					max-width: none;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					background: green;
+					width: 0;
+					height: 3px;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin-left: 50%;
+					transition: all .25s ease-out;
+				}
+			}
+			&.active a {
+				background: $green;
+				color: $white;
+			}
+			&:hover {
+				a { 
+					&:after {
+						width: 100%;
+						margin-left: 0;
+						transition: all .25s ease-out;
+					}
+				}
+				&.active a:after { 
+					color: $white;
+				}
+			}
+		}
+	}
+	.tab-pane {
+		padding: 50px 0;
+		h3 {
+			@include bree;
+			float: left;
+			width: 25%;
+			color: $green;
+			text-transform: uppercase;
+			span {
+				display: block;
+				font-size: 100px;
+				line-height: .5;
+				margin-bottom: 50px;
+				opacity: .4;
+			}
+			@include breakpoint(screen($phablet, 'max')) {
+				width: 100%;
+				float: none;
+			}
+		}
+		p {
+			float: left; 
+			width: 75%;
+			font-size: 18px;
+			line-height: 26px;
+			color: $dark;
+			@include breakpoint(screen($phablet, 'max')) {
+				width: 100%;
+				float: none;
+			}
+		}
+	}
+}

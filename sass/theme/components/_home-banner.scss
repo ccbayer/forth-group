@@ -1,0 +1,39 @@
+$btn-padding: 58px;
+.home-banner {
+	width: 100%;
+	padding-top: 284px;
+	height: 640px;
+	background: {
+		size: cover;
+		image: url(../img/main-banner-bg.jpg);
+	}
+	text-align: center;
+	h1 {
+		color: $white;
+		text-transform: uppercase;
+		font-size: 65px;
+		line-height: 78px;
+		letter-spacing: .05em;
+	}
+	a.btn {
+		color: $white;
+		background: transparent;
+		font-size: 18px;
+		margin-top: 45px;
+		text-transform: uppercase;
+		padding: {
+			left: $btn-padding;
+			right: $btn-padding;
+		}
+		border: {
+			radius: 0;
+			color: $white;
+			width: 3px;
+		}
+		transition: all .25s ease-in-out;
+		&:hover {
+			background: $green;
+			border-color: darken($green, 25%);
+		}
+	}
+}

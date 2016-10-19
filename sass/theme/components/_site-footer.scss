@@ -1,0 +1,84 @@
+#wrapper-footer {
+	background-color: $white;	
+	position: relative;
+	.maintenance-callout {
+		color: $white;
+		background-image: url('../img/pattern.jpg');
+		border: 5px solid $white;
+		border-radius: 10px;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+		border-bottom-width: 0;
+		position: absolute;
+		top: -31px;
+		right: -5px;
+		bottom: 0;
+		width: 376px;
+		padding: 10px 35px;
+		box-shadow: 1px -1px 30px rgba($black, .85);
+		h4 {
+			font-weight: bold;
+			font-size: 15px;
+		}
+		p {
+			font-size: 14px;
+			line-height: 18px;
+		}
+		a {
+			font-size: 14px;
+			color: $green;
+		}
+	}
+}
+
+footer.site-footer {
+	color: $white;
+	padding: 35px 0;
+	font-size: 12px;
+	a {
+		color: $white;
+		&:hover {
+		 text-decoration: underline;
+		}
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		color: $white;
+		list-style-type: none;
+		li {
+			font-size: 18px;
+			display: inline-block;
+			padding-right: 15px;
+			padding-left: 10px;
+			position: relative;
+			&:after {
+				content: "";
+				position: absolute;
+				height: 16px;
+				width: 1px;
+				top: 8px;
+				right: 0;
+				background-color: $green;
+			}
+			&.social {
+				padding-left: 15px;
+				padding-right: 0;
+				&:after {
+					display: none;
+				}
+			}
+			&:first-of-type {
+				padding-left: 0;
+			}
+			a {
+				color: $white;
+				text-decoration: none;
+				&:hover, 
+				&:active {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

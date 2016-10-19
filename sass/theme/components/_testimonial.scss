@@ -1,0 +1,28 @@
+.testimonial-wrapper {
+	padding: 80px 0 110px 0;
+	blockquote {
+		text-align: center;
+		quotes: "\201C""\201D""\2018""\2019";
+		&:before {
+			@include raleway(bold);
+			content: open-quote;
+			font-size: 100px;
+			line-height: 0;
+			display: block;
+			margin: 40px auto;
+			color: $dark;
+		}
+		p {
+			@include raleway;			
+			font-style: italic;
+			font-size: 18px;
+			text-align: center;
+			padding: 0 70px 0 40px;
+		}
+		footer {
+			 @include raleway(bold);
+			 font-size: 18px;
+			 text-align: center;
+		}
+	}
+}

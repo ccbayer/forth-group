@@ -1,0 +1,27 @@
+.icon-buttons {
+	a.icon-button {
+		@include clearfix;
+		display: block;
+		width: 100%;
+		background-color: $white;
+		border: 6px solid $light-green;
+		margin: 0 35px;
+		padding: 22px 35px;
+		color: $green;
+		transition: all .25s ease-in-out;
+		&:hover {
+			background-color: $light-green;
+			
+		}
+		img {
+			float: left;
+		}
+		p {
+			@include raleway;
+			width: 50%;
+			font-size: 20px;
+			float: left;
+			padding: 25px 0 0 20px;
+		}
+	}
+}

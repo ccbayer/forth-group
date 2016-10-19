@@ -1,0 +1,37 @@
+.pattern-overlay {
+	position: relative;
+	&:before {
+		content: '';
+		background: {
+			image: url('../img/pattern.jpg');
+		}
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+	}
+	&.opacity-45 {
+		&:before {
+			opacity: .45;			
+		}
+	}
+	&.opacity-80 {
+		&:before {
+			opacity: .8;			
+		}
+	}
+}
+
+.bg-white { 
+	background: $white;
+}
+
+.bg-light-green {
+	background: $light-green;
+}
+
+.rel {
+	position: relative;
+}
