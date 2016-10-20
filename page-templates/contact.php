@@ -26,11 +26,11 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	<div class="feedback-form-wrapper bg-white">
+	<div class="contact-form-wrapper bg-white">
 		<div class="container">
 			<div class="row">
 				<h2>Contact Form</h2>
-				<?php do_shortcode('[acf_contact id="2"]'); ?>
+				<?php do_shortcode('[acf_contact id="2" submit_value="Submit &raquo;"]'); ?>
 			</div>
 		</div>
 	</div>

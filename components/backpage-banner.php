@@ -3,9 +3,6 @@
 	$desktop = $images[0]['desktop_image'];
 	$tablet = $images[0]['tablet_image'];
 	$mobile = $images[0]['mobile_image'];
-	function getInternalLink($post) {
-		return get_permalink($post[0]->ID);
-	}
 ?>
 <div class="backpage-banner pattern-overlay opacity-45" style="background-image: url(<?php echo $desktop['url'] ?>);"></div>
 <div class="container introduction-wrapper">
@@ -21,7 +18,7 @@
             <?php 
 	            $buttons = get_field('icon_buttons'); 
 				foreach($buttons as $button):
-					$link = $button['link_type'] === 'Internal' ? getInternalLink($button['internal_link']) : $button['external_link'];
+					$link = $button['link_type'] === 'Internal' ? $button['internal_link'] : $button['external_link'];
 					$target = $button['link_type'] === 'Internal' ? '_self' : '_blank';
 										
 	        ?>

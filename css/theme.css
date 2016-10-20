@@ -7232,11 +7232,51 @@ body {
 
 h1 {
   font-family: "bree-serif", serif;
-  font-weight: "normal"; }
+  font-weight: 400; }
 
 p {
   font-family: "Raleway", sans-serif;
   font-weight: "normal"; }
+
+#message p {
+  text-align: center;
+  padding: 30px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 30px; }
+
+label,
+.acf-field .acf-label label {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-weight: normal !important;
+  font-size: 20px !important;
+  padding-left: 30%; }
+
+input,
+textarea {
+  border: 1px solid #80AE37;
+  background: #FFF;
+  min-height: 60px; }
+
+input[type="submit"] {
+  font-family: "bree-serif", serif;
+  font-weight: 400;
+  font-weight: normal;
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+  background: #80AE37;
+  line-height: 55px;
+  font-size: 22px;
+  color: #FFF;
+  border: 2px solid #80AE37;
+  padding-left: 55px;
+  padding-right: 55px;
+  transition: all .25s ease-in-out; }
+  input[type="submit"]:hover {
+    background: #FFF;
+    color: #80AE37; }
 
 .wrapper {
   position: relative;
@@ -7351,7 +7391,7 @@ header.site-header {
     padding-top: 16px; }
   .bp-cta-wrapper .btn {
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     border: 2px solid #80AE37;
     background: #FFF;
     box-sizing: border-box;
@@ -7371,7 +7411,7 @@ header.site-header {
   .introduction-wrapper .introduction h1,
   .introduction-wrapper .introduction h2 {
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     color: #80AE37;
     font-size: 34px;
     text-align: center; }
@@ -7399,7 +7439,7 @@ header.site-header {
       height: auto; }
     .introduction-wrapper figure figcaption {
       font-family: "bree-serif", serif;
-      font-weight: "normal";
+      font-weight: 400;
       max-width: 166px;
       margin: 0 auto;
       display: block;
@@ -7449,7 +7489,7 @@ header.site-header {
       text-align: center; }
       .figures-grid-with-captions figure figcaption h3 {
         font-family: "bree-serif", serif;
-        font-weight: "normal";
+        font-weight: 400;
         font-size: 18px;
         color: #333;
         text-transform: uppercase; }
@@ -7477,7 +7517,7 @@ header.site-header {
     height: 60px; }
   .figures-four-up-wrapper h3 {
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     color: #FFF;
     font-size: 18px;
     line-height: 22px;
@@ -7487,7 +7527,8 @@ header.site-header {
     vertical-align: middle;
     position: relative;
     top: 50%;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    padding: 0 8%; }
   .figures-four-up-wrapper figure {
     background-color: #FFF;
     text-align: center; }
@@ -7518,7 +7559,7 @@ header.site-header {
   .tabs-wrapper h2,
   .tabbed-carousel-wrapper h2 {
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     text-align: center;
     color: #333;
     font-size: 30px; }
@@ -7537,7 +7578,7 @@ header.site-header {
     .tabs-wrapper ul.nav.nav-tabs li,
     .tabbed-carousel-wrapper ul.nav.nav-tabs li {
       font-family: "bree-serif", serif;
-      font-weight: "normal";
+      font-weight: 400;
       font-size: 20px;
       display: block;
       float: left;
@@ -7592,7 +7633,7 @@ header.site-header {
     .tabs-wrapper .tab-pane h3,
     .tabbed-carousel-wrapper .tab-pane h3 {
       font-family: "bree-serif", serif;
-      font-weight: "normal";
+      font-weight: 400;
       float: left;
       width: 25%;
       color: #80AE37;
@@ -7757,11 +7798,15 @@ header.site-header {
           padding: 6px 8px; }
       .side-tabbed-content-wrapper .side-nav ul li a {
         font-family: "bree-serif", serif;
-        font-weight: "normal";
+        font-weight: 400;
         font-size: 18px;
         color: #333;
         text-decoration: none;
-        display: inline-block; }
+        display: inline-block;
+        transition: all .25s ease-in-out; }
+        .side-tabbed-content-wrapper .side-nav ul li a:hover {
+          padding-left: 5px;
+          color: #8c8c8c; }
   .side-tabbed-content-wrapper .content-wrapper {
     border: 1px solid #80AE37;
     background: #FFF;
@@ -7793,6 +7838,7 @@ header.site-header {
   border: 6px solid #E5EEE4;
   margin: 0 35px;
   padding: 22px 35px;
+  min-height: 157px;
   color: #80AE37;
   transition: all .25s ease-in-out; }
   .icon-buttons a.icon-button::after {
@@ -7810,6 +7856,30 @@ header.site-header {
     font-size: 20px;
     float: left;
     padding: 25px 0 0 20px; }
+
+.feedback-form-wrapper form {
+  padding: 50px 0;
+  width: 75%;
+  margin: 0 auto; }
+  .feedback-form-wrapper form .acf-label {
+    float: none;
+    width: 100%; }
+    .feedback-form-wrapper form .acf-label label {
+      padding-left: 0; }
+  .feedback-form-wrapper form .acf-fields .acf-field {
+    padding-left: 0;
+    padding-right: 0;
+    float: none;
+    width: 100; }
+  .feedback-form-wrapper form ul.acf-radio-list li {
+    float: left;
+    display: inline-block;
+    margin: 0 15px; }
+    .feedback-form-wrapper form ul.acf-radio-list li label {
+      text-align: right;
+      padding-left: 10px; }
+    .feedback-form-wrapper form ul.acf-radio-list li input {
+      float: left; }
 
 #wrapper-footer {
   background-color: #FFF;
@@ -7904,58 +7974,31 @@ footer.site-footer {
         .map-wrapper .contact-info h2 p a[href^="tel:"] {
           color: #333; }
 
-.feedback-form-wrapper {
+.contact-form-wrapper {
   padding: 60px 0; }
-  .feedback-form-wrapper h2 {
+  .contact-form-wrapper h2 {
     text-align: center;
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     font-size: 30px;
     margin-bottom: 60px; }
-  .feedback-form-wrapper .acf-field .acf-label {
+  .contact-form-wrapper .acf-field .acf-label {
     float: left;
     color: #333;
     float: left;
     width: 33.3333333333333%; }
-    .feedback-form-wrapper .acf-field .acf-label label {
-      font-family: "Raleway", sans-serif;
-      font-weight: 500;
-      font-size: 20px;
-      padding-left: 30%; }
-  .feedback-form-wrapper .acf-input {
+  .contact-form-wrapper .acf-input {
     float: left;
     width: 50%;
     margin-bottom: 30px; }
-    .feedback-form-wrapper .acf-input input,
-    .feedback-form-wrapper .acf-input textarea {
-      border: 1px solid #80AE37;
-      background: #FFF;
-      min-height: 60px; }
-  .feedback-form-wrapper .acf-form-submit {
+  .contact-form-wrapper .acf-form-submit {
     clear: both;
     float: left;
     margin-left: 33%; }
-  .feedback-form-wrapper .acf-fields > .acf-field {
+  .contact-form-wrapper .acf-fields > .acf-field {
     border: none;
     padding: 0; }
-  .feedback-form-wrapper input[type="submit"] {
-    font-family: "bree-serif", serif;
-    font-weight: "normal";
-    border: none;
-    margin: 0 auto;
-    text-align: center;
-    background: #80AE37;
-    line-height: 55px;
-    font-size: 22px;
-    color: #FFF;
-    border: 2px solid #80AE37;
-    padding-left: 55px;
-    padding-right: 55px;
-    transition: all .25s ease-in-out; }
-    .feedback-form-wrapper input[type="submit"]:hover {
-      background: #FFF;
-      color: #80AE37; }
-  .feedback-form-wrapper #message p {
+  .contact-form-wrapper #message p {
     text-align: center;
     padding: 30px;
     font-family: "Raleway", sans-serif;

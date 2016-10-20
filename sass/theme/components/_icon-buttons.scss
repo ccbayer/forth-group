@@ -6,7 +6,8 @@
 		background-color: $white;
 		border: 6px solid $light-green;
 		margin: 0 35px;
-		padding: 22px 35px;
+		padding: 22px 35px;		
+		min-height: 157px;
 		color: $green;
 		transition: all .25s ease-in-out;
 		&:hover {

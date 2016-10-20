@@ -1,0 +1,34 @@
+.feedback-form-wrapper {
+	form {			
+		padding: 50px 0;
+		width: 75%;
+		margin: 0 auto;
+		.acf-label {
+			float: none;
+			width: 100%;
+			label {
+				padding-left: 0;
+			}
+		}
+		.acf-fields .acf-field {
+			padding-left: 0;
+			padding-right: 0;
+			float: none;
+			width: 100;
+		}
+		ul.acf-radio-list {
+			li {
+				float: left;
+				display: inline-block;
+				margin: 0 15px;
+				label {
+					text-align: right;
+					padding-left: 10px;
+				}
+				input {
+					float: left;
+				}
+			}
+		}
+	}
+}

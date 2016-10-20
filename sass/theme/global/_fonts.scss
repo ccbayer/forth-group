@@ -17,7 +17,19 @@ $bree: "bree-serif", serif;
 }
 
 
-@mixin bree($weight: 'normal') {
+@mixin bree($weight: 400) {
+	// thin: 200
+	// regular: 400
+	// bold: 700	
+	@if($weight == 'thin') {
+		$weight: 200;
+	}
+	@if($weight == 'regular') {
+		$weight: 400;	
+	}
+	@if($weight == 'bold') {
+		$weight: 700;
+	}
 	font-family: $bree;
 	font-weight: $weight;	
 }
