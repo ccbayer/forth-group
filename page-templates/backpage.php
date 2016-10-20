@@ -18,7 +18,7 @@ get_header(); ?>
 			<div class="feedback-form-wrapper bg-light-green">
 				<div class="container">
 					<div class="row">
-						<?php do_shortcode('[acf_contact id="1"]'); ?>
+						<?php do_shortcode('[acf_contact id="1" submit_value="Submit &raquo;"]]'); ?>
 					</div>
 				</div>
 			</div>

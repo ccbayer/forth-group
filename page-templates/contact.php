@@ -30,7 +30,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<h2>Contact Form</h2>
-				<?php do_shortcode('[acf_contact id="2"]'); ?>
+				<?php do_shortcode('[acf_contact id="2" submit_value="Submit &raquo;"]'); ?>
 			</div>
 		</div>
 	</div>

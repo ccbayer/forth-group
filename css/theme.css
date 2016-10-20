@@ -7232,7 +7232,7 @@ body {
 
 h1 {
   font-family: "bree-serif", serif;
-  font-weight: "normal"; }
+  font-weight: 400; }
 
 p {
   font-family: "Raleway", sans-serif;
@@ -7261,7 +7261,8 @@ textarea {
 
 input[type="submit"] {
   font-family: "bree-serif", serif;
-  font-weight: "normal";
+  font-weight: 400;
+  font-weight: normal;
   border: none;
   margin: 0 auto;
   text-align: center;
@@ -7390,7 +7391,7 @@ header.site-header {
     padding-top: 16px; }
   .bp-cta-wrapper .btn {
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     border: 2px solid #80AE37;
     background: #FFF;
     box-sizing: border-box;
@@ -7410,7 +7411,7 @@ header.site-header {
   .introduction-wrapper .introduction h1,
   .introduction-wrapper .introduction h2 {
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     color: #80AE37;
     font-size: 34px;
     text-align: center; }
@@ -7438,7 +7439,7 @@ header.site-header {
       height: auto; }
     .introduction-wrapper figure figcaption {
       font-family: "bree-serif", serif;
-      font-weight: "normal";
+      font-weight: 400;
       max-width: 166px;
       margin: 0 auto;
       display: block;
@@ -7488,7 +7489,7 @@ header.site-header {
       text-align: center; }
       .figures-grid-with-captions figure figcaption h3 {
         font-family: "bree-serif", serif;
-        font-weight: "normal";
+        font-weight: 400;
         font-size: 18px;
         color: #333;
         text-transform: uppercase; }
@@ -7516,7 +7517,7 @@ header.site-header {
     height: 60px; }
   .figures-four-up-wrapper h3 {
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     color: #FFF;
     font-size: 18px;
     line-height: 22px;
@@ -7557,7 +7558,7 @@ header.site-header {
   .tabs-wrapper h2,
   .tabbed-carousel-wrapper h2 {
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     text-align: center;
     color: #333;
     font-size: 30px; }
@@ -7576,7 +7577,7 @@ header.site-header {
     .tabs-wrapper ul.nav.nav-tabs li,
     .tabbed-carousel-wrapper ul.nav.nav-tabs li {
       font-family: "bree-serif", serif;
-      font-weight: "normal";
+      font-weight: 400;
       font-size: 20px;
       display: block;
       float: left;
@@ -7631,7 +7632,7 @@ header.site-header {
     .tabs-wrapper .tab-pane h3,
     .tabbed-carousel-wrapper .tab-pane h3 {
       font-family: "bree-serif", serif;
-      font-weight: "normal";
+      font-weight: 400;
       float: left;
       width: 25%;
       color: #80AE37;
@@ -7796,7 +7797,7 @@ header.site-header {
           padding: 6px 8px; }
       .side-tabbed-content-wrapper .side-nav ul li a {
         font-family: "bree-serif", serif;
-        font-weight: "normal";
+        font-weight: 400;
         font-size: 18px;
         color: #333;
         text-decoration: none;
@@ -7973,7 +7974,7 @@ footer.site-footer {
   .contact-form-wrapper h2 {
     text-align: center;
     font-family: "bree-serif", serif;
-    font-weight: "normal";
+    font-weight: 400;
     font-size: 30px;
     margin-bottom: 60px; }
   .contact-form-wrapper .acf-field .acf-label {

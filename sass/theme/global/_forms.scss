@@ -23,6 +23,7 @@ textarea {
 
 input[type="submit"] {
 	@include bree;
+	font-weight: normal;
 	border: none;
 	margin: 0 auto;
 	text-align: center; 
