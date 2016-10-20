@@ -47,6 +47,11 @@
 					color: $dark;
 					text-decoration: none;
 					display: inline-block;
+					transition: all .25s ease-in-out;
+					&:hover {
+						padding-left: 5px;
+						color: lighten($dark, 35%);
+					}
 				}
 			}
 		}

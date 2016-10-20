@@ -7527,7 +7527,8 @@ header.site-header {
     vertical-align: middle;
     position: relative;
     top: 50%;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    padding: 0 8%; }
   .figures-four-up-wrapper figure {
     background-color: #FFF;
     text-align: center; }
@@ -7801,7 +7802,11 @@ header.site-header {
         font-size: 18px;
         color: #333;
         text-decoration: none;
-        display: inline-block; }
+        display: inline-block;
+        transition: all .25s ease-in-out; }
+        .side-tabbed-content-wrapper .side-nav ul li a:hover {
+          padding-left: 5px;
+          color: #8c8c8c; }
   .side-tabbed-content-wrapper .content-wrapper {
     border: 1px solid #80AE37;
     background: #FFF;
