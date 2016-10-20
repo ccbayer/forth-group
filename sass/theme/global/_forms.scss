@@ -1,0 +1,43 @@
+// validation message
+#message p {
+	text-align: center;
+	padding: 30px;	
+	@include raleway(500);
+	font-size: 30px;
+}
+
+label,
+.acf-field .acf-label label {
+	@include raleway(300);
+	font-weight: normal !important;
+	font-size: 20px !important;
+	padding-left: 30%; 
+}
+
+input,
+textarea {
+	border: 1px solid $green;
+	background: $white;
+	min-height: 60px;
+}
+
+input[type="submit"] {
+	@include bree;
+	border: none;
+	margin: 0 auto;
+	text-align: center; 
+	background: $green;
+	line-height: 55px;
+	font-size: 22px;
+	color: $white;
+	border: 2px solid $green;	
+	padding: {
+		left: 55px;
+		right: 55px;
+	}
+	transition: all .25s ease-in-out;
+	&:hover {
+		background: $white;
+		color: $green;
+	}
+}

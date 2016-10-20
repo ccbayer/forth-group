@@ -7,7 +7,9 @@
 @import "global/fonts";
 @import "global/global";
 @import "global/typography";
+@import "global/forms";
 @import "global/layout";
+
 
 // components
 @import "components/header";
@@ -26,6 +28,7 @@
 @import "components/side-tabbed-content";
 @import "components/icon-buttons";
 
+@import "components/feedback-form";
 @import "components/site-footer";
 
 

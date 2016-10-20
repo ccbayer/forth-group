@@ -26,7 +26,7 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	<div class="feedback-form-wrapper bg-white">
+	<div class="contact-form-wrapper bg-white">
 		<div class="container">
 			<div class="row">
 				<h2>Contact Form</h2>

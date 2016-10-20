@@ -7238,6 +7238,45 @@ p {
   font-family: "Raleway", sans-serif;
   font-weight: "normal"; }
 
+#message p {
+  text-align: center;
+  padding: 30px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 30px; }
+
+label,
+.acf-field .acf-label label {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-weight: normal !important;
+  font-size: 20px !important;
+  padding-left: 30%; }
+
+input,
+textarea {
+  border: 1px solid #80AE37;
+  background: #FFF;
+  min-height: 60px; }
+
+input[type="submit"] {
+  font-family: "bree-serif", serif;
+  font-weight: "normal";
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+  background: #80AE37;
+  line-height: 55px;
+  font-size: 22px;
+  color: #FFF;
+  border: 2px solid #80AE37;
+  padding-left: 55px;
+  padding-right: 55px;
+  transition: all .25s ease-in-out; }
+  input[type="submit"]:hover {
+    background: #FFF;
+    color: #80AE37; }
+
 .wrapper {
   position: relative;
   padding: 0; }
@@ -7812,6 +7851,30 @@ header.site-header {
     float: left;
     padding: 25px 0 0 20px; }
 
+.feedback-form-wrapper form {
+  padding: 50px 0;
+  width: 75%;
+  margin: 0 auto; }
+  .feedback-form-wrapper form .acf-label {
+    float: none;
+    width: 100%; }
+    .feedback-form-wrapper form .acf-label label {
+      padding-left: 0; }
+  .feedback-form-wrapper form .acf-fields .acf-field {
+    padding-left: 0;
+    padding-right: 0;
+    float: none;
+    width: 100; }
+  .feedback-form-wrapper form ul.acf-radio-list li {
+    float: left;
+    display: inline-block;
+    margin: 0 15px; }
+    .feedback-form-wrapper form ul.acf-radio-list li label {
+      text-align: right;
+      padding-left: 10px; }
+    .feedback-form-wrapper form ul.acf-radio-list li input {
+      float: left; }
+
 #wrapper-footer {
   background-color: #FFF;
   position: relative; }
@@ -7905,58 +7968,31 @@ footer.site-footer {
         .map-wrapper .contact-info h2 p a[href^="tel:"] {
           color: #333; }
 
-.feedback-form-wrapper {
+.contact-form-wrapper {
   padding: 60px 0; }
-  .feedback-form-wrapper h2 {
+  .contact-form-wrapper h2 {
     text-align: center;
     font-family: "bree-serif", serif;
     font-weight: "normal";
     font-size: 30px;
     margin-bottom: 60px; }
-  .feedback-form-wrapper .acf-field .acf-label {
+  .contact-form-wrapper .acf-field .acf-label {
     float: left;
     color: #333;
     float: left;
     width: 33.3333333333333%; }
-    .feedback-form-wrapper .acf-field .acf-label label {
-      font-family: "Raleway", sans-serif;
-      font-weight: 500;
-      font-size: 20px;
-      padding-left: 30%; }
-  .feedback-form-wrapper .acf-input {
+  .contact-form-wrapper .acf-input {
     float: left;
     width: 50%;
     margin-bottom: 30px; }
-    .feedback-form-wrapper .acf-input input,
-    .feedback-form-wrapper .acf-input textarea {
-      border: 1px solid #80AE37;
-      background: #FFF;
-      min-height: 60px; }
-  .feedback-form-wrapper .acf-form-submit {
+  .contact-form-wrapper .acf-form-submit {
     clear: both;
     float: left;
     margin-left: 33%; }
-  .feedback-form-wrapper .acf-fields > .acf-field {
+  .contact-form-wrapper .acf-fields > .acf-field {
     border: none;
     padding: 0; }
-  .feedback-form-wrapper input[type="submit"] {
-    font-family: "bree-serif", serif;
-    font-weight: "normal";
-    border: none;
-    margin: 0 auto;
-    text-align: center;
-    background: #80AE37;
-    line-height: 55px;
-    font-size: 22px;
-    color: #FFF;
-    border: 2px solid #80AE37;
-    padding-left: 55px;
-    padding-right: 55px;
-    transition: all .25s ease-in-out; }
-    .feedback-form-wrapper input[type="submit"]:hover {
-      background: #FFF;
-      color: #80AE37; }
-  .feedback-form-wrapper #message p {
+  .contact-form-wrapper #message p {
     text-align: center;
     padding: 30px;
     font-family: "Raleway", sans-serif;
