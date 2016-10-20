@@ -7793,6 +7793,7 @@ header.site-header {
   border: 6px solid #E5EEE4;
   margin: 0 35px;
   padding: 22px 35px;
+  min-height: 157px;
   color: #80AE37;
   transition: all .25s ease-in-out; }
   .icon-buttons a.icon-button::after {
