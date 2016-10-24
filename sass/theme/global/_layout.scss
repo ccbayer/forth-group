@@ -2,3 +2,17 @@
 	position: relative;
 	padding: 0;
 }
+
+.row {
+	@include breakpoint($phone-min, $desktop-max) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.container {
+	@include breakpoint($phone-min, $desktop-max) {
+		width: 100%;
+		max-width: $desktop-max;
+	}
+}

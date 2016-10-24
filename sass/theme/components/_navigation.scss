@@ -3,8 +3,12 @@
 	#main-menu {
 		float: right;
 		margin: {
-			top: 30px;
+			margin-top: -15px;
 			bottom: 15px;
+		}
+		@include mq($max-width: $tablet-min) {
+			width: 100%;
+			float: none;
 		}
 		li {
 			position: relative;
@@ -19,6 +23,19 @@
 				right: 0;
 				margin-left: 50%;
 				transition: all .25s ease-out;
+			}
+			&.service-links {
+				border-top: 1px dotted white;
+				margin-top: 5px;
+				padding-top: 10px;
+			}
+			&.hide-above-tablet {
+				padding: 0;
+			}
+			@include breakpoint(screen($tablet, lessthan)) {
+				&:after {
+					bottom: -5px;
+				}
 			}
 			a {
 				@include raleway(bold);
@@ -47,9 +64,60 @@
 					transition: all .25s ease-out;
 				}
 			}
+			@include mq($max-width: $desktop-max) {
+				padding: {
+					left: 10px;
+					right: 9px;
+				}
+				a {
+					margin: 0;
+				}
+			}
+			@include mq($max-width: $tablet-max) {
+				display: inline-block;
+				a {
+					font-size: 12px;
+				}
+			}
+			@include mq($max-width: $tablet-min) {
+				display: block;
+				float: none;
+				margin: 0 0 15px 0;
+				a {
+					padding: 0;
+					font-size: 16px;
+				}
+				&.active,
+				&:hover,
+				&.current-menu-item {
+					&:after {
+						display: none;
+					}
+				}
+			}
 		}
 	}
 	.navbar-brand {
-		padding-top: 14px;
+		margin-top: -32px;
+		@include breakpoint(screen($tablet, lessthan)) {
+			float: none;
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+	.navbar-toggle {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 10000;
+		color: $white;
+		font-size: 50px;
+		transition: all .25s ease-in-out;
+		transform: rotate(45deg);
+		&.active {
+			transform: rotate(0deg);
+		}
 	}
 }

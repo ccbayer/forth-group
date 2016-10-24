@@ -1,5 +1,5 @@
 // Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder. 
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from /sass/bootstrap/_variables.scss, paste it here and edit the value.
 // As example you find one of the most important Bootstrap variable below: $brand-primary.
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
@@ -12,7 +12,7 @@ $purple: #062467;
 $mid-grey: #333;
 $white: #FFF;
 $black: #000;
-$dark: $mid-grey; 
+$dark: $mid-grey;
 $light-green: #E5EEE4;
 $dark-blue: #062467;
 
@@ -49,7 +49,7 @@ $desktop: (
 	max: max-width $desktop-max,
 	lessthan: max-width $desktop-min,
 	morethan: $desktop-max
-);	
+);
 
 $tablet: (
 	range: $tablet-min $tablet-max,
@@ -57,7 +57,7 @@ $tablet: (
 	max: max-width $tablet-max,
 	lessthan: max-width $tablet-min,
 	morethan: $tablet-max
-);	
+);
 
 $phablet: (
 	range: $phablet-min $phablet-max,
@@ -65,7 +65,7 @@ $phablet: (
 	max: max-width $phablet-max,
 	lessthan: max-width $phablet-min,
 	morethan: $phablet-max
-);	
+);
 
 
 $phone: (
@@ -74,7 +74,7 @@ $phone: (
 	max: max-width $phone-max,
 	lessthan: max-width $phone-min,
 	morethan: $phone-max
-);	
+);
 
 
 @function screen($device, $param) {
