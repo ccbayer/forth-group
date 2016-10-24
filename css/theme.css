@@ -7384,12 +7384,14 @@ header.site-header {
   padding: 0; }
   .navbar #main-menu {
     float: right;
-    margin-margin-top: -15px;
-    margin-bottom: 15px; }
+    margin-top: -30px;
+    margin-bottom: 15px;
+    margin-left: -15px; }
     @media only screen and (max-width: 768px) {
       .navbar #main-menu {
         width: 100%;
-        float: none; } }
+        float: none;
+        margin: 15px 0; } }
     .navbar #main-menu li {
       position: relative;
       padding-left: 20px;
