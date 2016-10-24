@@ -14,17 +14,17 @@
 	}
 	&.opacity-45 {
 		&:before {
-			opacity: .45;			
+			opacity: .45;
 		}
 	}
 	&.opacity-80 {
 		&:before {
-			opacity: .8;			
+			opacity: .8;
 		}
 	}
 }
 
-.bg-white { 
+.bg-white {
 	background: $white;
 }
 
@@ -34,4 +34,25 @@
 
 .rel {
 	position: relative;
+}
+
+.hide-above-phablet {
+	display: none;
+	@include mq($max-width: $phablet-max) {
+		display: block;
+	}
+}
+.hide-above-tablet-portrait {
+	display: none !important;
+	@include mq($max-width: $tablet-min) {
+		display: block !important;
+	}
+}
+.hide-above-tablet {
+	@include mq($min-width: $desktop-min) {
+		display: none !important;
+	}
+	@include mq($max-width: $tablet-max) {
+		display: block;
+	}
 }

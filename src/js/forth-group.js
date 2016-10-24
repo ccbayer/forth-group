@@ -13,7 +13,7 @@ jQuery('a[role="tab"]').click(function (e) {
 
 jQuery(function() {
 	jQuery('.forth-slider').owlCarousel({
-	 
+
 	      autoPlay: 3000, //Set AutoPlay to 3 seconds
 	      items: 5,
 	      itemsDesktop: [1199, 5],
@@ -24,7 +24,7 @@ jQuery(function() {
 	      	'<span class="fa fa-chevron-right"></span>'
 	      ],
 	      pagination: true
-	 
+
 	  });
 
 });
@@ -34,13 +34,13 @@ jQuery(function() {
 jQuery(function() {
 	jQuery('.side-tabbed-content-wrapper').on('click', '.side-nav ul li a', function(event){
 		event.preventDefault();
-		var 
+		var
 			$this = jQuery(this),
 			$target = $this.attr('href')
 		;
 		// turn off all navs
 		jQuery('.side-nav ul li').removeClass('active');
-		// enable this nav 
+		// enable this nav
 		$this.parent('li').addClass('active');
 		// load content
 		$this.closest('.side-tabbed-content-wrapper').find('.content-item.active').removeClass('active');
@@ -50,4 +50,13 @@ jQuery(function() {
         	scrollTop: jQuery('.side-tabbed-content-wrapper').offset().top
 		}, 500);
 	});
+});
+
+// nav bar
+
+jQuery(function() {
+		jQuery('.navbar-toggle').on('click', function() {
+			jQuery(this).toggleClass('active');
+			jQuery('.site-header').toggleClass('active');
+		})
 });

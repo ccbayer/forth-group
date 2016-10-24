@@ -29,58 +29,59 @@
     <header class="site-header">
         <!-- ******************* The Navbar Area ******************* -->
         <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
-    	
+
             <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
             <nav class="navbar site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-                                
+
 
                     <div class="container">
-                        <div class="col-md-4">
-                            <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forth-group-logo.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-                        </div>
-                        <div class="col-md-8">
+                        <div class="row">
+                          <div class="col-md-8 offset-md-4">
                             <?php wp_nav_menu(
                                 array(
                                     'theme_location' => 'header-btn',
-                                    'container_class' => 'header-btn-wrapper',
+                                    'container_class' => 'header-btn-wrapper clearfix',
                                     'menu_class' => '',
                                     'fallback_cb' => '',
                                     'menu_id' => 'header-btn-menu',
                                     'walker' => new wp_bootstrap_navwalker()
                                     ));
                             ?>
-                            <div class="navbar-header clearfix">
-                                <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4 col-xs-6 col-sm-6">
+                              <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forth-group-logo.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+                          </div>
+                          <div class="col-md-8 col-xs-6 col-sm-6">
+                              <div class="navbar-header clearfix">
+                                  <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 
-                                  <button class="navbar-toggle hidden-sm-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
+                                  <button class="navbar-toggle hidden-md-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar">
+                                      <span class="sr-only">Toggle navigation</span>
+                                      &times;
+                                  </button>
 
 
-                            </div>
-                                <?php wp_nav_menu(
-                                        array(
-                                            'theme_location' => 'main',
-                                            'container_class' => 'collapse navbar-toggleable-xs exCollapsingNavbar',
-                                            'menu_class' => 'nav navbar-nav',
-                                            'fallback_cb' => '',
-                                            'menu_id' => 'main-menu',
-                                            'walker' => new wp_bootstrap_navwalker()
-                                        )
-                                ); ?>
+                              </div>
+                          </div>
+                          <div class="col-sm-12 pull-right">
+                            <?php wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'main',
+                                        'container_class' => 'collapse navbar-toggleable-sm exCollapsingNavbar',
+                                        'menu_class' => 'nav navbar-nav',
+                                        'fallback_cb' => '',
+                                        'menu_id' => 'main-menu',
+                                        'walker' => new wp_bootstrap_navwalker()
+                                    )
+                            ); ?>
+                          </div>
                         </div>
                     </div> <!-- .container -->
-                    
-                
+
+
             </nav><!-- .site-navigation -->
-            
+
         </div><!-- .wrapper-navbar end -->
     </header>
-
-
-
-
-

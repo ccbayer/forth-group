@@ -1,8 +1,9 @@
 
 @import "breakpoint-sass/stylesheets/breakpoint";// <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
+@import "sass-mediaqueries/media-queries";// <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
 
-@import "utilities/utilities";
 @import "utilities/mixins";
+@import "utilities/utilities";
 
 @import "global/fonts";
 @import "global/global";
