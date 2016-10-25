@@ -39,8 +39,11 @@
 						margin-top: -15px;
 						border-radius: 100%;
 						padding: 6px 8px;
+						@include mq($max-width: $tablet-max) {
+							transform: rotate(90deg);
+						}
 					}
-				}				
+				}
 				a {
 					@include bree;
 					font-size: 18px;

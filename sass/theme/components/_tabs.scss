@@ -4,7 +4,7 @@ $tabwidth: 33.33333%;
 .tabs-wrapper,
 .tabbed-carousel-wrapper {
 	padding: 30px;
-	@include breakpoint(map-get($tablet, lessthan)) {
+	@include mq($max-width: $tablet-min) {
 		padding: 15px 0;
 	}
 	h2 {
@@ -20,8 +20,8 @@ $tabwidth: 33.33333%;
 		&.count-4 {
 			li {
 				width: 25% !important;
-				@include breakpoint(map-get($tablet, lessthan)) {
-					width: 100%;
+				@include mq($max-width: $tablet-min) {
+					width: 100% !important;
 				}
 			}
 		}
@@ -31,7 +31,7 @@ $tabwidth: 33.33333%;
 			display: block;
 			float: left;
 			width: $tabwidth;
-			@include breakpoint(screen($tablet, lessthan)) {
+			@include mq($max-width: $tablet-min) {
 				width: 100%;
 			}
 			a {
@@ -66,14 +66,14 @@ $tabwidth: 33.33333%;
 				color: $white;
 			}
 			&:hover {
-				a { 
+				a {
 					&:after {
 						width: 100%;
 						margin-left: 0;
 						transition: all .25s ease-out;
 					}
 				}
-				&.active a:after { 
+				&.active a:after {
 					color: $white;
 				}
 			}
@@ -94,18 +94,18 @@ $tabwidth: 33.33333%;
 				margin-bottom: 50px;
 				opacity: .4;
 			}
-			@include breakpoint(screen($phablet, 'max')) {
+			@include mq($max-width: $phablet-max) {
 				width: 100%;
 				float: none;
 			}
 		}
 		p {
-			float: left; 
+			float: left;
 			width: 75%;
 			font-size: 18px;
 			line-height: 26px;
 			color: $dark;
-			@include breakpoint(screen($phablet, 'max')) {
+			@include mq($max-width: $phablet-max) {
 				width: 100%;
 				float: none;
 			}

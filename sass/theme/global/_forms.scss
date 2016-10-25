@@ -1,7 +1,7 @@
 // validation message
 #message p {
 	text-align: center;
-	padding: 30px;	
+	padding: 30px;
 	@include raleway(500);
 	font-size: 30px;
 }
@@ -11,7 +11,7 @@ label,
 	@include raleway(300);
 	font-weight: normal !important;
 	font-size: 20px !important;
-	padding-left: 30%; 
+	padding-left: 30%;
 }
 
 input,
@@ -26,12 +26,12 @@ input[type="submit"] {
 	font-weight: normal;
 	border: none;
 	margin: 0 auto;
-	text-align: center; 
+	text-align: center;
 	background: $green;
 	line-height: 55px;
 	font-size: 22px;
 	color: $white;
-	border: 2px solid $green;	
+	border: 2px solid $green;
 	padding: {
 		left: 55px;
 		right: 55px;
@@ -41,4 +41,10 @@ input[type="submit"] {
 		background: $white;
 		color: $green;
 	}
+	@include mq($max-width: $tablet-min) {
+			width: 80%;
+			display: block;
+			margin: 10px auto;
+			max-width: 350px;
+		}
 }
