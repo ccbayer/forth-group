@@ -124,3 +124,10 @@
 		}
 	}
 }
+
+
+.navwrap {
+	@include mq($max-width: $tablet-min) {
+		width: 100% !important;
+	}
+}
