@@ -7481,12 +7481,28 @@ header.site-header {
   background-size: cover;
   background-image: url(../img/main-banner-bg.jpg);
   text-align: center; }
+  @media only screen and (max-width: 1024px) {
+    .home-banner {
+      padding-top: 22.1875%;
+      padding-bottom: 22.1875%;
+      height: auto; } }
   .home-banner h1 {
     color: #FFF;
     text-transform: uppercase;
     font-size: 65px;
     line-height: 78px;
     letter-spacing: .05em; }
+    @media only screen and (max-width: 1024px) {
+      .home-banner h1 {
+        font-size: 56px;
+        line-height: 1; } }
+    @media only screen and (max-width: 768px) {
+      .home-banner h1 {
+        padding-top: 30px; } }
+    @media only screen and (max-width: 480px) {
+      .home-banner h1 {
+        font-size: 32px;
+        padding-top: 45px; } }
   .home-banner a.btn {
     color: #FFF;
     background: transparent;
@@ -7509,15 +7525,26 @@ header.site-header {
   background-position: top center;
   background-size: cover;
   text-align: center; }
+  @media only screen and (max-width: 481px) {
+    .backpage-banner {
+      padding-top: 150px; } }
 
 .bp-cta-wrapper {
   padding: 50px 0 170px 0; }
+  @media only screen and (max-width: 768px) {
+    .bp-cta-wrapper {
+      padding: 30px 0; } }
   .bp-cta-wrapper h3 {
     text-align: center;
     font-size: 27px;
     line-height: 32px;
     color: #333;
     padding-top: 16px; }
+    @media only screen and (max-width: 768px) {
+      .bp-cta-wrapper h3 {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 8px 0; } }
   .bp-cta-wrapper .btn {
     font-family: "bree-serif", serif;
     font-weight: 400;
@@ -7534,6 +7561,12 @@ header.site-header {
       background: #80AE37;
       border-color: #394d18;
       color: #FFF; }
+    @media only screen and (max-width: 768px) {
+      .bp-cta-wrapper .btn {
+        display: block;
+        margin: 30px auto;
+        width: 80%;
+        max-width: 400px; } }
 
 .introduction-wrapper {
   padding: 35px 0 65px 0; }
@@ -7644,6 +7677,9 @@ header.site-header {
     background: #062467;
     padding: 5px 0;
     height: 60px; }
+  @media only screen and (max-width: 767px) {
+    .figures-four-up-wrapper .figure-wrapper {
+      margin-bottom: 15px; } }
   .figures-four-up-wrapper h3 {
     font-family: "bree-serif", serif;
     font-weight: 400;
@@ -7677,11 +7713,14 @@ header.site-header {
         list-style-position: outside; }
         .figures-four-up-wrapper figure figcaption ul li {
           padding: 0; }
+        @media only screen and (max-width: 1024px) {
+          .figures-four-up-wrapper figure figcaption ul {
+            margin-left: 5%; } }
 
 .tabs-wrapper,
 .tabbed-carousel-wrapper {
   padding: 30px; }
-  @media (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .tabs-wrapper,
     .tabbed-carousel-wrapper {
       padding: 15px 0; } }
@@ -7700,10 +7739,10 @@ header.site-header {
     .tabs-wrapper ul.nav.nav-tabs.count-4 li,
     .tabbed-carousel-wrapper ul.nav.nav-tabs.count-4 li {
       width: 25% !important; }
-      @media (max-width: 768px) {
+      @media only screen and (max-width: 768px) {
         .tabs-wrapper ul.nav.nav-tabs.count-4 li,
         .tabbed-carousel-wrapper ul.nav.nav-tabs.count-4 li {
-          width: 100%; } }
+          width: 100% !important; } }
     .tabs-wrapper ul.nav.nav-tabs li,
     .tabbed-carousel-wrapper ul.nav.nav-tabs li {
       font-family: "bree-serif", serif;
@@ -7712,7 +7751,7 @@ header.site-header {
       display: block;
       float: left;
       width: 33.33333%; }
-      @media (max-width: 768px) {
+      @media only screen and (max-width: 768px) {
         .tabs-wrapper ul.nav.nav-tabs li,
         .tabbed-carousel-wrapper ul.nav.nav-tabs li {
           width: 100%; } }
@@ -7774,7 +7813,7 @@ header.site-header {
         line-height: .5;
         margin-bottom: 50px;
         opacity: .4; }
-      @media (max-width: 767px) {
+      @media only screen and (max-width: 767px) {
         .tabs-wrapper .tab-pane h3,
         .tabbed-carousel-wrapper .tab-pane h3 {
           width: 100%;
@@ -7786,7 +7825,7 @@ header.site-header {
       font-size: 18px;
       line-height: 26px;
       color: #333; }
-      @media (max-width: 767px) {
+      @media only screen and (max-width: 767px) {
         .tabs-wrapper .tab-pane p,
         .tabbed-carousel-wrapper .tab-pane p {
           width: 100%;

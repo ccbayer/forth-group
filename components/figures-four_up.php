@@ -4,8 +4,8 @@
             <?php
 	          $figs = get_sub_field('figure');
 	          foreach($figs as $figure):
-	        ?> 
-            <div class="col-md-3">
+	        ?>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 figure-wrapper">
                 <div class="headline">
                     <h3><?php echo $figure['headline']; ?></h3>
                 </div>
@@ -13,12 +13,12 @@
                     <img src="<?php echo $figure['icon']['url']; ?>" alt="">
                     <figcaption>
                         <?php echo $figure['body']; ?>
-                    </figcaption>                                            
+                    </figcaption>
                 </figure>
             </div>
             <?php
-            	endforeach;    
+            	endforeach;
             ?>
         </div>
     </div>
-</div>  
+</div>

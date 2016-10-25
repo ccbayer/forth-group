@@ -3,12 +3,17 @@
 	div {
 		padding: 0 2%;
 	}
-	.headline {		
+	.headline {
 		background: $dark-blue;
 		padding: 5px 0;
 		height: 60px;
 	}
-	h3 { 
+	.figure-wrapper {
+		@include mq($max-width: $phablet-max) {
+			margin-bottom: 15px;
+		}
+	}
+	h3 {
 		@include bree;
 		color: $white;
 		font-size: 18px;
@@ -42,6 +47,9 @@
 				list-style-position: outside;
 				li {
 					padding: 0;
+				}
+				@include mq($max-width: $tablet-max) {
+					margin-left: 5%;
 				}
 			}
 		}

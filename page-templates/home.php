@@ -13,7 +13,7 @@ get_header(); ?>
     <div class="home-banner pattern-overlay opacity-45">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 offset-md-4">
+                <div class="col-md-6 offset-md-3">
                     <h1><?php the_field('main_headline') ?></h1>
                     <a href="<?php the_field('call_to_action_link'); ?>" class="btn"><?php the_field('call_to_action_text'); ?></a>
                 </div>
@@ -34,7 +34,7 @@ get_header(); ?>
 	        ?>
             <div class="row">
 	            <?php foreach($icon_group as $icon): ?>
-                <figure class="col-md-3">
+                <figure class="col-md-3 col-sm-6 col-xs-sm">
                     <img src="<?php echo $icon['icon']['url']; ?>" alt="">
                     <figcaption><?php echo $icon['caption']; ?></figcaption>
                 </figure>
@@ -56,10 +56,10 @@ get_header(); ?>
                         <p><?php echo $test['testimonial_copy']; ?></p>
                         <footer><?php echo $test['testimonial_author']; ?></footer>
                     </blockquote>
-                <?php 
+                <?php
 	            		endforeach;
 	            	endif;
-	            ?> 
+	            ?>
                 </div>
                 <div class="col-md-5">
                     <?php // video goes here ?>

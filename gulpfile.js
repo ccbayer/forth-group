@@ -34,7 +34,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-// Run: 
+// Run:
 // gulp sass
 // Compiles SCSS files in CSS
 gulp.task('sass', function () {
@@ -46,7 +46,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./css'));
 });
 
-// Run: 
+// Run:
 // gulp nanocss
 // Minifies CSS files
 gulp.task('cssnano', ['cleancss'], function(){
@@ -58,28 +58,28 @@ gulp.task('cssnano', ['cleancss'], function(){
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css/'))
     .pipe(reload({stream: true}));
-}); 
+});
 
 gulp.task('cleancss', function() {
-  return gulp.src('./css/*.min.css', { read: false }) // much faster 
+  return gulp.src('./css/*.min.css', { read: false }) // much faster
     .pipe(ignore('theme.css'))
     .pipe(rimraf());
 });
 
-// Run: 
+// Run:
 // gulp browser-sync
 // Starts browser-sync task for starting the server.
 gulp.task('browser-sync', function() {
     browserSync.init(browserSyncWatchFiles, browserSyncOptions);
 });
 
-// Run: 
+// Run:
 // gulp watch-bs
 // Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
 gulp.task('watch-bs', ['browser-sync', 'watch', 'cssnano'], function () { });
 
-// Run: 
-// gulp scripts. 
+// Run:
+// gulp scripts.
 // Uglifies and concat all JS files into one
 gulp.task('scripts', function() {
   gulp.src([
@@ -87,7 +87,7 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
 
     // Start - All BS4 stuff
-    basePaths.dev + 'bs3/dist/js/bootstrap.js', 
+    basePaths.dev + 'bs3/dist/js/bootstrap.js',
 
     // End - All BS4 stuff
 
@@ -104,7 +104,7 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
 
     // Start - All BS4 stuff
-    basePaths.dev + 'bs3/dist/js/bootstrap.js', 
+    basePaths.dev + 'bs3/dist/js/bootstrap.js',
 
     // End - All BS4 stuff
 
@@ -117,7 +117,7 @@ gulp.task('scripts', function() {
 });
 
 
-// Run: 
+// Run:
 // gulp watch
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task('watch', ['sass', 'cssnano', 'scripts'], function () {
@@ -127,8 +127,8 @@ gulp.task('watch', ['sass', 'cssnano', 'scripts'], function () {
 });
 
 
-// Run: 
-// gulp copy-assets. 
+// Run:
+// gulp copy-assets.
 // Copy all needed dependency assets files from bower_component assets to themes /js, /scss and /fonts folder. Run this task after bower install or bower update
 
 
@@ -137,7 +137,7 @@ gulp.task('copy-assets', function() {
 
 
 ////////////////// All Bootstrap 4 Assets /////////////////////////
-// Copy all Bootstrap JS files 
+// Copy all Bootstrap JS files
     gulp.src(basePaths.bower + 'bootstrap/dist/js/**/*.js')
        .pipe(gulp.dest(basePaths.dev + '/js/bootstrap4'));
 

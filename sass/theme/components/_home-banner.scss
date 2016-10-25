@@ -3,9 +3,18 @@ $btn-padding: 58px;
 	width: 100%;
 	padding-top: 284px;
 	height: 640px;
+	// percentage:
+	$percentage: percentage(284px / 640px);
 	background: {
 		size: cover;
 		image: url(../img/main-banner-bg.jpg);
+	}
+	@include mq($max-width: $tablet-max) {
+		padding: {
+			top: $percentage / 2;
+			bottom: $percentage / 2;
+		}
+		height: auto;
 	}
 	text-align: center;
 	h1 {
@@ -14,6 +23,17 @@ $btn-padding: 58px;
 		font-size: 65px;
 		line-height: 78px;
 		letter-spacing: .05em;
+		@include mq($max-width: $tablet-max) {
+			font-size: 56px;
+			line-height: 1;
+		}
+		@include mq($max-width: $tablet-min) {
+			padding-top: 30px;
+		}
+		@include mq($max-width: $phone-max) {
+			font-size: 32px;
+			padding-top: 45px;
+		}
 	}
 	a.btn {
 		color: $white;
