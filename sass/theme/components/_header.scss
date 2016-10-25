@@ -12,7 +12,8 @@ header.site-header {
 		background: rgba($black, .75);
 	}
 	// header btns
-	.header-btn-wrapper {
+	.header-btn-wrapper,
+	.header-btn-mobile {
 		@include clearfix;
 		float: right;
 		ul {
@@ -30,26 +31,6 @@ header.site-header {
 						left: 24px;
 						right: 24px;
 					}
-					/*
-					@include breakpoint($tablet-min, 949px) {
-						font-size: 12px;
-						padding: 0 5px;
-						margin: 0;
-					}
-					@include breakpoint(950px, $tablet-max) {
-						padding: 0 7px;
-						font-size: 13px;
-					}
-					@include breakpoint(screen($desktop, min)) {
-						padding: 0 10px;
-						border-left: none;
-						margin: .25rem;
-					}
-					@include breakpoint(screen($desktop, max)) {
-						padding: 0 14px;
-						margin: .3rem;
-					}
-					*/
 					// less than 1280
 					@include mq($max-width: $desktop-max) {
 						padding: 0 10px;
@@ -73,6 +54,40 @@ header.site-header {
 		}
 		@include breakpoint(screen($tablet, lessthan)) {
 			display: none;
+		}
+	}
+	.header-btn-mobile {
+		display: none;
+			@include mq($max-width: $tablet-min) {
+		  display: block;
+			opacity: 0;
+			transition: all .25s ease-in-out;
+			&.active {
+				opacity: 1;
+			}
+			ul{
+				@include clearfix;
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: -44px;
+				border-bottom: 1px solid $white;
+				margin: 0;
+				li {
+					width: 33.333%;
+					float: left;
+					border-left: 1px solid $white;
+					&:first-of-type {
+						border-left: none;
+					}
+					a.nav-link {
+						margin: 0;
+						width: 100%;
+						font-size: 12px;
+						text-align: center;
+					}
+				}
+			}
 		}
 	}
 }

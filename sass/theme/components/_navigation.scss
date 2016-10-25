@@ -103,9 +103,10 @@
 		margin-top: -32px;
 		@include breakpoint(screen($tablet, lessthan)) {
 			float: none;
+			text-align: left;
 			img {
 				display: block;
-				margin: 0 auto;
+				max-width: 180px;
 			}
 		}
 	}

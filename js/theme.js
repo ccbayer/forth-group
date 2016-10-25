@@ -4284,6 +4284,6 @@ jQuery(function() {
 jQuery(function() {
 		jQuery('.navbar-toggle').on('click', function() {
 			jQuery(this).toggleClass('active');
-			jQuery('.site-header').toggleClass('active');
+			jQuery('.site-header').add('.header-btn-mobile').toggleClass('active');
 		})
 });
