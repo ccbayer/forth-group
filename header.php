@@ -65,7 +65,7 @@
 
                               </div>
                           </div>
-                          <div class="col-sm-12 pull-right">
+                          <div class="col-sm-12 pull-right navwrap">
                             <?php wp_nav_menu(
                                     array(
                                         'theme_location' => 'main',
