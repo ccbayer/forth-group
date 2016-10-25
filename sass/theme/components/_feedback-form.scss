@@ -1,5 +1,5 @@
 .feedback-form-wrapper {
-	form {			
+	form {
 		padding: 50px 0;
 		width: 75%;
 		margin: 0 auto;
@@ -27,6 +27,13 @@
 				}
 				input {
 					float: left;
+				}
+				@include mq($max-width: $tablet-min) {
+					float: none;
+					width: 100%;
+					label {
+						line-height: 55px;
+					}
 				}
 			}
 		}
