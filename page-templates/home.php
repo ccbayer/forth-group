@@ -61,8 +61,10 @@ get_header(); ?>
 	            	endif;
 	            ?>
                 </div>
-                <div class="col-md-5">
-                    <?php // video goes here ?>
+                <div class="col-md-5 video-outer-wrapper">
+                  <div class="video-inner-wrapper">
+                    <iframe src="https://player.vimeo.com/video/189009818" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  </div>
                 </div>
             </div>
         </div>
