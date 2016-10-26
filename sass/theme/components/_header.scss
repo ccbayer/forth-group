@@ -59,11 +59,9 @@ header.site-header {
 	.header-btn-mobile {
 		display: none;
 			@include mq($max-width: $tablet-min) {
-		  display: block;
-			opacity: 0;
-			transition: all .25s ease-in-out;
+
 			&.active {
-				opacity: 1;
+				display: block;
 			}
 			ul{
 				background: $green;
