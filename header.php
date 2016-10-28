@@ -57,7 +57,7 @@
                               <div class="navbar-header clearfix">
                                   <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 
-                                  <button class="navbar-toggle hidden-md-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar">
+                                  <button class="navbar-toggle hide-above-phablet" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar">
                                       <span class="sr-only">Toggle navigation</span>
                                       &times;
                                   </button>
@@ -69,7 +69,7 @@
                             <?php wp_nav_menu(
                                     array(
                                         'theme_location' => 'main',
-                                        'container_class' => 'collapse navbar-toggleable-sm exCollapsingNavbar',
+                                        'container_class' => 'collapse navbar-toggleable-lttablet exCollapsingNavbar',
                                         'menu_class' => 'nav navbar-nav',
                                         'fallback_cb' => '',
                                         'menu_id' => 'main-menu',

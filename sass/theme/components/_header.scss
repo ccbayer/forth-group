@@ -69,7 +69,6 @@ header.site-header {
 				width: 100%;
 				position: absolute;
 				left: 0;
-				bottom: -44px;
 				border-bottom: 1px solid $white;
 				margin: 0;
 				li {
@@ -94,7 +93,6 @@ header.site-header {
 		}
 		@include mq($max-width: $phone-max) {
 			ul {
-				top: 117px;
 				li {
 					width: 50%;
 					a.nav-link {

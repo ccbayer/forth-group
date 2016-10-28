@@ -38,7 +38,7 @@
 
 .hide-above-phablet {
 	display: none;
-	@include mq($max-width: $phablet-max) {
+	@include mq($max-width: $tablet-min) {
 		display: block;
 	}
 }
@@ -54,5 +54,11 @@
 	}
 	@include mq($max-width: $tablet-max) {
 		display: block;
+	}
+}
+
+.navbar-toggleable-lttablet {
+	@include mq($min-width: $tablet-min + 1) {
+		display: block !important;
 	}
 }

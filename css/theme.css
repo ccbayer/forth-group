@@ -7223,7 +7223,7 @@ a.skip-link {
 
 .hide-above-phablet {
   display: none; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     .hide-above-phablet {
       display: block; } }
 
@@ -7240,6 +7240,10 @@ a.skip-link {
 @media only screen and (max-width: 1024px) {
   .hide-above-tablet {
     display: block; } }
+
+@media only screen and (min-width: 769px) {
+  .navbar-toggleable-lttablet {
+    display: block !important; } }
 
 .raleway {
   font-family: "Raleway", sans-serif; }
@@ -7383,7 +7387,6 @@ header.site-header {
         width: 100%;
         position: absolute;
         left: 0;
-        bottom: -44px;
         border-bottom: 1px solid #FFF;
         margin: 0; }
         header.site-header .header-btn-mobile ul::after {
@@ -7405,17 +7408,15 @@ header.site-header {
             padding-bottom: 15px;
             border-left: 1px solid #FFF; } }
     @media only screen and (max-width: 480px) {
-      header.site-header .header-btn-mobile ul {
-        top: 117px; }
-        header.site-header .header-btn-mobile ul li {
-          width: 50%; }
-          header.site-header .header-btn-mobile ul li a.nav-link {
-            padding: 10px 0; }
-          header.site-header .header-btn-mobile ul li:last-of-type {
-            clear: both;
-            width: 100%;
-            border-left: none;
-            border-top: 1px solid #FFF; } }
+      header.site-header .header-btn-mobile ul li {
+        width: 50%; }
+        header.site-header .header-btn-mobile ul li a.nav-link {
+          padding: 10px 0; }
+        header.site-header .header-btn-mobile ul li:last-of-type {
+          clear: both;
+          width: 100%;
+          border-left: none;
+          border-top: 1px solid #FFF; } }
 
 .navbar {
   padding: 0; }
@@ -7544,7 +7545,7 @@ header.site-header {
     @media only screen and (max-width: 480px) {
       .home-banner h1 {
         font-size: 32px;
-        padding-top: 45px; } }
+        padding-top: 145px; } }
   .home-banner a.btn {
     color: #FFF;
     background: transparent;
