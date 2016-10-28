@@ -30,6 +30,7 @@ var uglify = require('gulp-uglify');
 var merge2 = require('merge2');
 var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
+var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -42,7 +43,8 @@ gulp.task('sass', function () {
         .pipe(plumber())
         .pipe(sass( {
 	        includePaths: './bower_components'
-        }))
+        }))        
+        .pipe(autoprefixer())
         .pipe(gulp.dest('./css'));
 });
 
