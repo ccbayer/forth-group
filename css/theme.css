@@ -7804,6 +7804,10 @@ header.site-header {
         .figures-grid-with-captions figure figcaption p a {
           color: #062467;
           text-decoration: underline; }
+          .figures-grid-with-captions figure figcaption p a.readMore, .figures-grid-with-captions figure figcaption p a.readLess {
+            display: block; }
+        .figures-grid-with-captions figure figcaption p span.more {
+          display: none; }
 
 .figures-four-up-wrapper {
   padding: 60px 0; }

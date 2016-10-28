@@ -23,8 +23,15 @@
 				a {
 					color: $purple;
 					text-decoration: underline;
+					&.readMore,
+					&.readLess {
+						display: block;
+					}
+				}
+				span.more {
+					display: none;
 				}
 			}
-		}		
+		}
 	}
 }
