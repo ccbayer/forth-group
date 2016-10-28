@@ -11,6 +11,8 @@ jQuery('a[role="tab"]').click(function (e) {
 
 // jQuery(".nav-tabs").tab();
 
+$ = jQuery;
+
 jQuery(function() {
 	jQuery('.forth-slider').owlCarousel({
 
@@ -59,4 +61,30 @@ jQuery(function() {
 			jQuery(this).toggleClass('active');
 			jQuery('.site-header').add('.header-btn-mobile').toggleClass('active');
 		})
+});
+
+
+// read more  read Less
+$(function() {
+
+	$('.readMore').on('click', function(event) {
+		event.preventDefault();
+		var $targetToHide = $(this).attr('href')
+		var $targetToShow = $(this).parent('span').next('span.more');
+		if($targetToHide && $targetToShow) {
+			$($targetToHide).hide();
+			$targetToShow.show();
+		}
+	});
+
+	$('.readLess').on('click', function(event) {
+		event.preventDefault();
+		var $targetToShow = $(this).attr('href')
+		var $targetToHide = $(this).parent('span.more');
+		if($targetToHide && $targetToShow) {
+			$($targetToShow).show();
+			$targetToHide.hide();
+		}
+	});
+
 });
