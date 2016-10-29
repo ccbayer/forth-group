@@ -7,7 +7,7 @@
 			color: $green;
 			font-size: 34px;
 			text-align: center;
-			@include line-after;
+			@include line-after($green);
 		}
 		h1 {
 			text-transform: uppercase;

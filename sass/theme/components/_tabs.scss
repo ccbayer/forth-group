@@ -84,7 +84,7 @@ $tabwidth: 33.33333%;
 		h3 {
 			@include bree;
 			float: left;
-			width: 25%;
+			width: 23%;
 			color: $green;
 			text-transform: uppercase;
 			span {
@@ -99,9 +99,10 @@ $tabwidth: 33.33333%;
 				float: none;
 			}
 		}
-		p {
+		.tab-content {
 			float: left;
 			width: 75%;
+			margin-left: 2%;
 			font-size: 18px;
 			line-height: 26px;
 			color: $dark;

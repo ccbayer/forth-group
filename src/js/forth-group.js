@@ -53,26 +53,32 @@
 	// read more  read Less
 	$(function() {
 
-		$('.readMore').on('click', function(event) {
+		$('.readMoreLess').on('click', function(event) {
 			event.preventDefault();
-			var $targetToHide = $(this).attr('href')
-			var $targetToShow = $(this).parent('span').next('span.more');
-			if($targetToHide && $targetToShow) {
-				$($targetToHide).hide();
-				$targetToShow.show();
-			}
-		});
-
-		$('.readLess').on('click', function(event) {
-			event.preventDefault();
-			var $targetToShow = $(this).attr('href')
-			var $targetToHide = $(this).parent('span.more');
-			if($targetToHide && $targetToShow) {
-				$($targetToShow).show();
-				$targetToHide.hide();
+			var target = $(this).attr('href');
+			$('.read-more').hide();
+			if(target) {
+				$(target).toggle();
 			}
 		});
 
 	});
+
+	// testimonial nav
+	$(function() {
+		$('.testimonial-nav a').on('click', function(event) {
+			event.preventDefault();
+			var $target = $(this).attr('href');
+			$('blockquote').add('.testimonial-nav a').removeClass('active');
+			$(this).add($target).addClass('active');
+		});
+
+		$('.testimonial-nav li').on('click', function() {
+			$(this).find('a').trigger('click');
+		});
+
+	});
+
+	// end ENCAPSULATE
 
 })(jQuery);

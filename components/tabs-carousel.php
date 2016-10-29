@@ -1,5 +1,5 @@
 <?php
- $galleryIDPrefix = 'gallery-' .  substr(md5(rand()), 0, 7).'-';	
+ $galleryIDPrefix = 'gallery-' .  substr(md5(rand()), 0, 7).'-';
  $gallery = get_sub_field('gallery');
  $count = sizeof($gallery) > 3 ? 4 : $sizeof($gallery);
 ?>
@@ -22,9 +22,9 @@
             <div class="col-md-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs count-<?php echo $count; ?>" role="tablist" data-tabs="tabs">
-                <?php	            	
+                <?php
 	            	for($i = 0; $i < sizeof($gallery); $i++) {
-			        	$class = $i === 0 ? 'active' : '';	
+			        	$class = $i === 0 ? 'active' : '';
 			        	$num = $i + 1;
 			        ?>
                     <li role="presentation" class="<?php echo $class; ?>">
@@ -40,25 +40,59 @@
             <div class="tab-content">
 	            <?php
 					for($i = 0; $i < sizeof($gallery); $i++) {
-						$class = $i === 0 ? 'active' : '';	
+						$class = $i === 0 ? 'active' : '';
 			        	$num = $i + 1;
 		        ?>
                 <div role="tabpanel" class="tab-pane <?php echo $class; ?>" id="tab-<?php echo $galleryIDPrefix.$num ?>">
                     <div class="forth-slider owl-carousel owl-theme">
                       <?php
+                      $num = 1;
 	                    foreach($gallery[$i]['gallery_images'] as $img):
 					?>
-						<div class="item"><img src="<?php echo $img['gallery_image']['sizes']['tabbed-gallery-thumbnail-cropped'] ?>" alt=""></div>
-					<?php	                    
-	                    endforeach;
+						<div class="item">
+              <a data-toggle="modal" data-target="#modal-<?php echo $galleryIDPrefix?>-<?php echo $num; ?>">
+                <img src="<?php echo $img['gallery_image']['sizes']['tabbed-gallery-thumbnail-cropped'] ?>" alt="">
+              </a>
+            </div>
+					<?php
+                      $num++;
+                      endforeach;
 	                ?>
                     </div>
                 </div>
 				<?php
-					}	
+					}
 				?>
             </div>
             <!-- end tab panes -->
-        </div> 
+        </div>
     </div>
-</div> 
+<?php
+// MODALS FOR GALLERY
+for($i = 0; $i < sizeof($gallery); $i++):
+  $num = 1;
+  foreach($gallery[$i]['gallery_images'] as $img):
+?>
+<div class="modal fade" id="modal-<?php echo $galleryIDPrefix?>-<?php echo $num ?>" tabindex="-1" role="dialog" aria-labelledby="modal-label-<?php echo $num ?>" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modal-label-<?php echo $num ?>"><?php echo $gallery[$i]['gallery_label']; ?></h4>
+      </div>
+      <div class="modal-body">
+        <img src="<?php echo $img['gallery_image']['sizes']['large'] ?>" alt=""/>
+      </div>
+    </div>
+  </div>
+</div>
+<?
+  $num++;
+  endforeach;
+endfor;
+
+?>
+
+</div>

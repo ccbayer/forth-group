@@ -1,8 +1,22 @@
 .testimonial-wrapper {
 	padding: 80px 0 110px 0;
+	.testimonial-inner-wrapper {
+		position: relative;
+		height: 350px;
+		overflow: hidden;
+	}
 	blockquote {
 		text-align: center;
-		quotes: "\201C""\201D""\2018""\2019";
+		 quotes: "“" "”" "“" "”";
+		opacity: 0;
+		position: absolute;
+		bottom: -1000px;
+		transition: all .25s ease-in-out;
+		&.active {
+		 top: 0;
+		 opacity: 1;
+		 display: block;
+		}
 		&:before {
 			@include raleway(bold);
 			content: open-quote;
@@ -11,9 +25,12 @@
 			display: block;
 			margin: 40px auto;
 			color: $dark;
+		},
+		&:after {
+			content: no-close-quote;
 		}
 		p {
-			@include raleway;			
+			@include raleway;
 			font-style: italic;
 			font-size: 18px;
 			text-align: center;
@@ -23,6 +40,29 @@
 			 @include raleway(bold);
 			 font-size: 18px;
 			 text-align: center;
+		}
+	}
+	.testimonial-nav {
+		ul {
+			list-style: none;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			li {
+				cursor: pointer;
+				display: inline-block;
+				margin: 0 15px;
+				padding: 15px 0;
+				a {
+					display: inline-block;;
+					width: 45px;
+					height: 3px;
+					background: $gray;
+					&.active {
+						background: $green;
+					}
+				}
+			}
 		}
 	}
 }

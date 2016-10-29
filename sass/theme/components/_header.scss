@@ -11,6 +11,10 @@ header.site-header {
 	&.active {
 		background: rgba($black, .75);
 	}
+	.logo {
+		max-width: 200px;
+		margin-top: 15px;
+	}
 	// header btns
 	.header-btn-wrapper,
 	.header-btn-mobile {

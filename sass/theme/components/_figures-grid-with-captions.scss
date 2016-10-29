@@ -23,15 +23,24 @@
 				a {
 					color: $purple;
 					text-decoration: underline;
-					&.readMore,
-					&.readLess {
-						display: block;
-					}
-				}
-				span.more {
-					display: none;
 				}
 			}
 		}
+	}
+	h4 {
+		@include bree;
+		text-align: left;
+		font-size: 16px;
+		color: $dark;
+		text-transform: uppercase;
+	}
+	.read-more {
+		border: {
+			top: 2px solid $green;
+			bottom: 2px solid $green;
+		}
+		padding: 15px 42px;
+		text-align: left;
+		display: none;
 	}
 }
