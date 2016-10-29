@@ -15,7 +15,17 @@
 		&.active {
 			.owl-carousel.forth-slider {
 				display: block;
+				.item {
+					cursor: pointer;
+				}
 			}
 		}
 	}
+
+	.modal {
+		.modal-body {
+			text-align: center;
+		}
+	}
+
 }

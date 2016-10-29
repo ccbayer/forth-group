@@ -53,7 +53,7 @@ $btn-padding: 58px;
 		transition: all .25s ease-in-out;
 		&:hover {
 			background: $green;
-			border-color: darken($green, 25%);
+			border-color: $green;
 		}
 	}
 }

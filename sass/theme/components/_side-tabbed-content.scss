@@ -71,6 +71,11 @@
 			&.active {
 				display: block;
 			}
+			p {
+				a {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 	// faqs

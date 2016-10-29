@@ -25,18 +25,37 @@ function readMore($input, $limit) {
                     <div class="row">
 						<?php
 				          $figs = get_sub_field('figure');
-				          foreach($figs as $figure):
-                  $content = readMore($figure['content'], 220);
-				    ?>
+                  $moreContentHolder = '';
+                  for($i = 0; $i < sizeof($figs); $i++):
+                  $content = readMore($figs[$i]['content'], 220);
+                  $moreId = 'readMore-'.substr(md5(rand()), 0, 7);
+            ?>
                         <figure class="col-md-6">
-                            <img src="<?php echo $figure['icon']['url'] ?>" alt="">
+                            <img src="<?php echo $figs[$i]['icon']['url'] ?>" alt="">
                             <figcaption>
-                                <h3><?php echo $figure['label']; ?></h3>
-                                <p><?php echo $content; ?></p>
+                                <h3><?php echo $figs[$i]['label']; ?></h3>
+                                <div class="content">
+                                  <?php echo $figs[$i]['content'] ?>
+                                  <a href="#<?php echo $moreId ?>" class="readMoreLess">Read More + </a>
+                                  <?php
+                                    $moreContentHolder .= '<div class="read-more" id="' . $moreId .'"><h4>'.$figs[$i]['label'].'</h4>' . $figs[$i]['expanded_content'] . '<a href="#'.$moreId.'" class="readMoreLess">Read Less -</a></div>';
+                                  ?>
+                                </div>
                             </figcaption>
                         </figure>
+
                         <?php
-	                      endforeach;
+                          if($i % 2) {
+                        ?>
+                          <div class="col-md-12">
+                            <?php echo $moreContentHolder; ?>
+                          </div>
+                        <?
+                          $moreContentHolder = '';
+                          }
+                        ?>
+                        <?php
+                      endfor;
 	                    ?>
                     </div>
                 </div>

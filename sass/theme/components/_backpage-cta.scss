@@ -4,7 +4,7 @@
 		padding: 30px 0;
 	}
 	h3 {
-		text-align: center;
+		text-align: left;
 		font-size: 27px;
 		line-height: 32px;
 		color: $dark;
@@ -29,7 +29,7 @@
 		&:hover {
 			background: $green;
 			border: {
-				color: darken($green, 25%);
+				color: $green;
 			}
 			color: $white;
 		}

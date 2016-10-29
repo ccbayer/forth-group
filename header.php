@@ -51,7 +51,7 @@
                         </div>
                         <div class="row">
                           <div class="col-md-4 col-xs-6 col-sm-6">
-                              <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forth-group-logo.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+                              <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forth-group-logo.png" class="logo" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
                           </div>
                           <div class="col-md-8 col-xs-6 col-sm-6">
                               <div class="navbar-header clearfix">

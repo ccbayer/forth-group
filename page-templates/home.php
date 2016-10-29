@@ -32,10 +32,20 @@ get_header(); ?>
 	        	$icon_group = get_field('icon_group');
 	        	if($icon_group):
 	        ?>
-            <div class="row">
+            <div class="row" id="icon-group">
 	            <?php foreach($icon_group as $icon): ?>
                 <figure class="col-md-3 col-sm-6 col-xs-sm">
+                      <?php
+                        if($icon['link']):
+                          echo '<a href="'.$icon['link'].'">';
+                        endif;
+                      ?>
                     <img src="<?php echo $icon['icon']['url']; ?>" alt="">
+                    <?php
+                      if($icon['link']):
+                        echo '</a>';
+                      endif;
+                    ?>
                     <figcaption><?php echo $icon['caption']; ?></figcaption>
                 </figure>
                 <?php endforeach; ?>
@@ -50,17 +60,36 @@ get_header(); ?>
 				<?php
 	        		$testimonials = get_field('testimonials');
 	        		if($testimonials):
-	        			foreach($testimonials as $test):
+                echo '<div class="testimonial-inner-wrapper">';
+	        			for($i = 0; $i < sizeof($testimonials); $i++):
+                  $active = '';
+                  if($i === 0):
+                    $active = 'active';
+                  endif;
 	        	?>
-                    <blockquote>
-                        <p><?php echo $test['testimonial_copy']; ?></p>
-                        <footer><?php echo $test['testimonial_author']; ?></footer>
+                    <blockquote id="testimonial-<?php echo $i ?>" class="<?php echo $active; ?>">
+                        <p><?php echo $testimonials[$i]['testimonial_copy']; ?></p>
+                        <footer><?php echo $testimonials[$i]['testimonial_author']; ?></footer>
                     </blockquote>
                 <?php
-	            		endforeach;
-	            	endif;
+                endfor;
+	          	endif;
 	            ?>
-                </div>
+            </div>
+              <?php
+                  if(sizeof($testimonials) > 1):
+                    echo '<div class="testimonial-nav"><ul>';
+                    for($i = 0; $i < sizeof($testimonials); $i++):
+                      $active = '';
+                      if($i === 0):
+                        $active = 'active';
+                      endif;
+                      echo '<li><a href="#testimonial-'.$i.'" class="'.$active.'"><span class="sr-only">View Testimonial '.$i.'</span></a></li>';
+                    endfor;
+                    echo '</ul></div>';
+                  endif;
+                  echo '</div>';
+              ?>
                 <?php if(get_field('video_url')): ?>
                 <div class="col-md-5">
                   <div class="video-inner-wrapper">
