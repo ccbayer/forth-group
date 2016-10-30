@@ -8,6 +8,7 @@ $btn-padding: 58px;
 	$percentage: percentage(284px / 640px);
 	background: {
 		size: cover;
+		color: $dark;
 	//	image: url(../img/main-banner-bg.jpg);
 	}
 	@include mq($max-width: $tablet-max) {
