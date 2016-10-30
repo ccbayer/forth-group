@@ -7602,11 +7602,11 @@ header.site-header {
       margin-top: 0; } }
 
 .home-banner {
+  position: relative;
   width: 100%;
   padding-top: 284px;
   height: 640px;
   background-size: cover;
-  background-image: url(../img/main-banner-bg.jpg);
   text-align: center; }
   @media only screen and (max-width: 1024px) {
     .home-banner {
@@ -7646,6 +7646,17 @@ header.site-header {
     .home-banner a.btn:hover {
       background: #80AE37;
       border-color: #80AE37; }
+  .home-banner .video-container {
+    overflow: hidden;
+    position: absolute;
+    height: 640px;
+    width: 100%;
+    top: 0;
+    left: 0; }
+    .home-banner .video-container video {
+      opacity: .8;
+      width: 100%    !important;
+      height: auto   !important; }
 
 .backpage-banner {
   width: 100%;
