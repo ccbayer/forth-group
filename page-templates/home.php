@@ -9,9 +9,25 @@
 
 get_header(); ?>
 
+<?php
+  $hero = get_field('hero_image');
+  $heroImage = 'style="background-image: url('.$hero[0]['hero_image_desktop']['url'].')"';
+  if(get_field('show_hero_video') && get_field('hero_video')):
+    $heroImage = '';
+  endif;
+?>
+
 <div class="wrapper" id="home-page-wrapper">
-    <div class="home-banner pattern-overlay opacity-45">
+    <div class="home-banner pattern-overlay opacity-45" <?php echo $hero;?>>
         <div class="container">
+          <?php if(get_field('show_hero_video') && get_field('hero_video')): ?>
+            <div class="video-container">
+              <?php $video = get_field('hero_video'); ?>
+              <video poster="<?php echo $hero[0]['hero_image_desktop']['url']; ?>" playsinline autoplay muted loop>
+                <source src="<?php echo $video['url']; ?>">
+              </video>
+            </div>
+          <?php endif; ?>
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <h1><?php the_field('main_headline') ?></h1>

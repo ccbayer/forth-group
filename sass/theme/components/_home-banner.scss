@@ -1,5 +1,6 @@
 $btn-padding: 58px;
 .home-banner {
+	position: relative;
 	width: 100%;
 	padding-top: 284px;
 	height: 640px;
@@ -7,7 +8,8 @@ $btn-padding: 58px;
 	$percentage: percentage(284px / 640px);
 	background: {
 		size: cover;
-		image: url(../img/main-banner-bg.jpg);
+		color: $dark;
+	//	image: url(../img/main-banner-bg.jpg);
 	}
 	@include mq($max-width: $tablet-max) {
 		padding: {
@@ -54,6 +56,20 @@ $btn-padding: 58px;
 		&:hover {
 			background: $green;
 			border-color: $green;
+		}
+	}
+	//video
+	.video-container {
+		overflow: hidden;
+		position: absolute;
+		height: 640px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		video {
+			opacity: .8;
+			width: 100%    !important;
+			height: auto   !important;
 		}
 	}
 }
