@@ -3,15 +3,34 @@
 	if($show):
 		$link = get_field('button_link_type') === 'Internal' ? get_permalink(get_field('button_link_internal')) : get_field('button_link_external');
 		$target = get_field('button_link_type') === 'Internal' ? '_self' : '_blank';
+		$btnClass = 'btn';
+		$labelWidth = 7;
+		$btnWidth = 5;
+		if(get_field('secondary_bottom_cta')):
+			$btnClass = $btnClass.' btn2';
+			$labelWidth = 6;
+			$btnWidth = 6;
+		endif;
+
 ?>
 <div class="bg-light-green bp-cta-wrapper">
     <div class="container">
         <div class="row">
-        	<div class="col-md-7">
+        	<div class="col-md-<?php echo $labelWidth ?> lbl-wrapper">
         		<h3><?php the_field('bottom_cta_text'); ?></h2>
         	</div>
-        	<div class="col-md-3">
-            	<a class="btn" href="<?php echo $link; ?>" target=<?php echo $target ?>><?php the_field('bottom_cta_button_label'); ?> &raquo;</a>
+        	<div class="col-md-<?php echo $btnWidth ?> btn-wrapper">
+            	<a class="<?php echo $btnClass ?>" href="<?php echo $link; ?>" target=<?php echo $target ?>><?php the_field('bottom_cta_button_label'); ?> &raquo;</a>
+							<?php
+								// is there a secondary CTA?
+								if(get_field('secondary_bottom_cta')):
+									$secondarylink = get_field('secondary_bottom_cta_link_type') === 'Internal' ? get_permalink(get_field('secondary_bottom_cta_internal_link')) : get_field('secondary_bottom_cta_external_link');
+									$secondarytarget = get_field('secondary_bottom_cta_link_type') === 'Internal' ? '_self' : '_blank';
+							?>
+							<a class="<?php echo $btnClass ?>" href="<?php echo $secondarylink; ?>" target=<?php echo $secondarytarget ?>><?php the_field('secondary_bottom_cta_button_label'); ?> &raquo;</a>
+							<?php
+								endif;
+							?>
         	</div>
         </div>
     </div>
