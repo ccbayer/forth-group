@@ -4,7 +4,6 @@
 		padding: 30px 0;
 	}
 	h3 {
-		text-align: left;
 		font-size: 27px;
 		line-height: 32px;
 		color: $dark;
@@ -15,9 +14,16 @@
 			padding: 8px 0;
 		}
 	}
+	.btn-wrapper {
+		text-align: left;
+	}
+	.lbl-wrapper {
+		text-align: center;
+	}
 	.btn {
 		@include bree;
 		border: 2px solid $green;
+		text-align: none;
 		background: $white;
 		box-sizing: border-box;
 		color: $green;
@@ -32,6 +38,10 @@
 				color: $green;
 			}
 			color: $white;
+		}
+		&.btn2 {
+			float: left;
+			margin: 0 20px;
 		}
 		@include mq($max-width: $tablet-min) {
 			display: block;

@@ -7325,6 +7325,9 @@ a.skip-link {
 body {
   font-family: "Raleway", sans-serif; }
 
+a {
+  text-decoration: underline; }
+
 h1 {
   font-family: "bree-serif", serif;
   font-weight: 400; }
@@ -7430,6 +7433,7 @@ header.site-header {
         font-size: 14px;
         display: block;
         line-height: 42px;
+        text-decoration: none;
         padding-left: 24px;
         padding-right: 24px; }
         @media only screen and (max-width: 1280px) {
@@ -7472,8 +7476,6 @@ header.site-header {
         header.site-header .header-btn-mobile ul li {
           width: 33.333%;
           float: left; }
-          header.site-header .header-btn-mobile ul li:first-of-type {
-            border-left: none; }
           header.site-header .header-btn-mobile ul li a.nav-link {
             margin: 0;
             width: 100%;
@@ -7482,7 +7484,9 @@ header.site-header {
             line-height: 14px;
             padding-top: 15px;
             padding-bottom: 15px;
-            border-left: 1px solid #FFF; } }
+            border-left: 1px solid #FFF; }
+            header.site-header .header-btn-mobile ul li a.nav-link:first-of-type {
+              border-left: none; } }
     @media only screen and (max-width: 480px) {
       header.site-header .header-btn-mobile ul li {
         width: 50%; }
@@ -7537,7 +7541,8 @@ header.site-header {
         color: #FFF;
         font-size: 16px;
         text-transform: uppercase;
-        letter-spacing: -.005em; }
+        letter-spacing: -.005em;
+        text-decoration: none; }
       .navbar #main-menu li:last-of-type {
         padding-right: 0; }
       .navbar #main-menu li:hover, .navbar #main-menu li.current-menu-item, .navbar #main-menu li.current-page-ancestor, .navbar #main-menu li.active {
@@ -7677,7 +7682,6 @@ header.site-header {
     .bp-cta-wrapper {
       padding: 30px 0; } }
   .bp-cta-wrapper h3 {
-    text-align: left;
     font-size: 27px;
     line-height: 32px;
     color: #333;
@@ -7687,10 +7691,15 @@ header.site-header {
         font-size: 24px;
         line-height: 28px;
         padding: 8px 0; } }
+  .bp-cta-wrapper .btn-wrapper {
+    text-align: left; }
+  .bp-cta-wrapper .lbl-wrapper {
+    text-align: center; }
   .bp-cta-wrapper .btn {
     font-family: "bree-serif", serif;
     font-weight: 400;
     border: 2px solid #80AE37;
+    text-align: none;
     background: #FFF;
     box-sizing: border-box;
     color: #80AE37;
@@ -7704,6 +7713,9 @@ header.site-header {
       background: #80AE37;
       border-color: #80AE37;
       color: #FFF; }
+    .bp-cta-wrapper .btn.btn2 {
+      float: left;
+      margin: 0 20px; }
     @media only screen and (max-width: 768px) {
       .bp-cta-wrapper .btn {
         display: block;
