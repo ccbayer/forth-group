@@ -70,3 +70,19 @@ register_nav_menus( array(
 
 add_image_size( 'tabbed-gallery-thumbnail-cropped', 220, 220, true );
 add_image_size( 'tabbed-gallery-thumbnail', 220, 220 );
+
+/* ACF OPTIONS */
+if( function_exists('acf_add_options_page') ) {
+
+	if( function_exists('acf_add_options_page') ) {
+
+		$option_page = acf_add_options_page(array(
+			'page_title' 	=> 'Website Footer',
+			'menu_title' 	=> 'Website Footer',
+			'menu_slug' 	=> 'website-footer',
+			'capability' 	=> 'edit_posts',
+			'redirect' 	=> false
+		));
+
+	}
+}
