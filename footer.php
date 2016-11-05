@@ -13,7 +13,15 @@
     <div class="container">
 
         <div class="row rel">
-
+          <?php if(get_field('show_maintenance_request_bar', 'option')):
+              $target = get_field('new_tab', 'option') ? '_blank' : '_self';
+             ?>
+            <div class="maintenance-callout">
+                <h4><?php the_field('maintenance_request_headline', 'option'); ?></h4>
+                <p><?php the_field('maintenance_request_copy', 'option'); ?></p>
+                <a href="<?php the_field('maintenance_request_link_url', 'option') ?>" target="<?php echo $target; ?>"><?php the_field('maintenance_request_link_label', 'option'); ?></a>
+            </div>
+          <?php endif; ?>
             <div class="col-md-8">
                 <footer id="colophon" class="site-footer" role="contentinfo">
                     <ul class="site-info">
@@ -41,15 +49,6 @@
                 </footer><!-- #colophon -->
 
             </div><!--col end -->
-            <?php if(get_field('show_maintenance_request_bar', 'option')):
-              $target = get_field('new_tab', 'option') ? '_blank' : '_self';
-             ?>
-            <div class="maintenance-callout">
-                <h4><?php the_field('maintenance_request_headline', 'option'); ?></h4>
-                <p><?php the_field('maintenance_request_copy', 'option'); ?></p>
-                <a href="<?php the_field('maintenance_request_link_url', 'option') ?>" target="<?php echo $target; ?>"><?php the_field('maintenance_request_link_label', 'option'); ?></a>
-            </div>
-          <?php endif; ?>
         </div><!-- row end -->
 
     </div><!-- container end -->

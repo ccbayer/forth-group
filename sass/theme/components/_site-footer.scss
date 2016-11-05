@@ -1,5 +1,5 @@
 #wrapper-footer {
-	background-color: $white;	
+	background-color: $white;
 	position: relative;
 	.maintenance-callout {
 		color: $white;
@@ -27,6 +27,14 @@
 		a {
 			font-size: 14px;
 			color: $green;
+		}
+		@include mq($max-width: $tablet-min) {
+			position: static;
+			width: 100%;
+			border: 0;
+			padding: 10px 0;
+			border-radius: 0;
+			box-shadow: none;
 		}
 	}
 }
@@ -74,7 +82,7 @@ footer.site-footer {
 			a {
 				color: $white;
 				text-decoration: none;
-				&:hover, 
+				&:hover,
 				&:active {
 					text-decoration: underline;
 				}
