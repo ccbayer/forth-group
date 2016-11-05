@@ -17,6 +17,7 @@ $btn-padding: 58px;
 			bottom: $percentage / 2;
 		}
 		height: auto;
+		overflow: hidden;
 	}
 	text-align: center;
 	h1 {
@@ -43,6 +44,7 @@ $btn-padding: 58px;
 		font-size: 18px;
 		margin-top: 45px;
 		text-transform: uppercase;
+		text-decoration: none;
 		padding: {
 			left: $btn-padding;
 			right: $btn-padding;
@@ -66,10 +68,18 @@ $btn-padding: 58px;
 		width: 100%;
 		top: 0;
 		left: 0;
+		background: $dark;
 		video {
 			opacity: .8;
 			width: 100%    !important;
 			height: auto   !important;
+		}
+		@include mq($max-width: $tablet-max) {
+			height: 100%;
+			opacity: .8;
+			video {
+				width: auto !important;
+			}
 		}
 	}
 }

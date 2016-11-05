@@ -7327,6 +7327,8 @@ body {
 
 a {
   text-decoration: underline; }
+  a.btn {
+    text-decoration: none; }
 
 h1 {
   font-family: "bree-serif", serif;
@@ -7618,7 +7620,8 @@ header.site-header {
     .home-banner {
       padding-top: 22.1875%;
       padding-bottom: 22.1875%;
-      height: auto; } }
+      height: auto;
+      overflow: hidden; } }
   .home-banner h1 {
     color: #FFF;
     text-transform: uppercase;
@@ -7642,6 +7645,7 @@ header.site-header {
     font-size: 18px;
     margin-top: 45px;
     text-transform: uppercase;
+    text-decoration: none;
     padding-left: 58px;
     padding-right: 58px;
     border-radius: 0;
@@ -7658,11 +7662,18 @@ header.site-header {
     height: 640px;
     width: 100%;
     top: 0;
-    left: 0; }
+    left: 0;
+    background: #333; }
     .home-banner .video-container video {
       opacity: .8;
       width: 100%    !important;
       height: auto   !important; }
+    @media only screen and (max-width: 1024px) {
+      .home-banner .video-container {
+        height: 100%;
+        opacity: .8; }
+        .home-banner .video-container video {
+          width: auto !important; } }
 
 .backpage-banner {
   width: 100%;
@@ -8317,6 +8328,14 @@ header.site-header {
     #wrapper-footer .maintenance-callout a {
       font-size: 14px;
       color: #80AE37; }
+    @media only screen and (max-width: 768px) {
+      #wrapper-footer .maintenance-callout {
+        position: static;
+        width: 100%;
+        border: 0;
+        padding: 10px 0;
+        border-radius: 0;
+        box-shadow: none; } }
 
 footer.site-footer {
   color: #FFF;
