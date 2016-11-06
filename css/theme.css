@@ -7283,6 +7283,9 @@ a.skip-link {
   .pattern-overlay.opacity-80:before {
     opacity: .8; }
 
+.centered {
+  text-align: center; }
+
 .bg-white {
   background: #FFF; }
 
@@ -7336,7 +7339,7 @@ h1 {
 
 p {
   font-family: "Raleway", sans-serif;
-  font-weight: "normal"; }
+  font-weight: normal; }
 
 #message p {
   text-align: center;
@@ -7384,6 +7387,34 @@ input[type="submit"] {
       display: block;
       margin: 10px auto;
       max-width: 350px; } }
+
+.btn {
+  font-family: "bree-serif", serif;
+  font-weight: 400;
+  border: 2px solid #80AE37;
+  text-align: none;
+  background: #FFF;
+  box-sizing: border-box;
+  color: #80AE37;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-size: 22px;
+  padding: 16px 42px;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out; }
+  .btn:hover {
+    background: #80AE37;
+    border-color: #80AE37;
+    color: #FFF; }
+  .btn.btn2 {
+    float: left;
+    margin: 0 20px; }
+  @media only screen and (max-width: 768px) {
+    .btn {
+      display: block;
+      margin: 30px auto;
+      width: 80%;
+      max-width: 400px; } }
 
 .wrapper {
   position: relative;
@@ -7601,12 +7632,10 @@ header.site-header {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg); }
 
-.navwrap {
-  margin-top: 30px; }
-  @media only screen and (max-width: 768px) {
-    .navwrap {
-      width: 100% !important;
-      margin-top: 0; } }
+@media only screen and (max-width: 768px) {
+  .navwrap {
+    width: 100% !important;
+    margin-top: 0; } }
 
 .home-banner {
   position: relative;
@@ -7663,7 +7692,8 @@ header.site-header {
     width: 100%;
     top: 0;
     left: 0;
-    background: #333; }
+    background-color: #333;
+    background-image: url(../img/pattern.jpg); }
     .home-banner .video-container video {
       opacity: .8;
       width: 100%    !important;
@@ -7706,33 +7736,9 @@ header.site-header {
     text-align: left; }
   .bp-cta-wrapper .lbl-wrapper {
     text-align: center; }
-  .bp-cta-wrapper .btn {
-    font-family: "bree-serif", serif;
-    font-weight: 400;
-    border: 2px solid #80AE37;
-    text-align: none;
-    background: #FFF;
-    box-sizing: border-box;
-    color: #80AE37;
-    text-transform: uppercase;
-    border-radius: 0;
-    font-size: 22px;
-    padding: 16px 42px;
-    -webkit-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out; }
-    .bp-cta-wrapper .btn:hover {
-      background: #80AE37;
-      border-color: #80AE37;
-      color: #FFF; }
-    .bp-cta-wrapper .btn.btn2 {
-      float: left;
-      margin: 0 20px; }
-    @media only screen and (max-width: 768px) {
-      .bp-cta-wrapper .btn {
-        display: block;
-        margin: 30px auto;
-        width: 80%;
-        max-width: 400px; } }
+  .bp-cta-wrapper .btn.btn2 {
+    float: left;
+    margin: 0 20px; }
 
 .introduction-wrapper {
   padding: 35px 0 65px 0; }
@@ -7781,20 +7787,24 @@ header.site-header {
   padding: 80px 0 110px 0; }
   .testimonial-wrapper .testimonial-inner-wrapper {
     position: relative;
-    height: 350px;
     overflow: hidden; }
+    @media only screen and (max-width: 481px) {
+      .testimonial-wrapper .testimonial-inner-wrapper {
+        height: 480px; } }
   .testimonial-wrapper blockquote {
+    position: relative;
     text-align: center;
     quotes: "“" "”" "“" "”";
-    opacity: 0;
-    position: absolute;
-    bottom: -1000px;
     -webkit-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out; }
+    transition: all .25s ease-in-out;
+    top: 0;
+    opacity: 0;
+    height: 0;
+    display: none; }
     .testimonial-wrapper blockquote.active {
-      top: 0;
-      opacity: 1;
-      display: block; }
+      display: block;
+      height: auto;
+      opacity: 1; }
     .testimonial-wrapper blockquote:before {
       font-family: "Raleway", sans-serif;
       font-weight: bold;
@@ -7808,11 +7818,14 @@ header.site-header {
       content: no-close-quote; }
     .testimonial-wrapper blockquote p {
       font-family: "Raleway", sans-serif;
-      font-weight: "normal";
+      font-weight: normal;
       font-style: italic;
       font-size: 18px;
       text-align: center;
       padding: 0 70px 0 40px; }
+      @media only screen and (max-width: 1024px) {
+        .testimonial-wrapper blockquote p {
+          padding: 0 30px; } }
     .testimonial-wrapper blockquote footer {
       font-family: "Raleway", sans-serif;
       font-weight: bold;
@@ -8225,8 +8238,9 @@ header.site-header {
       padding: 30px 50px; }
       .side-tabbed-content-wrapper .content-wrapper .content-item.active {
         display: block; }
-      .side-tabbed-content-wrapper .content-wrapper .content-item p a {
-        text-decoration: underline; }
+      .side-tabbed-content-wrapper .content-wrapper .content-item a.btn {
+        margin: 15px auto;
+        max-width: 80%; }
   .side-tabbed-content-wrapper .faq-item h3 {
     font-family: "Raleway", sans-serif;
     font-weight: 300;
@@ -8265,7 +8279,7 @@ header.site-header {
     float: left; }
   .icon-buttons a.icon-button p {
     font-family: "Raleway", sans-serif;
-    font-weight: "normal";
+    font-weight: normal;
     width: 50%;
     font-size: 20px;
     float: left;
@@ -8304,38 +8318,6 @@ header.site-header {
 #wrapper-footer {
   background-color: #FFF;
   position: relative; }
-  #wrapper-footer .maintenance-callout {
-    color: #FFF;
-    background-image: url("../img/pattern.jpg");
-    border: 5px solid #FFF;
-    border-radius: 10px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-width: 0;
-    position: absolute;
-    top: -31px;
-    right: -5px;
-    bottom: 0;
-    width: 376px;
-    padding: 10px 35px;
-    box-shadow: 1px -1px 30px rgba(0, 0, 0, 0.85); }
-    #wrapper-footer .maintenance-callout h4 {
-      font-weight: bold;
-      font-size: 15px; }
-    #wrapper-footer .maintenance-callout p {
-      font-size: 14px;
-      line-height: 18px; }
-    #wrapper-footer .maintenance-callout a {
-      font-size: 14px;
-      color: #80AE37; }
-    @media only screen and (max-width: 768px) {
-      #wrapper-footer .maintenance-callout {
-        position: static;
-        width: 100%;
-        border: 0;
-        padding: 10px 0;
-        border-radius: 0;
-        box-shadow: none; } }
 
 footer.site-footer {
   color: #FFF;
@@ -8376,6 +8358,39 @@ footer.site-footer {
         text-decoration: none; }
         footer.site-footer ul li a:hover, footer.site-footer ul li a:active {
           text-decoration: underline; }
+
+.maintenance-callout {
+  color: #FFF;
+  background-image: url("../img/pattern.jpg");
+  border: 5px solid #FFF;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-width: 0;
+  position: absolute;
+  top: -31px;
+  right: -5px;
+  bottom: 0;
+  width: 376px;
+  padding: 21px 35px 10px 35px;
+  box-shadow: 1px -1px 30px rgba(0, 0, 0, 0.85); }
+  .maintenance-callout h4 {
+    font-weight: bold;
+    font-size: 18px; }
+  .maintenance-callout p {
+    font-size: 16px;
+    line-height: 18px; }
+  .maintenance-callout a {
+    font-size: 14px;
+    color: #80AE37; }
+  @media only screen and (max-width: 768px) {
+    .maintenance-callout {
+      position: static;
+      width: 100%;
+      border: 0;
+      padding: 10px 0;
+      border-radius: 0;
+      box-shadow: none; } }
 
 .map-wrapper {
   padding: 60px 0; }

@@ -71,10 +71,9 @@
 			&.active {
 				display: block;
 			}
-			p {
-				a {
-					text-decoration: underline;
-				}
+			a.btn {
+				margin: 15px auto;
+				max-width: 80%;
 			}
 		}
 	}

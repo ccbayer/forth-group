@@ -1,0 +1,36 @@
+.maintenance-callout {
+  color: $white;
+  background-image: url('../img/pattern.jpg');
+  border: 5px solid $white;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-width: 0;
+  position: absolute;
+  top: -31px;
+  right: -5px;
+  bottom: 0;
+  width: 376px;
+  padding: 21px 35px 10px 35px;
+  box-shadow: 1px -1px 30px rgba($black, .85);
+  h4 {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  a {
+    font-size: 14px;
+    color: $green;
+  }
+  @include mq($max-width: $tablet-min) {
+    position: static;
+    width: 100%;
+    border: 0;
+    padding: 10px 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

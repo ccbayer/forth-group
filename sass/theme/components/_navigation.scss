@@ -129,7 +129,6 @@
 
 
 .navwrap {
-	margin-top: 30px;
 	@include mq($max-width: $tablet-min) {
 		width: 100% !important;
 		margin-top: 0;

@@ -68,7 +68,10 @@ $btn-padding: 58px;
 		width: 100%;
 		top: 0;
 		left: 0;
-		background: $dark;
+		background: {
+			color: $dark;
+			image: url(../img/pattern.jpg);
+		}
 		video {
 			opacity: .8;
 			width: 100%    !important;

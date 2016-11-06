@@ -43,7 +43,7 @@ gulp.task('sass', function () {
         .pipe(plumber())
         .pipe(sass( {
 	        includePaths: './bower_components'
-        }))        
+        }))
         .pipe(autoprefixer())
         .pipe(gulp.dest('./css'));
 });
@@ -122,9 +122,9 @@ gulp.task('scripts', function() {
 // Run:
 // gulp watch
 // Starts watcher. Watcher runs gulp sass task on changes
-gulp.task('watch', ['sass', 'cssnano', 'scripts'], function () {
+gulp.task('watch', ['sass', 'scripts'], function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch('./css/theme.css', ['cssnano']);
+//    gulp.watch('./css/theme.css', ['cssnano']);
     gulp.watch('./src/**/*.js', ['scripts']);
 });
 

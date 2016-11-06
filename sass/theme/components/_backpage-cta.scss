@@ -21,33 +21,9 @@
 		text-align: center;
 	}
 	.btn {
-		@include bree;
-		border: 2px solid $green;
-		text-align: none;
-		background: $white;
-		box-sizing: border-box;
-		color: $green;
-		text-transform: uppercase;
-		border-radius: 0;
-		font-size: 22px;
-		padding: 16px 42px;
-		transition: all .25s ease-in-out;
-		&:hover {
-			background: $green;
-			border: {
-				color: $green;
-			}
-			color: $white;
-		}
 		&.btn2 {
 			float: left;
 			margin: 0 20px;
-		}
-		@include mq($max-width: $tablet-min) {
-			display: block;
-			margin: 30px auto;
-			width: 80%;
-			max-width: 400px;
 		}
 	}
 }
