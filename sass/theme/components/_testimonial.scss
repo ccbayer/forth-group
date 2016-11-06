@@ -2,20 +2,24 @@
 	padding: 80px 0 110px 0;
 	.testimonial-inner-wrapper {
 		position: relative;
-		height: 350px;
 		overflow: hidden;
+		@include mq($max-width: $phablet-min) {
+			height: 480px;
+		}
 	}
 	blockquote {
+		position: relative;
 		text-align: center;
-		 quotes: "“" "”" "“" "”";
-		opacity: 0;
-		position: absolute;
-		bottom: -1000px;
+		quotes: "“" "”" "“" "”";
 		transition: all .25s ease-in-out;
+		top: 0;
+		opacity: 0;
+		height: 0;
+		display: none;
 		&.active {
-		 top: 0;
-		 opacity: 1;
-		 display: block;
+			display: block;
+			height: auto;
+			opacity: 1;
 		}
 		&:before {
 			@include raleway(bold);
@@ -35,6 +39,9 @@
 			font-size: 18px;
 			text-align: center;
 			padding: 0 70px 0 40px;
+			@include mq($max-width: $tablet-max) {
+				padding: 0 30px;
+			}
 		}
 		footer {
 			 @include raleway(bold);

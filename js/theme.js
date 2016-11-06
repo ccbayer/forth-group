@@ -4234,13 +4234,27 @@ if (typeof jQuery === 'undefined') {
 
 			      autoPlay: 3000, //Set AutoPlay to 3 seconds
 			      items: 5,
-			      itemsDesktop: [1199, 5],
-			      itemsDesktopSmall: [768, 3],
 			      nav: true,
 			      navText: [
 			      	'<span class="fa fa-chevron-left"></span>',
 			      	'<span class="fa fa-chevron-right"></span>'
 			      ],
+						responsiveClass:true,
+						responsive:{
+				        0:{
+				            items:1,
+				            nav:true
+				        },
+				        640: {
+				            items:3,
+				            nav:false
+				        },
+				        769: {
+				            items:5,
+				            nav: true,
+				            loop: false
+				        }
+				    },
 			      pagination: true
 
 			  });
@@ -4295,6 +4309,7 @@ if (typeof jQuery === 'undefined') {
 	$(function() {
 		$('.testimonial-nav a').on('click', function(event) {
 			event.preventDefault();
+			event.stopPropagation();
 			var $target = $(this).attr('href');
 			$('blockquote').add('.testimonial-nav a').removeClass('active');
 			$(this).add($target).addClass('active');
