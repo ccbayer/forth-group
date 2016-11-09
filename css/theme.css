@@ -7714,8 +7714,6 @@ header.site-header {
   @media only screen and (max-width: 481px) {
     .backpage-banner {
       padding-top: 186px; } }
-  .backpage-banner .intro-copy {
-    padding: 0 80px; }
 
 .bp-cta-wrapper {
   padding: 50px 0 170px 0; }
@@ -7726,7 +7724,8 @@ header.site-header {
     font-size: 27px;
     line-height: 32px;
     color: #333;
-    padding-top: 16px; }
+    padding-top: 16px;
+    font-weight: 400; }
     @media only screen and (max-width: 768px) {
       .bp-cta-wrapper h3 {
         font-size: 24px;
@@ -7742,6 +7741,8 @@ header.site-header {
 
 .introduction-wrapper {
   padding: 35px 0 65px 0; }
+  .introduction-wrapper .introduction .intro-copy {
+    padding: 0 80px; }
   .introduction-wrapper .introduction h1,
   .introduction-wrapper .introduction h2 {
     font-family: "bree-serif", serif;
@@ -7931,7 +7932,7 @@ header.site-header {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    padding: 0 8%; }
+    padding: 0 7%; }
   .figures-four-up-wrapper figure {
     background-color: #FFF;
     text-align: center; }
@@ -8243,7 +8244,7 @@ header.site-header {
         max-width: 80%; }
   .side-tabbed-content-wrapper .faq-item h3 {
     font-family: "Raleway", sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 18px;
     color: #333;
     margin-bottom: 15px; }
@@ -8279,7 +8280,7 @@ header.site-header {
     float: left; }
   .icon-buttons a.icon-button p {
     font-family: "Raleway", sans-serif;
-    font-weight: normal;
+    font-weight: bold;
     width: 50%;
     font-size: 20px;
     float: left;
