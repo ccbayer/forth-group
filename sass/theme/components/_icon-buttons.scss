@@ -21,7 +21,7 @@
 			float: left;
 		}
 		p {
-			@include raleway;
+			@include raleway(bold);
 			width: 50%;
 			font-size: 20px;
 			float: left;

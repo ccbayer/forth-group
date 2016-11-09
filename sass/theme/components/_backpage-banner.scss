@@ -10,7 +10,4 @@ $btn-padding: 58px;
 	@include mq($max-width: $phablet-min) {
 		padding-top: 186px;
 	}
-	.intro-copy {
-		padding: 0 80px;
-	}
 }
