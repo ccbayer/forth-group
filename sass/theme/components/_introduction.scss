@@ -3,6 +3,9 @@
 	.introduction {
 		.intro-copy {
 			padding: 0 80px;
+			@include mq($max-width: $tablet-min) {
+				padding: 0 15px;
+			}
 		}
 		h1,
 		h2 {
