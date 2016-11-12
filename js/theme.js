@@ -4288,7 +4288,16 @@ if (typeof jQuery === 'undefined') {
 			$('.navbar-toggle').on('click', function() {
 				$(this).toggleClass('active');
 				$('.site-header').add('.header-btn-mobile').toggleClass('active');
-			})
+			});
+
+			$(document).on('scroll', function() {
+				var $hdr = $('.site-header');
+				if($(document).scrollTop() > $hdr.outerHeight()) {
+					$hdr.addClass('active');
+				} else {
+					$hdr.removeClass('active');
+				}
+			});
 	});
 
 	// read more  read Less

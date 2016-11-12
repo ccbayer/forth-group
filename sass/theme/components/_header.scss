@@ -2,14 +2,14 @@ header.site-header {
 	position: fixed;
 	width: 100%;
 	z-index: 100;
-	background: rgba($black, .4);
+	background: rgba($black, .3);
 	transition: background .25s ease-in-out;
 	border-bottom: 1px solid $white;
 	a[href^="tel:"] {
 		color: $white;
 	}
 	&.active {
-		background: rgba($black, .75);
+		background: rgba($black, .8);
 	}
 	.logo {
 		max-width: 200px;

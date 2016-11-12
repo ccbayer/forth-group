@@ -7433,14 +7433,14 @@ header.site-header {
   position: fixed;
   width: 100%;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   -webkit-transition: background .25s ease-in-out;
   transition: background .25s ease-in-out;
   border-bottom: 1px solid #FFF; }
   header.site-header a[href^="tel:"] {
     color: #FFF; }
   header.site-header.active {
-    background: rgba(0, 0, 0, 0.75); }
+    background: rgba(0, 0, 0, 0.8); }
   header.site-header .logo {
     max-width: 200px;
     margin-top: 15px; }
