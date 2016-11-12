@@ -7883,13 +7883,30 @@ header.site-header {
     width: 100%;
     height: 100%; }
 
+img.circle-icon-animate {
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  border-radius: 50%;
+  border: 1px solid transparent; }
+  img.circle-icon-animate:hover {
+    border-width: 10px; }
+  img.circle-icon-animate.icon-green:hover {
+    border-color: #80AD41; }
+  img.circle-icon-animate.icon-grey:hover {
+    border-color: #777878; }
+  img.circle-icon-animate.icon-blue:hover {
+    border-color: #3D6392; }
+  img.circle-icon-animate.icon-dark-blue:hover {
+    border-color: #232C63; }
+
 .figures-grid-with-captions {
   text-align: center;
   padding: 40px 0; }
   .figures-grid-with-captions figure {
     padding-top: 30px; }
     .figures-grid-with-captions figure img {
-      display: block;
+      box-sizing: border-box;
+      display: inline-block;
       margin: 0 auto 30px auto; }
     .figures-grid-with-captions figure figcaption {
       padding: 0 30px;
