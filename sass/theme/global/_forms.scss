@@ -42,7 +42,6 @@ input[type="submit"] {
 		color: $green;
 	}
 	@include mq($max-width: $tablet-min) {
-			width: 80%;
 			display: block;
 			margin: 10px auto;
 			max-width: 350px;

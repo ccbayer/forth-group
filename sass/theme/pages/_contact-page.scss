@@ -7,6 +7,9 @@
 		height: 540px;
 		max-width: 810px;
 		border: 2px solid $green;
+		@include mq($max-width: $tablet-min) {
+			height: 300px;
+		}
 	}
 	.contact-info {
 		padding: 50px 0 0 50px;
@@ -19,11 +22,14 @@
 				font-size: 20px;
 				line-height: 28px;
 				color: $dark;
-				padding-bottom: 20px;				
+				padding-bottom: 20px;
 				a[href^="tel:"] {
 					color: $dark;
 				}
 			}
+		}
+		@include mq($max-width: $tablet-min) {
+			padding: 15px;
 		}
 	}
 }
@@ -41,16 +47,34 @@
 		color: $dark;
 		float: left;
 		width: 33.3333333333333%;
+		@include mq($max-width: $tablet-min) {
+			float: none;
+			width: 100%;
+			text-align: left;
+			label {
+				padding-left: 0;
+			}
+		}
 	}
 	.acf-input {
 		float: left;
 		width: 50%;
 		margin-bottom: 30px;
+		@include mq($max-width: $tablet-min) {
+			float: none;
+			width: 100%;
+		}
 	}
 	.acf-form-submit {
 		clear: both;
 		float: left;
 		margin-left: 33%;
+		@include mq($max-width: $tablet-min) {
+			margin-left: 0;
+			float: none;
+			width: 100%;
+			text-align: center;
+		}
 	}
 	.acf-fields > .acf-field {
 		border: none;
@@ -58,7 +82,7 @@
 	}
 	#message p {
 		text-align: center;
-		padding: 30px;	
+		padding: 30px;
 		@include raleway(500);
 		font-size: 30px;
 	}

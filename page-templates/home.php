@@ -22,6 +22,7 @@ get_header(); ?>
         <div class="container">
           <?php if(get_field('show_hero_video') && get_field('hero_video')): ?>
             <div class="video-container">
+              <div class="video-pattern"></div>
               <?php $video = get_field('hero_video'); ?>
               <video poster="<?php echo $hero[0]['hero_image_desktop']['url']; ?>" playsinline autoplay muted loop>
                 <source src="<?php echo $video['url']; ?>">
@@ -29,7 +30,7 @@ get_header(); ?>
             </div>
           <?php endif; ?>
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3" id="home-content">
                     <h1><?php the_field('main_headline') ?></h1>
                     <a href="<?php the_field('call_to_action_link'); ?>" class="btn"><?php the_field('call_to_action_text'); ?></a>
                 </div>

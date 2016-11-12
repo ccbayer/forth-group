@@ -14,6 +14,11 @@
 			margin-bottom: 30px;
 			padding: 0 15px;
 			list-style-type: none;
+			@include mq($max-width: $tablet-min) {
+				padding: 0;
+				margin-left: -15px;
+				margin-right: -15px;
+			}
 			li {
 				padding: 35px 0;
 				border-bottom: 1px solid $green;
@@ -23,6 +28,9 @@
 				padding-left: 45px;
 				span {
 					display: none;
+				}
+				@include mq($max-width: $tablet-min) {
+					padding: 15px;
 				}
 				&.active {
 					background: $white;
@@ -65,6 +73,11 @@
 		background: $white;
 		padding: 0 15px;
 		transition: height .5s ease-in-out;
+		@include mq($max-width: $tablet-min) {
+			padding: 0;
+			margin-left: -15px;
+			margin-right: -15px;
+		}
 		.content-item {
 			display: none;
 			padding: 30px 50px;
@@ -74,6 +87,9 @@
 			a.btn {
 				margin: 15px auto;
 				max-width: 80%;
+			}
+			@include mq($max-width: $tablet-min) {
+				padding: 15px;
 			}
 		}
 	}
