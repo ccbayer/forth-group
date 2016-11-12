@@ -13,21 +13,27 @@ img.circle-icon-animate {
   &.icon-green {
     &:hover {
       border-color: $icon-green;
+      background-color: darken($icon-green, 10%);
     }
   }
   &.icon-grey {
     &:hover {
       border-color: $icon-grey;
+      background-color: darken($icon-grey, 10%);
+
     }
   }
   &.icon-blue {
     &:hover {
       border-color: $icon-blue;
+      background-color: darken($icon-blue, 10%);
     }
   }
   &.icon-dark-blue {
     &:hover {
       border-color: $icon-dkblue;
+      background-color: darken($icon-dkblue, 10%);
+
     }
   }
 }

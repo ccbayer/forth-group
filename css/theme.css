@@ -7891,13 +7891,17 @@ img.circle-icon-animate {
   img.circle-icon-animate:hover {
     border-width: 10px; }
   img.circle-icon-animate.icon-green:hover {
-    border-color: #80AD41; }
+    border-color: #80AD41;
+    background-color: #658833; }
   img.circle-icon-animate.icon-grey:hover {
-    border-color: #777878; }
+    border-color: #777878;
+    background-color: #5e5e5e; }
   img.circle-icon-animate.icon-blue:hover {
-    border-color: #3D6392; }
+    border-color: #3D6392;
+    background-color: #2e4b6e; }
   img.circle-icon-animate.icon-dark-blue:hover {
-    border-color: #232C63; }
+    border-color: #232C63;
+    background-color: #161b3d; }
 
 .figures-grid-with-captions {
   text-align: center;
