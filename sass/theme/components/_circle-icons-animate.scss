@@ -1,0 +1,33 @@
+$icon-green: #80AD41;
+$icon-blue: #3D6392;
+$icon-dkblue: #232C63;
+$icon-grey: #777878;
+
+img.circle-icon-animate {
+  transition: all .25s ease-in-out;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  &:hover {
+    border-width: 10px;
+  }
+  &.icon-green {
+    &:hover {
+      border-color: $icon-green;
+    }
+  }
+  &.icon-grey {
+    &:hover {
+      border-color: $icon-grey;
+    }
+  }
+  &.icon-blue {
+    &:hover {
+      border-color: $icon-blue;
+    }
+  }
+  &.icon-dark-blue {
+    &:hover {
+      border-color: $icon-dkblue;
+    }
+  }
+}

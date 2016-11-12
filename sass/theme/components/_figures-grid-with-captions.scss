@@ -4,7 +4,8 @@
 	figure {
 		padding-top: 30px;
 		img {
-			display: block;
+			box-sizing: border-box;
+			display: inline-block;
 			margin: 0 auto 30px auto;
 		}
 		figcaption {

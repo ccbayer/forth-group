@@ -31,7 +31,7 @@ function readMore($input, $limit) {
                   $moreId = 'readMore-'.substr(md5(rand()), 0, 7);
             ?>
                         <figure class="col-md-6">
-                            <img src="<?php echo $figs[$i]['icon']['url'] ?>" alt="">
+                            <img src="<?php echo $figs[$i]['icon']['url'] ?>" alt="" class="<?php echo $figs[$i]['css_classes']; ?>">
                             <figcaption>
                                 <h3><?php echo $figs[$i]['label']; ?></h3>
                                 <div class="content">
