@@ -58,19 +58,25 @@
 
 	// nav bar
 	$(function() {
-			$('.navbar-toggle').on('click', function() {
-				$(this).toggleClass('active');
-				$('.site-header').add('.header-btn-mobile').toggleClass('active');
-			});
 
-			$(document).on('scroll', function() {
+			var checkNavBarPosition = function() {
 				var $hdr = $('.site-header');
 				if($(document).scrollTop() > $hdr.outerHeight()) {
 					$hdr.addClass('active');
 				} else {
 					$hdr.removeClass('active');
 				}
+			};
+
+			$('.navbar-toggle').on('click', function() {
+				$(this).toggleClass('active');
+				$('.site-header').add('.header-btn-mobile').toggleClass('active');
 			});
+
+			$(document).on('scroll', function() {
+				checkNavBarPosition();
+			});
+			checkNavBarPosition();
 	});
 
 	// read more  read Less
