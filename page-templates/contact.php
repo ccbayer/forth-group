@@ -9,7 +9,7 @@ acf_form_head();
 get_header(); ?>
 
 <div class="wrapper" id="back-page-wrapper" class="contact-page">
-	
+
 	<?php get_template_part( 'components/backpage', 'banner' ); ?>
 	<div class="map-wrapper bg-light-green">
 		<div class="container">
@@ -29,7 +29,7 @@ get_header(); ?>
 	<div class="contact-form-wrapper bg-white">
 		<div class="container">
 			<div class="row">
-				<h2>Contact Form</h2>
+				<h2 class="tk">Contact Form</h2>
 				<?php do_shortcode('[acf_contact id="2" submit_value="Submit &raquo;"]'); ?>
 			</div>
 		</div>

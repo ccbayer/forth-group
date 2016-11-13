@@ -3,20 +3,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2 intro">
-                    <h2><?php the_sub_field('headline'); ?></h2>
+                    <h2 class="tk"><?php the_sub_field('headline'); ?></h2>
                     	<?php the_sub_field('description'); ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 side-nav">
 	                <ul>
-	                <?php 
+	                <?php
 		                $tabs = get_sub_field('faq_group');
 		                $count = sizeof($tabs);
 		                for($i = 0; $i< $count; $i++) {
 			                $n = $i + 1;
 			                $class = $i === 0 ? 'active' : '';
-							echo '<li class="'.$class.'"><a href="#content-'.$n.'">'.$tabs[$i]['faq_group_label'].'</a> <span class="fa fa-chevron-right" aria-hidden="true"></span></li>';
+							echo '<li class="'.$class.'"><a href="#content-'.$n.'" class="tk">'.$tabs[$i]['faq_group_label'].'</a> <span class="fa fa-chevron-right" aria-hidden="true"></span></li>';
 		                }
 		                ?>
 	                </ul>
@@ -30,7 +30,7 @@
 								$class = $i === 0 ? 'active' : '';
 							?>
 							<div class="content-item <?php echo $class; ?>" id="content-<?php echo $n; ?>">
-							<?php	
+							<?php
 								$faqs = $tabs[$i]['faq'];
 								foreach($faqs as $faq):
 								?>
@@ -43,7 +43,7 @@
 								<?php
 								endforeach;
 							?>
-							</div>	
+							</div>
 							<?php
 							}
 	                    ?>

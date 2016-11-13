@@ -7283,6 +7283,18 @@ a.skip-link {
   .pattern-overlay.opacity-80:before {
     opacity: .8; }
 
+.visibility-none {
+  visibility: hidden; }
+
+.fade-in,
+.tk {
+  opacity: 0;
+  -webkit-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out; }
+  .fade-in.on,
+  .tk.on {
+    opacity: 1; }
+
 .centered {
   text-align: center; }
 

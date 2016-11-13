@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <h2><?php the_sub_field('headline') ?></h2>
+                <h2 class="tk"><?php the_sub_field('headline') ?></h2>
                 <div class="intro-content">
 	                <?php
 	                $desc = get_sub_field('description');
@@ -28,7 +28,7 @@
   			        	$class = $i === 0 ? 'active' : '';
   			        	$num = $i + 1;
   			        ?>
-                    <li role="presentation" class="<?php echo $class; ?>">
+                    <li role="presentation" class="<?php echo $class; ?> tk">
                         <a href="#tab-<?php echo $galleryIDPrefix.$num ?>" aria-controls="tab-<?php echo $num ?>" role="tab" data-toggle="tab"><?php echo $gallery[$i]['gallery_label'] ?></a>
                     </li>
 		          <?php

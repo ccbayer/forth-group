@@ -19,7 +19,6 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <!-- typekit -->
 <script src="https://use.typekit.net/awh1ivy.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
 <?php wp_head(); ?>
 </head>
 

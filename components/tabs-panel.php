@@ -6,7 +6,7 @@
 <div class="bg-<?php the_sub_field('background_color') ?> tabs-wrapper">
     <div class="container">
         <div class="row">
-            <h2><?php the_sub_field('headline') ?></h2>
+            <h2 class="tk"><?php the_sub_field('headline') ?></h2>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -15,7 +15,7 @@
 	                <?php
 		                $tabs = get_sub_field('tab');
 		            	for($i = 0; $i < sizeof($tabs); $i++):
-			            	
+
 			            	$class = $i === 0 ? 'class="active"' : '';
 			            	$d = $i + 1;
 							$num = $display_number ? $d .'.' : '';
@@ -23,7 +23,7 @@
 							// prefix with 0 if less than 10
 							if($i < 10 && $display_number):
 								$num = '0' . $num;
-							endif; 
+							endif;
 						?>
 		            	<li role="presentation" <?php echo $class; ?>>
 							<a href="#tab-<?php echo $tabs_prefix.$d ?>" aria-controls="tab-<?php echo $d ?>" role="tab" data-toggle="tab"><?php echo $num . ' ' . $tabs[$i]['tab_label'] ?></a>
@@ -40,11 +40,11 @@
 	                <?php
 						$tabs = get_sub_field('tab');
 		            	for($i = 0; $i < sizeof($tabs); $i++):
-		            	
+
 		            		$class = $i === 0 ? 'active' : '';
 			            	$d = $i + 1;
 							$num = $display_number ? $d .'.' : '';
-						
+
 							// prefix with 0 if less than 10
 							if($i < 10 && $display_number):
 								$num = '<span>0'.$num.'</span>';
