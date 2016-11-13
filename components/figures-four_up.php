@@ -7,7 +7,7 @@
 	        ?>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 figure-wrapper">
                 <div class="headline">
-                    <h3><?php echo $figure['headline']; ?></h3>
+                    <h3 class="tk"><?php echo $figure['headline']; ?></h3>
                 </div>
                 <figure>
                     <img src="<?php echo $figure['icon']['url']; ?>" alt="">

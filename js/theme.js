@@ -4337,5 +4337,20 @@ if (typeof jQuery === 'undefined') {
 	});
 
 	// end ENCAPSULATE
+	try {
+	  Typekit.load({
+	    loading: function() {
+	      // Javascript to execute when fonts start loading
+	    },
+	    active: function() {
+	      // Javascript to execute when fonts become active
+				$('.tk').removeClass('visibility-none').addClass('on');
+	    },
+	    inactive: function() {
+	      // Javascript to execute when fonts become inactive
+				$('.tk').removeClass('visibility-none').addClass('on');
+	    }
+	  })
+	} catch(e) {}
 
 })(jQuery);

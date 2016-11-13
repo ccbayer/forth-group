@@ -8,7 +8,7 @@
 <div class="container introduction-wrapper">
     <div class="row">
         <div class="col-md-10 offset-md-1 introduction">
-            <h1><?php the_field('headline'); ?></h1>
+            <h1 class="tk"><?php the_field('headline'); ?></h1>
             <div class="intro-copy">
 							<?php the_field('introduction'); ?>
 						</div>

@@ -18,7 +18,7 @@ function readMore($input, $limit) {
     <div class="bg-<?php the_sub_field('background_color'); ?> figures-grid-with-captions">
         <div class="container">
             <div class="row">
-                <h2><?php the_sub_field('headline'); ?></h2>
+                <h2 class="tk"><?php the_sub_field('headline'); ?></h2>
             </div>
             <div class="row">
                 <div class="col-md-10 offset-md-1">
@@ -33,7 +33,7 @@ function readMore($input, $limit) {
                         <figure class="col-md-6">
                             <img src="<?php echo $figs[$i]['icon']['url'] ?>" alt="" class="<?php echo $figs[$i]['css_classes']; ?>">
                             <figcaption>
-                                <h3><?php echo $figs[$i]['label']; ?></h3>
+                                <h3 class="tk"><?php echo $figs[$i]['label']; ?></h3>
                                 <div class="content">
                                   <?php echo $figs[$i]['content'] ?>
                                   <a href="#<?php echo $moreId ?>" class="readMoreLess">Read More + </a>

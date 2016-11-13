@@ -31,8 +31,8 @@ get_header(); ?>
           <?php endif; ?>
             <div class="row">
                 <div class="col-md-6 offset-md-3" id="home-content">
-                    <h1><?php the_field('main_headline') ?></h1>
-                    <a href="<?php the_field('call_to_action_link'); ?>" class="btn"><?php the_field('call_to_action_text'); ?></a>
+                    <h1 class="tk"><?php the_field('main_headline') ?></h1>
+                    <a href="<?php the_field('call_to_action_link'); ?>" class="btn tk"><?php the_field('call_to_action_text'); ?></a>
                 </div>
             </div>
         </div>
@@ -41,8 +41,8 @@ get_header(); ?>
         <div class="container introduction-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2 introduction">
-                    <h2><?php the_field('subheadline'); ?></h2>
-					<?php the_field('introduction'); ?>
+                    <h2 class="tk"><?php the_field('subheadline'); ?></h2>
+					               <?php the_field('introduction'); ?>
 	                </div>
             </div>
             <?php
@@ -63,7 +63,7 @@ get_header(); ?>
                         echo '</a>';
                       endif;
                     ?>
-                    <figcaption><?php echo $icon['caption']; ?></figcaption>
+                    <figcaption class="tk"><?php echo $icon['caption']; ?></figcaption>
                 </figure>
                 <?php endforeach; ?>
             </div>

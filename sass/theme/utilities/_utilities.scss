@@ -24,6 +24,19 @@
 	}
 }
 
+.visibility-none {
+	visibility: hidden;
+}
+
+.fade-in,
+.tk {
+	opacity: 0;
+	transition: opacity .25s ease-in-out;
+	&.on {
+		opacity: 1;
+	}
+}
+
 .centered {
 	text-align: center;
 }
