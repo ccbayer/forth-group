@@ -65,6 +65,11 @@
 		display: block !important;
 	}
 }
+.hide-below-tablet {
+	@include mq($max-width: $tablet-max) {
+		display: none;
+	}
+}
 .hide-above-tablet {
 	@include mq($min-width: $desktop-min) {
 		display: none !important;

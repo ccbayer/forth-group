@@ -7319,6 +7319,10 @@ a.skip-link {
     .hide-above-tablet-portrait {
       display: block !important; } }
 
+@media only screen and (max-width: 1024px) {
+  .hide-below-tablet {
+    display: none; } }
+
 @media only screen and (min-width: 1025px) {
   .hide-above-tablet {
     display: none !important; } }
@@ -7946,6 +7950,8 @@ img.circle-icon-animate {
         .figures-grid-with-captions figure figcaption p a {
           color: #062467;
           text-decoration: underline; }
+      .figures-grid-with-captions figure figcaption .more-mobile {
+        display: none; }
   .figures-grid-with-captions h4 {
     font-family: "bree-serif", serif;
     font-weight: 400;
@@ -7953,7 +7959,13 @@ img.circle-icon-animate {
     font-size: 16px;
     color: #333;
     text-transform: uppercase; }
+    .figures-grid-with-captions h4 a {
+      font-family: "Raleway", sans-serif;
+      font-weight: normal;
+      font-size: 14px;
+      text-transform: none; }
   .figures-grid-with-captions .read-more {
+    display: none;
     border-top: 2px solid #80AE37;
     border-bottom: 2px solid #80AE37;
     padding: 15px 42px;
@@ -8232,7 +8244,7 @@ img.circle-icon-animate {
   text-align: center; }
 
 .side-tabbed-content-wrapper {
-  padding: 30px 0; }
+  padding: 30px 0 60px 0; }
   .side-tabbed-content-wrapper .intro {
     padding-bottom: 40px; }
     .side-tabbed-content-wrapper .intro h2,
