@@ -28,7 +28,9 @@ function readMore($input, $limit) {
                   $moreContentHolder = '';
                   for($i = 0; $i < sizeof($figs); $i++):
                   $content = readMore($figs[$i]['content'], 220);
-                  $moreId = 'readMore-'.substr(md5(rand()), 0, 7);
+                    $moreId = 'readMore-'.substr(md5(rand()), 0, 7);
+                    $moreIdLg = 'readMoreDesktop-'.substr(md5(rand()), 0, 7);
+                    $targetToSwap = 'targetTrigger-'.substr(md5(rand()), 0, 10);
             ?>
                         <figure class="col-md-6">
                             <img src="<?php echo $figs[$i]['icon']['url'] ?>" alt="" class="<?php echo $figs[$i]['css_classes']; ?>">
@@ -36,10 +38,12 @@ function readMore($input, $limit) {
                                 <h3 class="tk"><?php echo $figs[$i]['label']; ?></h3>
                                 <div class="content">
                                   <?php echo $figs[$i]['content'] ?>
-                                  <a href="#<?php echo $moreId ?>" class="readMoreLess">Read More + </a>
                                   <?php
-                                    $moreContentHolder .= '<div class="read-more" id="' . $moreId .'"><h4>'.$figs[$i]['label'].'</h4>' . $figs[$i]['expanded_content'] . '<a href="#'.$moreId.'" class="readMoreLess">Read Less -</a></div>';
+                                   $moreContentHolder .= '<div class="read-more" id="' . $moreIdLg .'"><h4>'.$figs[$i]['label'].' <a href="#'.$moreIdLg.'" class="forthHideAndSwap" data-target-to-swap="#'.$targetToSwap.'" data-attr-to-swap="data-toggle-on">Read Less -</a></h4>' . $figs[$i]['expanded_content'] . '</div>';
                                   ?>
+                                  <div class="more-mobile" id="<?php echo $moreId ?>"><?php echo $figs[$i]['expanded_content']; ?></div>
+                                  <a href="#<?php echo $moreId ?>" class="readMoreLess hide-above-tablet" data-toggle-on="Read More +" data-toggle-off="Read Less -">Read More +</a>
+                                  <a href="#<?php echo $moreIdLg ?>" id="<?php echo $targetToSwap ?>" class="forthToggleSwapTrigger hide-below-tablet" data-toggle-on="Read More +" data-toggle-off="Read Less -">Read More +</a>
                                 </div>
                             </figcaption>
                         </figure>
@@ -51,8 +55,8 @@ function readMore($input, $limit) {
                             <?php echo $moreContentHolder; ?>
                           </div>
                         <?
-                          $moreContentHolder = '';
-                          }
+                         $moreContentHolder = '';
+                        }
                         ?>
                         <?php
                       endfor;

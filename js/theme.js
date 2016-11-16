@@ -4309,13 +4309,45 @@ if (typeof jQuery === 'undefined') {
 	// read more  read Less
 	$(function() {
 
+
+		toggleText = function($el) {
+			var thisToggleText = $el.html() === $el.data('toggleOn') ? $el.data('toggleOff') : $el.data('toggleOn');
+			$el.html(thisToggleText);
+		}
+
+		$('.forthToggleSwapTrigger').on('click', function(event) {
+			event.preventDefault();
+			var $this = $(this);
+			var target = $this.attr('href');
+			var thatToggleText = $this.data('toggleOn');
+			var mode = $this.data('mode');
+			// turn others off
+			$('.forthToggleSwapTrigger').not($this).html(thatToggleText);
+			$('.read-more').not($(target)).hide();
+			$(target).toggle();
+			toggleText($this);
+		});
+
+		// hides an element and replaces its text with a data attribute value
+		$('.forthHideAndSwap').on('click', function(event) {
+			event.preventDefault();
+			var $this = $(this);
+			var $targetToHide = $($this.attr('href'));
+			var $targetToSwap = $($this.data('targetToSwap'));
+			$targetToHide.hide();
+			toggleText($targetToSwap);
+ 		});
+
 		$('.readMoreLess').on('click', function(event) {
 			event.preventDefault();
-			var target = $(this).attr('href');
-			$('.read-more').hide();
+			var $this = $(this);
+			var target = $this.attr('href');
+			var toggleAll = $this.data('toggleAll');
+			var hideOthers = $this.data('hideOthers');
+			toggleText($this);
 			if(target) {
-				$(target).toggle();
-			}
+					$(target).toggle();
+				}
 		});
 
 	});
@@ -4336,7 +4368,7 @@ if (typeof jQuery === 'undefined') {
 
 	});
 
-	// end ENCAPSULATE
+	// typekit fade in loading
 	try {
 	  Typekit.load({
 	    loading: function() {
@@ -4353,4 +4385,5 @@ if (typeof jQuery === 'undefined') {
 	  })
 	} catch(e) {}
 
+		// end ENCAPSULATE
 })(jQuery);
