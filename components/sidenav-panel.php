@@ -15,7 +15,7 @@
 		                ?>
 	                </ul>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 col-sm-12">
                         <!-- content item 1-->
                         <?php
 							for($i = 0; $i< $count; $i++) {

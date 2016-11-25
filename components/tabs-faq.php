@@ -9,7 +9,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 side-nav">
-	                <ul class="nav-tabs responsive">
+	                <ul>
 	                <?php
 		                $tabs = get_sub_field('faq_group');
 		                $count = sizeof($tabs);
