@@ -14,10 +14,8 @@
 			margin-bottom: 30px;
 			padding: 0 15px;
 			list-style-type: none;
-			@include mq($max-width: $tablet-min) {
-				padding: 0;
-				margin-left: -15px;
-				margin-right: -15px;
+			@include mq($max-width: $tablet-min + 1) {
+				display: none;
 			}
 			li {
 				padding: 35px 0;
@@ -28,9 +26,6 @@
 				padding-left: 45px;
 				span {
 					display: none;
-				}
-				@include mq($max-width: $tablet-min) {
-					padding: 15px;
 				}
 				&.active {
 					background: $white;
@@ -69,8 +64,6 @@
 	}
 
 	.content-wrapper {
-		border: 1px solid $green;
-		background: $white;
 		padding: 0 15px;
 		transition: height .5s ease-in-out;
 		@include mq($max-width: $tablet-min) {
@@ -80,6 +73,8 @@
 		}
 		.content-item {
 			display: none;
+			border: 1px solid $green;
+			background: $white;
 			padding: 30px 50px;
 			&.active {
 				display: block;
@@ -93,6 +88,37 @@
 			}
 		}
 	}
+
+	.responsive-tab-trigger {
+		display: none;
+		position: relative;
+		padding: 35px 0;
+		color: $dark;
+		text-decoration: none;
+		border-bottom: 1px solid $green;
+		span {
+			display: inline-block;
+			margin-left: 15px;
+			color: $green;
+			border: 2px solid $green;
+			width: 30px;
+			height: 30px;
+			top: 50%;
+			margin-top: -15px;
+			border-radius: 100%;
+			padding: 6px 8px;
+		}
+		&.active {
+			border-bottom: none;
+			span {
+				transform: rotate(90deg);
+			}
+		}
+		@include mq($max-width: $tablet-min) {
+				display: block;
+		}
+	}
+
 	// faqs
 	.faq-item {
 		h3 {

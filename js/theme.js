@@ -4276,10 +4276,18 @@ if (typeof jQuery === 'undefined') {
 			// load content
 			$this.closest('.side-tabbed-content-wrapper').find('.content-item.active').removeClass('active');
 			$($target).addClass('active');
+			$($target).parent('.content-wrapper').prev('.responsive-tab-trigger').addClass('active');
 			// scroll to top of element
 			$('html, body').animate({
 	        	scrollTop: $('.side-tabbed-content-wrapper').offset().top
-			}, 500);
+			}, 500);r
+		});
+		// responsive tabs
+		$('.responsive-tab-trigger').on('click', function(event) {
+			event.preventDefault();
+			var target = $(this).attr('href');
+			$('.responsive-tab-trigger').removeClass('active');
+			$('.side-nav ul li a[href="' + target + '"]').click();
 		});
 	});
 
