@@ -21,16 +21,17 @@
 		                ?>
 	                </ul>
                 </div>
-                <div class="col-md-8">
-                    <div class="content-wrapper">
+                <div class="col-md-8 col-sm-12">
                         <!-- content item 1-->
                         <?php
 							for($i = 0; $i< $count; $i++) {
 								$n = $i + 1;
 								$class = $i === 0 ? 'active' : '';
 							?>
-							<div class="content-item <?php echo $class; ?>" id="content-<?php echo $n; ?>">
-							<?php
+                <a href="#content-<?php echo $n; ?>" class="tk responsive-tab-trigger <?php echo $class ?>"><?php echo $tabs[$i]['faq_group_label']; ?><span class="fa fa-chevron-right" aria-hidden="true"></span></a>
+                <div class="content-wrapper">
+                <div class="content-item <?php echo $class; ?>" id="content-<?php echo $n; ?>">
+              <?php
 								$faqs = $tabs[$i]['faq'];
 								foreach($faqs as $faq):
 								?>
@@ -44,10 +45,11 @@
 								endforeach;
 							?>
 							</div>
+
+                </div>
 							<?php
 							}
 	                    ?>
-                        </div>
                     </div>
                 </div>
             </div>
