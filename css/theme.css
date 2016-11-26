@@ -8318,14 +8318,14 @@ img.circle-icon-animate {
       @media only screen and (max-width: 768px) {
         .side-tabbed-content-wrapper .content-wrapper .content-item {
           padding: 15px; } }
-  .side-tabbed-content-wrapper .responsive-tab-trigger {
+  .side-tabbed-content-wrapper .main-tab-content-wrapper .tab-switch {
     display: none;
     position: relative;
     padding: 35px 0;
     color: #333;
     text-decoration: none;
     border-bottom: 1px solid #80AE37; }
-    .side-tabbed-content-wrapper .responsive-tab-trigger span {
+    .side-tabbed-content-wrapper .main-tab-content-wrapper .tab-switch span {
       display: inline-block;
       margin-left: 15px;
       color: #80AE37;
@@ -8336,13 +8336,13 @@ img.circle-icon-animate {
       margin-top: -15px;
       border-radius: 100%;
       padding: 6px 8px; }
-    .side-tabbed-content-wrapper .responsive-tab-trigger.active {
+    .side-tabbed-content-wrapper .main-tab-content-wrapper .tab-switch.active {
       border-bottom: none; }
-      .side-tabbed-content-wrapper .responsive-tab-trigger.active span {
+      .side-tabbed-content-wrapper .main-tab-content-wrapper .tab-switch.active span {
         -webkit-transform: rotate(90deg);
                 transform: rotate(90deg); }
     @media only screen and (max-width: 768px) {
-      .side-tabbed-content-wrapper .responsive-tab-trigger {
+      .side-tabbed-content-wrapper .main-tab-content-wrapper .tab-switch {
         display: block; } }
   .side-tabbed-content-wrapper .faq-item h3 {
     font-family: "Raleway", sans-serif;
