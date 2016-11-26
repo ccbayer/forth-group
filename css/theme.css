@@ -7598,6 +7598,14 @@ header.site-header {
             font-size: 16px; }
           .navbar #main-menu li.active:after, .navbar #main-menu li:hover:after, .navbar #main-menu li.current-menu-item:after {
             display: none; } }
+      @media only screen and (max-width: 480px) {
+        .navbar #main-menu li {
+          width: 100%;
+          float: none;
+          padding: 0; }
+          .navbar #main-menu li.pull-right {
+            float: none;
+            padding-right: 0; } }
   .navbar .navbar-brand {
     margin-top: -32px; }
     @media (max-width: 768px) {

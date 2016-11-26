@@ -120,6 +120,15 @@
 					}
 				}
 			}
+			@include mq($max-width: $phone-max) {
+				width: 100%;
+				float: none;
+				padding: 0;
+				&.pull-right {
+					float: none;
+					padding-right: 0;
+				}
+			}
 		}
 	}
 	.navbar-brand {
