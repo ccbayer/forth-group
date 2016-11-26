@@ -53,6 +53,10 @@
 	position: relative;
 }
 
+.clear {
+	clear: both;
+}
+
 .hide-above-phablet {
 	display: none;
 	@include mq($max-width: $tablet-min) {

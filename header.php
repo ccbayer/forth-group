@@ -82,16 +82,4 @@
             </nav><!-- .site-navigation -->
 
         </div><!-- .wrapper-navbar end -->
-        <div class="hide-above-tablet-portrait">
-          <?php wp_nav_menu(
-              array(
-                  'theme_location' => 'header-btn',
-                  'container_class' => 'header-btn-mobile active',
-                  'menu_class' => '',
-                  'fallback_cb' => '',
-                  'menu_id' => 'header-btn-menu-mobile',
-                  'walker' => new wp_bootstrap_navwalker()
-                  ));
-          ?>
-        </div>
     </header>

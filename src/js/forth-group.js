@@ -73,9 +73,9 @@
 			var checkNavBarPosition = function() {
 				var $hdr = $('.site-header');
 				if($(document).scrollTop() > $hdr.outerHeight()) {
-					$hdr.addClass('active');
+					$hdr.addClass('faded');
 				} else {
-					$hdr.removeClass('active');
+					$hdr.removeClass('faded');
 				}
 			};
 
