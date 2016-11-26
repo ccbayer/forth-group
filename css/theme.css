@@ -7307,6 +7307,9 @@ a.skip-link {
 .rel {
   position: relative; }
 
+.clear {
+  clear: both; }
+
 .hide-above-phablet {
   display: none; }
   @media only screen and (max-width: 768px) {
@@ -7448,31 +7451,27 @@ input[type="submit"] {
 header.site-header {
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 200;
   background: rgba(0, 0, 0, 0.3);
   -webkit-transition: background .25s ease-in-out;
   transition: background .25s ease-in-out;
   border-bottom: 1px solid #FFF; }
   header.site-header a[href^="tel:"] {
     color: #FFF; }
-  header.site-header.active {
+  header.site-header.active, header.site-header.faded {
     background: rgba(0, 0, 0, 0.8); }
   header.site-header .logo {
     max-width: 200px;
     margin-top: 15px; }
-  header.site-header .header-btn-wrapper,
-  header.site-header .header-btn-mobile {
+  header.site-header .header-btn-wrapper {
     float: right; }
-    header.site-header .header-btn-wrapper::after,
-    header.site-header .header-btn-mobile::after {
+    header.site-header .header-btn-wrapper::after {
       content: "";
       display: table;
       clear: both; }
-    header.site-header .header-btn-wrapper ul,
-    header.site-header .header-btn-mobile ul {
+    header.site-header .header-btn-wrapper ul {
       padding: 0; }
-      header.site-header .header-btn-wrapper ul li a.nav-link,
-      header.site-header .header-btn-mobile ul li a.nav-link {
+      header.site-header .header-btn-wrapper ul li a.nav-link {
         font-family: "Raleway", sans-serif;
         font-weight: bold;
         text-transform: uppercase;
@@ -7485,66 +7484,21 @@ header.site-header {
         padding-left: 24px;
         padding-right: 24px; }
         @media only screen and (max-width: 1280px) {
-          header.site-header .header-btn-wrapper ul li a.nav-link,
-          header.site-header .header-btn-mobile ul li a.nav-link {
+          header.site-header .header-btn-wrapper ul li a.nav-link {
             padding: 0 10px; } }
         @media only screen and (min-width: 865px) and (max-width: 1025px) {
-          header.site-header .header-btn-wrapper ul li a.nav-link,
-          header.site-header .header-btn-mobile ul li a.nav-link {
+          header.site-header .header-btn-wrapper ul li a.nav-link {
             padding: 0 7px;
             font-size: 13px;
             margin: 0 .25rem; } }
         @media only screen and (min-width: 768px) and (max-width: 865px) {
-          header.site-header .header-btn-wrapper ul li a.nav-link,
-          header.site-header .header-btn-mobile ul li a.nav-link {
+          header.site-header .header-btn-wrapper ul li a.nav-link {
             padding: 0 5px;
             font-size: 12px;
-            margin: 0;
-            border-left: 1px solid #FFF; } }
+            margin: .1em; } }
     @media (max-width: 768px) {
-      header.site-header .header-btn-wrapper,
-      header.site-header .header-btn-mobile {
+      header.site-header .header-btn-wrapper {
         display: none; } }
-  header.site-header .header-btn-mobile {
-    display: none; }
-    @media only screen and (max-width: 768px) {
-      header.site-header .header-btn-mobile.active {
-        display: block; }
-      header.site-header .header-btn-mobile ul {
-        background: #80AE37;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        border-bottom: 1px solid #FFF;
-        margin: 0; }
-        header.site-header .header-btn-mobile ul::after {
-          content: "";
-          display: table;
-          clear: both; }
-        header.site-header .header-btn-mobile ul li {
-          width: 33.333%;
-          float: left; }
-          header.site-header .header-btn-mobile ul li a.nav-link {
-            margin: 0;
-            width: 100%;
-            font-size: 12px;
-            text-align: center;
-            line-height: 14px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            border-left: 1px solid #FFF; }
-            header.site-header .header-btn-mobile ul li a.nav-link:first-of-type {
-              border-left: none; } }
-    @media only screen and (max-width: 480px) {
-      header.site-header .header-btn-mobile ul li {
-        width: 50%; }
-        header.site-header .header-btn-mobile ul li a.nav-link {
-          padding: 10px 0; }
-        header.site-header .header-btn-mobile ul li:last-of-type {
-          clear: both;
-          width: 100%;
-          border-left: none;
-          border-top: 1px solid #FFF; } }
 
 .navbar {
   padding: 0; }
@@ -7553,6 +7507,10 @@ header.site-header {
     margin-top: -30px;
     margin-bottom: 15px;
     margin-left: -15px; }
+    .navbar #main-menu::after {
+      content: "";
+      display: table;
+      clear: both; }
     @media only screen and (max-width: 768px) {
       .navbar #main-menu {
         width: 100%;
@@ -7574,10 +7532,6 @@ header.site-header {
         margin-left: 50%;
         -webkit-transition: all .25s ease-out;
         transition: all .25s ease-out; }
-      .navbar #main-menu li.service-links {
-        border-top: 1px dotted white;
-        margin-top: 5px;
-        padding-top: 10px; }
       .navbar #main-menu li.hide-above-tablet {
         padding: 0; }
       @media (max-width: 768px) {
@@ -7593,6 +7547,8 @@ header.site-header {
         text-decoration: none; }
       .navbar #main-menu li:last-of-type {
         padding-right: 0; }
+      .navbar #main-menu li.nav-btn {
+        display: none; }
       .navbar #main-menu li:hover, .navbar #main-menu li.current-menu-item, .navbar #main-menu li.current-page-ancestor, .navbar #main-menu li.active {
         position: relative; }
         .navbar #main-menu li:hover a, .navbar #main-menu li.current-menu-item a, .navbar #main-menu li.current-page-ancestor a, .navbar #main-menu li.active a {
@@ -7605,7 +7561,7 @@ header.site-header {
       @media only screen and (max-width: 1280px) {
         .navbar #main-menu li {
           padding-left: 10px;
-          padding-right: 9px; }
+          padding-right: 10px; }
           .navbar #main-menu li a {
             margin: 0; } }
       @media only screen and (max-width: 1024px) {
@@ -7615,9 +7571,28 @@ header.site-header {
             font-size: 12px; } }
       @media only screen and (max-width: 768px) {
         .navbar #main-menu li {
-          display: block;
-          float: none;
+          width: 50%;
+          float: left;
           margin: 0 0 15px 0; }
+          .navbar #main-menu li.pull-right {
+            float: right;
+            padding-right: 0; }
+          .navbar #main-menu li.nav-btn {
+            display: block; }
+            .navbar #main-menu li.nav-btn:last-of-type {
+              width: 100%; }
+            .navbar #main-menu li.nav-btn a {
+              font-family: "Raleway", sans-serif;
+              font-weight: bold;
+              text-align: center;
+              text-transform: uppercase;
+              background: #80AE37;
+              color: #FFF;
+              font-size: 14px;
+              display: block;
+              line-height: 42px;
+              text-decoration: none;
+              padding: 0; }
           .navbar #main-menu li a {
             padding: 0;
             font-size: 16px; }

@@ -1,14 +1,15 @@
 header.site-header {
 	position: fixed;
 	width: 100%;
-	z-index: 100;
+	z-index: 200;
 	background: rgba($black, .3);
 	transition: background .25s ease-in-out;
 	border-bottom: 1px solid $white;
 	a[href^="tel:"] {
 		color: $white;
 	}
-	&.active {
+	&.active,
+	&.faded {
 		background: rgba($black, .8);
 	}
 	.logo {
@@ -16,8 +17,7 @@ header.site-header {
 		margin-top: 15px;
 	}
 	// header btns
-	.header-btn-wrapper,
-	.header-btn-mobile {
+	.header-btn-wrapper {
 		@include clearfix;
 		float: right;
 		ul {
@@ -45,71 +45,18 @@ header.site-header {
 					@include mq($min-width: 865px, $max-width: $desktop-min) {
 						padding: 0 7px;
 						font-size: 13px;
-						margin: 0 .25rem;
+						margin: 0 .25rem
 					}
 					@include mq($min-width: $tablet-min, $max-width: 865px) {
 						padding: 0 5px;
 						font-size: 12px;
-						margin: 0;
-						border-left: 1px solid $white;
+						margin: .1em;
 					}
-
 				}
 			}
 		}
 		@include breakpoint(screen($tablet, lessthan)) {
 			display: none;
-		}
-	}
-	.header-btn-mobile {
-		display: none;
-			@include mq($max-width: $tablet-min) {
-
-			&.active {
-				display: block;
-			}
-			ul{
-				background: $green;
-				@include clearfix;
-				width: 100%;
-				position: absolute;
-				left: 0;
-				border-bottom: 1px solid $white;
-				margin: 0;
-				li {
-					width: 33.333%;
-					float: left;
-					a.nav-link {
-						margin: 0;
-						width: 100%;
-						font-size: 12px;
-						text-align: center;
-						line-height: 14px;
-						padding-top: 15px;
-						padding-bottom: 15px;
-						border-left: 1px solid $white;
-						&:first-of-type {
-							border-left: none;
-						}
-					}
-				}
-			}
-		}
-		@include mq($max-width: $phone-max) {
-			ul {
-				li {
-					width: 50%;
-					a.nav-link {
-						padding: 10px 0;
-					}
-					&:last-of-type {
-						clear: both;
-						width: 100%;
-						border-left: none;
-						border-top: 1px solid $white;
-					}
-				}
-			}
 		}
 	}
 }
