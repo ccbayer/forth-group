@@ -82,6 +82,14 @@
 			a.btn {
 				margin: 15px auto;
 				max-width: 80%;
+				display: block;
+				white-space: normal;
+				@include mq($max-width: $tablet-max) {
+					font-size: 18px;
+				}
+				@include mq($max-width: $phone-max) {
+					width: 100%;
+				}
 			}
 			@include mq($max-width: $tablet-min) {
 				padding: 15px;
@@ -124,6 +132,7 @@
 		h3 {
 			@include raleway(600);
 			font-size: 18px;
+			line-height: 24px;
 			color: $dark;
 			margin-bottom: 15px;
 		}
