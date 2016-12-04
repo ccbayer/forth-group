@@ -21,8 +21,7 @@
 	.item {
 		margin: 10px;
 	}
-	.owl-nav,
-	.owl-nav.disabled {
+	.owl-nav {
 		display: block !important; //override
 		position: relative;
 		.owl-prev,
@@ -61,7 +60,8 @@
 			}
 		}
 	}
-	.owl-nav.disabled {
- 		// display: none !important;
+	.owl-prev.disabled,
+	.owl-next.disabled {
+		display: none !important;
 	}
 }

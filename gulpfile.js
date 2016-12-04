@@ -95,6 +95,7 @@ gulp.task('scripts', function() {
 
     basePaths.dev + 'js/skip-link-focus-fix.js',
     // custom stuff
+    basePaths.bower + 'retinajs/dist/retina.min.js',
     basePaths.dev + 'js/forth-group.js'
     ])
     .pipe(concat('theme.min.js'))
@@ -112,6 +113,7 @@ gulp.task('scripts', function() {
 
     basePaths.dev + 'js/skip-link-focus-fix.js',
     // custom stuff
+    basePaths.bower + 'retinajs/dist/retina.min.js',
     basePaths.dev + 'js/forth-group.js'
     ])
     .pipe(concat('theme.js'))

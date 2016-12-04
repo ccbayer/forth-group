@@ -151,7 +151,12 @@
 		});
 
 	});
-
+	// Retina
+	$(function() {
+		if(typeof(retinajs) === 'function') {
+			retinajs( $('img') );
+		}
+	});
 	// typekit fade in loading
 	try {
 	  Typekit.load({

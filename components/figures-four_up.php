@@ -10,7 +10,7 @@
                     <h3 class="tk"><?php echo $figure['headline']; ?></h3>
                 </div>
                 <figure>
-                    <img src="<?php echo $figure['icon']['url']; ?>" alt="">
+                    <img src="<?php echo $figure['icon']['url']; ?>" alt="" data-rjs="2">
                     <figcaption>
                         <?php echo $figure['body']; ?>
                     </figcaption>

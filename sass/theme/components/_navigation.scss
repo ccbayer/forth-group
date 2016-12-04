@@ -92,9 +92,10 @@
 				}
 				&.nav-btn {
 					display: block;
-					&:last-of-type {
+					/* &:last-of-type {
 						width: 100%;
 					}
+					*/
 					a {
 						@include raleway(bold);
 						text-align: center;

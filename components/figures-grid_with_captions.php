@@ -33,7 +33,7 @@ function readMore($input, $limit) {
                     $targetToSwap = 'targetTrigger-'.substr(md5(rand()), 0, 10);
             ?>
                         <figure class="col-md-6">
-                            <img src="<?php echo $figs[$i]['icon']['url'] ?>" alt="" class="<?php echo $figs[$i]['css_classes']; ?>">
+                            <img src="<?php echo $figs[$i]['icon']['url'] ?>" alt="" data-rjs="2" class="<?php echo $figs[$i]['css_classes']; ?>">
                             <figcaption>
                                 <h3 class="tk"><?php echo $figs[$i]['label']; ?></h3>
                                 <div class="content">

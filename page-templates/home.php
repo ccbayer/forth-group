@@ -57,7 +57,7 @@ get_header(); ?>
                           echo '<a href="'.$icon['link'].'">';
                         endif;
                       ?>
-                    <img src="<?php echo $icon['icon']['url']; ?>" alt="" class="<?php echo $icon['css_classes'] ?>">
+                    <img src="<?php echo $icon['icon']['url']; ?>" alt="" class="<?php echo $icon['css_classes'] ?>" data-rjs="2">
                     <?php
                       if($icon['link']):
                         echo '</a>';

@@ -26,8 +26,8 @@
 	        ?>
 	        	<div class="col-md-4">
 		            <a href="<?php echo $link; ?>" class="icon-button" target="<?php $target ?>">
-			            <img src="<?php echo $button['icon']['url'] ?>" alt=""/>
-			            <p><?php echo $button['label'] ?> &raquo;</p>
+			            <img src="<?php echo $button['icon']['url'] ?>" alt="" data-rjs="2"/>
+			            <span><?php echo $button['label'] ?> &raquo;</span>
 		            </a>
 	        	</div>
             	<?php endforeach; ?>
