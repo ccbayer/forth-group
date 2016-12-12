@@ -7705,7 +7705,7 @@ header.site-header {
       right: 0;
       z-index: 10;
       position: absolute;
-      opacity: .4; }
+      opacity: .6; }
     .home-banner .video-container video {
       z-index: 5;
       width: 100%    !important;
@@ -8193,8 +8193,17 @@ img.circle-icon-animate {
 .tabbed-carousel-wrapper .intro-content {
   text-align: center; }
 
+@media only screen and (max-width: 1120px) {
+  .tabbed-carousel-wrapper ul.nav.nav-tabs li {
+    font-size: 1em !important; } }
+
+@media only screen and (max-width: 1024px) {
+  .tabbed-carousel-wrapper ul.nav.nav-tabs li {
+    font-size: .8em; } }
+
 .tabbed-carousel-wrapper .tab-pane {
-  padding: 100px 0 0 0; }
+  clear: both;
+  padding: 50px 0 0 0; }
   .tabbed-carousel-wrapper .tab-pane .owl-carousel.forth-slider {
     display: none; }
   .tabbed-carousel-wrapper .tab-pane.active .owl-carousel.forth-slider {

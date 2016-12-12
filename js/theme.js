@@ -4240,24 +4240,22 @@ if (typeof jQuery === 'undefined') {
 			      	'<span class="fa fa-chevron-left"></span>',
 			      	'<span class="fa fa-chevron-right"></span>'
 			      ],
-						responsiveClass:true,
-						responsive:{
-				        0:{
-				            items:1,
-				            nav:true
+						responsiveClass: true,
+						responsive: {
+				        0: {
+				            items: 1,
+				            nav: true
 				        },
 				        640: {
-				            items:3,
-				            nav:false
+				            items: 3,
+				            nav: true
 				        },
-				        769: {
-				            items:5,
-				            nav: true,
-				            loop: false
+				        769:  {
+				            items: 5,
+				            nav: true
 				        }
 				    },
 			      pagination: true
-
 			  });
 
 		});

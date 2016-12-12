@@ -7,8 +7,19 @@
 	.intro-content {
 		text-align: center;
 	}
+	ul.nav.nav-tabs {
+		li {
+			@include mq($max-width: 1120px) {
+				font-size: 1em !important;
+			}
+			@include mq($max-width: $tablet-max) {
+				font-size: .8em;
+			}
+		}
+	}
 	.tab-pane {
-		padding: 100px 0 0 0;
+		clear: both;
+		padding: 50px 0 0 0;
 		.owl-carousel.forth-slider {
 			display: none;
 		}
