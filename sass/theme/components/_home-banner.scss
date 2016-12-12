@@ -77,14 +77,13 @@ $btn-padding: 58px;
 			color: $dark;
 		}
 		.video-pattern {
-			background-image: url(../img/pattern.jpg);
+			background-image: url(../img/darkdenim.png);
 			top: 0;
 			left: 0;
 			bottom: 0;
 			right: 0;
 			z-index: 10;
 			position: absolute;
-			opacity: .6;
 		}
 		video {
 			z-index: 5;
