@@ -7698,14 +7698,13 @@ header.site-header {
     z-index: 1;
     background-color: #333; }
     .home-banner .video-container .video-pattern {
-      background-image: url(../img/pattern.jpg);
+      background-image: url(../img/darkdenim.png);
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
       z-index: 10;
-      position: absolute;
-      opacity: .6; }
+      position: absolute; }
     .home-banner .video-container video {
       z-index: 5;
       width: 100%    !important;
