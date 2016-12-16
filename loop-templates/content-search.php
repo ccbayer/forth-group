@@ -2,6 +2,7 @@
 /**
  * @package understrap
  */
+ global $searchLabel;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -27,6 +28,14 @@
 		<?php the_excerpt(); ?>
 
 	</div><!-- .entry-summary -->
+	<hr/>
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<?php $searchLabel = 'Search Again'; ?>
+			<?php get_search_form(); ?>
+		</div>
+	</div>
+
 
 	<footer class="entry-footer">
 

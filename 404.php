@@ -5,74 +5,52 @@
  */
 
 get_header(); ?>
-<h1>404 yo</h1>
-<div class="wrapper" id="404-wrapper">
-    
-    <div  id="content" class="container">
-
-        <div class="row">
-        
-            <div id="primary" class="content-area">
-
-                <main id="main" class="site-main" role="main">
-
-                    <section class="error-404 not-found">
-                        
-                        <header class="page-header">
-
-                            <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'understrap' ); ?></h1>
-                        </header><!-- .page-header -->
-
-                        <div class="page-content">
-
-                            <p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'understrap' ); ?></p>
-
-                            <?php get_search_form(); ?>
-
-                            <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-                            <?php if ( understrap_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-
-                                <div class="widget widget_categories">
-
-                                    <h2 class="widget-title"><?php _e( 'Most Used Categories', 'understrap' ); ?></h2>
-
-                                    <ul>
-                                    <?php
-                                        wp_list_categories( array(
-                                            'orderby'    => 'count',
-                                            'order'      => 'DESC',
-                                            'show_count' => 1,
-                                            'title_li'   => '',
-                                            'number'     => 10,
-                                        ) );
-                                    ?>
-                                    </ul>
-
-                                </div><!-- .widget -->
-                            
-                            <?php endif; ?>
-
-                            <?php
-                                /* translators: %1$s: smiley */
-                                $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'understrap' ), convert_smilies( ':)' ) ) . '</p>';
-                                the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-                            ?>
-
-                            <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
-                        </div><!-- .page-content -->
-                        
-                    </section><!-- .error-404 -->
-
-                </main><!-- #main -->
-                
-            </div><!-- #primary -->
-
-        </div> <!-- .row -->
-        
-    </div><!-- Container end -->
-    
-</div><!-- Wrapper end -->
-
+<div class="wrapper" id="back-page-wrapper">
+  <div class="backpage-banner pattern-overlay"></div>
+  <div class="container introduction-wrapper">
+      <div class="row">
+          <div class="col-md-10 offset-md-1 introduction">
+              <h1 class="tk"><?php the_field('404_title', 'option') ?></h1>
+              <?php if(get_field('404_introduction', 'option')): ?>
+              <div class="intro-copy">
+  							<p><?php the_field('404_introduction', 'option') ?></p>
+  						</div>
+              <?php endif; ?>
+  				</div>
+  	    </div>
+      </div>
+    <div class="container">
+      <?php if(get_field('404_body_content', 'option')): ?>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <p><?php the_field('404_body_content', 'option'); ?></p>
+        </div>
+      </div>
+      <?php endif; ?>
+      <?php if(get_field('show_search_field', 'option')): ?>
+      <div class="row">
+      	<div class="col-md-8 offset-md-2">
+          <?php get_search_form(); ?>
+        </div>
+      </div>
+      <?php endif; ?>
+    </div>
+    <?php if(get_field('404_cta', 'option')): ?>
+      <?php
+      $cta = get_field('404_cta', 'option');
+      ?>
+      <div class="bg-light-green bp-cta-wrapper">
+          <div class="container">
+              <div class="row">
+              	<div class="col-md-12 lbl-wrapper">
+              		<h3><?php echo $cta[0]['cta_heading']; ?></h2>
+              	</div>
+              	<div class="col-md-12 btn-wrapper">
+                  	<a class="btn tk" href="<?php echo $cta[0]['cta_link_destination']; ?>"><?php echo $cta[0]['cta_label']; ?> &raquo;</a>
+              	</div>
+              </div>
+          </div>
+      </div>
+    <?php endif; ?>
+</div>
 <?php get_footer(); ?>

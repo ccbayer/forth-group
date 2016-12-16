@@ -8479,6 +8479,25 @@ footer.site-footer {
       border-radius: 0;
       box-shadow: none; } }
 
+#searchform {
+  margin: 30px 0;
+  clear: both; }
+  #searchform label {
+    padding-left: 0; }
+  #searchform input[type="submit"] {
+    line-height: 1; }
+
+#search-page-wrapper .understrap-read-more-link {
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  text-decoration: underline; }
+
+#search-page-wrapper .search-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 30px 0; }
+
 .map-wrapper {
   padding: 60px 0; }
   .map-wrapper iframe {
