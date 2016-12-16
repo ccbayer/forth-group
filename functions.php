@@ -71,6 +71,8 @@ register_nav_menus( array(
 add_image_size( 'tabbed-gallery-thumbnail-cropped', 220, 220, true );
 add_image_size( 'tabbed-gallery-thumbnail', 220, 220 );
 
+global $searchLabel;
+
 /* ACF OPTIONS */
 if( function_exists('acf_add_options_page') ) {
 
@@ -80,6 +82,14 @@ if( function_exists('acf_add_options_page') ) {
 			'page_title' 	=> 'Website Footer',
 			'menu_title' 	=> 'Website Footer',
 			'menu_slug' 	=> 'website-footer',
+			'capability' 	=> 'edit_posts',
+			'redirect' 	=> false
+		));
+
+		$option_page = acf_add_options_page(array(
+			'page_title' 	=> 'Search and 404',
+			'menu_title' 	=> 'Search and 404',
+			'menu_slug' 	=> 'search-and-404',
 			'capability' 	=> 'edit_posts',
 			'redirect' 	=> false
 		));

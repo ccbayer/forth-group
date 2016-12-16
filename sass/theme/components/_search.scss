@@ -1,0 +1,25 @@
+#searchform {
+  margin: 30px 0;
+  clear: both;
+  label {
+    padding-left: 0;
+  }
+  input[type="submit"] {
+    line-height: 1;
+  }
+}
+
+// results
+#search-page-wrapper {
+  .understrap-read-more-link {
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    text-decoration: underline;
+  }
+  .search-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 30px 0;
+  }
+}
