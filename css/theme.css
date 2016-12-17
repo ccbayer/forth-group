@@ -7406,6 +7406,11 @@ input[type="submit"] {
       margin: 10px auto;
       max-width: 350px; } }
 
+.acf-field.additional-feedback-checkbox {
+  margin-top: -30px; }
+  .acf-field.additional-feedback-checkbox > .acf-label {
+    display: none; }
+
 .btn {
   font-family: "bree-serif", serif;
   font-weight: 400;
