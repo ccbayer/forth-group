@@ -7727,7 +7727,7 @@ header.site-header {
   background-position: top center;
   background-size: cover;
   text-align: center; }
-  @media only screen {
+  @media only screen and (max-width: 1024px) {
     .backpage-banner {
       padding-top: 220px; } }
   @media only screen and (max-width: 481px) {
