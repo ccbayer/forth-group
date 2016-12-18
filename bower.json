@@ -31,7 +31,8 @@
     "bootstrap": "~3.3.7",
     "bootstrap-sass": "~3.3.7",
     "breakpoint-sass": "^2.7.0",
-    "sass-mediaqueries": "^1.6.1"
+    "sass-mediaqueries": "^1.6.1",
+    "lazysizes": "^2.0.7"
   },
   "_source": "https://github.com/holger1411/understrap.git",
   "_target": "~0.4.7",

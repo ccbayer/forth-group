@@ -149,10 +149,12 @@
 		});
 
 	});
+	// BG Sizes
+
 	// Retina
 	$(function() {
 		if(typeof(retinajs) === 'function') {
-			retinajs( $('img') );
+			retinajs( $('img.retina') );
 		}
 	});
 	// typekit fade in loading

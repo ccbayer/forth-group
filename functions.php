@@ -71,6 +71,16 @@ register_nav_menus( array(
 add_image_size( 'tabbed-gallery-thumbnail-cropped', 220, 220, true );
 add_image_size( 'tabbed-gallery-thumbnail', 220, 220 );
 
+add_image_size( 'tablet-banner-cropped', 1024, 220, true ); // 1024 - 768
+add_image_size( 'tablet-banner', 1024, 220 );
+
+add_image_size( 'phablet-banner-cropped', 768, 220, true ); // 768 - 480
+add_image_size( 'mobile-banner', 768, 220 );
+
+add_image_size( 'mobile-banner-cropped', 480, 186, true ); // 480
+add_image_size( 'mobile-banner', 480, 186 );
+
+
 global $searchLabel;
 
 /* ACF OPTIONS */
