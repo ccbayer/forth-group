@@ -7,6 +7,9 @@ $btn-padding: 58px;
 		size: cover;
 	}
 	text-align: center;
+	@include mq($tablet-min, $tablet-max) {
+		padding-top: 220px;
+	}
 	@include mq($max-width: $phablet-min) {
 		padding-top: 186px;
 	}

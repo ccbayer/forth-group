@@ -95,6 +95,9 @@ gulp.task('scripts', function() {
 
     basePaths.dev + 'js/skip-link-focus-fix.js',
     // custom stuff
+    basePaths.bower + 'lazysizes/plugins/respimg/ls.respimg.min.js',
+    basePaths.bower + 'lazysizes/plugins/bgset/ls.bgset.min.js',
+    basePaths.bower + 'lazysizes/lazysizes.min.js',
     basePaths.bower + 'retinajs/dist/retina.min.js',
     basePaths.dev + 'js/forth-group.js'
     ])
@@ -113,6 +116,9 @@ gulp.task('scripts', function() {
 
     basePaths.dev + 'js/skip-link-focus-fix.js',
     // custom stuff
+    basePaths.bower + 'lazysizes/plugins/respimg/ls.respimg.min.js',
+    basePaths.bower + 'lazysizes/plugins/bgset/ls.bgset.min.js',
+    basePaths.bower + 'lazysizes/lazysizes.min.js',
     basePaths.bower + 'retinajs/dist/retina.min.js',
     basePaths.dev + 'js/forth-group.js'
     ])
