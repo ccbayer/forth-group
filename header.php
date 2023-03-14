@@ -7,6 +7,13 @@
  * @package understrap
  */
 ?><!DOCTYPE html>
+
+<?php 
+  $gtm_ga_config = get_field('gtm_ga', 'option');
+  $gtm_id = $gtm_ga_config['gtm_id'] ?? 'AW-1026605636';
+  $ga_id = $gta_ga_config['ga_id'] ?? 'UA-65334141-1';
+?>
+
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -19,31 +26,38 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico">
 <!-- typekit -->
-<script src="https://use.typekit.net/awh1ivy.js"></script>
+<script src="https://use.typekit.net/awh1ivy.js" async></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-65334141-1', 'auto');
+  ga('create', '<?= $ga_id ?>', 'auto');
   ga('send', 'pageview');
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1026605636"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= $gtm_id ?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-1026605636');
-  gtag('config', 'AW-1026605636/wOgtCK7_svoDEMSEw-kD', {
+  gtag('config', '<?= $gtm_id ?>');
+  gtag('config', '<?= $gtm_id ?>/<?= $gta_ga_config['conversion_ids']['phone_number'] ?>', {
     'phone_conversion_number': '312-379-0400'
   });
 </script>
 <?php wp_head(); ?>
+<?php 
+  $scripts = get_field('site_scripts', 'option');
+  if($scripts['header_scripts']):
+?>
+<script>
+  <?= $scripts['header_scripts'] ?>
+</script>
+<?php endif; ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-gtm-id="<?= $gtm_id ?>">
 
 <div id="page" class="hfeed site">
     <header class="site-header">

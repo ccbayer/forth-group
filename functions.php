@@ -104,5 +104,13 @@ if( function_exists('acf_add_options_page') ) {
 			'redirect' 	=> false
 		));
 
+    $option_page = acf_add_options_page(array(
+			'page_title' 	=> 'Configuration',
+			'menu_title' 	=> 'Configuration',
+			'menu_slug' 	=> 'configuration',
+			'capability' 	=> 'edit_posts',
+			'redirect' 	=> false
+		));
+
 	}
 }

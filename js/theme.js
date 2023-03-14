@@ -4410,21 +4410,23 @@ if (typeof jQuery === 'undefined') {
   // Analytics
   $(window).load(function() {
     $('a.has-gtm').on('click', function(event) {
-      // fire GTM event
       event.preventDefault();
+      // fire GTM event
       var $this = $(this);
       var data = $this.data();
-      console.log(data);
-      if(data['gtmConversion'] && window.gtag) {
-        gtag('event', 'conversion', {
-          'send_to': data['gtmConversion'],
-        });
-      }
-      if(data['gtmEventCategory']) {
-        gtag('event', 'click', {
-          'event_category': data['gtmEventCategory'],
-          'event_label': data['gtmEventLabel'],
-        });
+      var gtmID = $('body').data('gtmId');
+      if(gtmID && window.gtag) {
+        if(data['gtmConversion']) {
+          gtag('event', 'conversion', {
+            'send_to': gtmID + '/' + data['gtmConversion'],
+          });
+        }
+        if(data['gtmEventCategory']) {
+          gtag('event', 'click', {
+            'event_category': data['gtmEventCategory'],
+            'event_label': data['gtmEventLabel'],
+          });
+        }
       }
     });
   });
