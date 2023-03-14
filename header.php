@@ -29,6 +29,17 @@
   ga('create', 'UA-65334141-1', 'auto');
   ga('send', 'pageview');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1026605636"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1026605636');
+  gtag('config', 'AW-1026605636/wOgtCK7_svoDEMSEw-kD', {
+    'phone_conversion_number': '312-379-0400'
+  });
+</script>
 <?php wp_head(); ?>
 </head>
 

@@ -88,16 +88,27 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$atts['target'] = ! empty( $item->target )	? $item->target	: '';
 			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
 			// If item has_children add atts to a.
-
+      $classes = implode(' ',$item->classes);
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']   		= '#';
 				$atts['data-toggle']	= 'dropdown';
-				$atts['class']			= 'nav-link dropdown-toggle';
+				$atts['class'] = 'nav-link dropdown-toggle';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
-				$atts['class']			= 'nav-link';
+				$atts['class'] = 'nav-link';
 			}
-			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
+      /* GTM STUFF */
+      $gtm_add_tracking =  get_field('add_gtm_tracking', $item) ?? false;
+      $gtm_conversion = get_field('gtm_conversion', $item) ?? false;
+      $gtm_event_label = get_field('gtm_event_label', $item) ?? false;
+      $gtm_event_category = get_field('gtm_event_category', $item) ?? false;
+      if($gtm_add_tracking) {
+        $atts['class'] = $atts['class'] . ' has-gtm';
+        $atts['data-gtm-conversion'] = $gtm_conversion;
+        $atts['data-gtm-event-label'] = $gtm_event_label ?? sanitize_title($item->title);
+        $atts['data-gtm-event-category'] = $gtm_event_category;
+      }
+      $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
 				if ( ! empty( $value ) ) {

@@ -174,5 +174,25 @@
 	  })
 	} catch(e) {}
 
+  // Analytics
+  $(window).load(function() {
+    $('a.has-gtm').on('click', function(event) {
+      // fire GTM event
+      var $this = $(this);
+      var data = $this.data();
+      if(data['gtmConversion'] && window.gtag) {
+        gtag('event', 'conversion', {
+          'send_to': data['gtmConversion'],
+        });
+      }
+      if(data['gtmEventCategory']) {
+        gtag('event', 'click', {
+          'event_category': data['gtmEventCategory'],
+          'event_label': data['gtmEventLabel'],
+        });
+      }
+    });
+  });
+
 		// end ENCAPSULATE
 })(jQuery);
