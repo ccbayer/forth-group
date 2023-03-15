@@ -174,5 +174,29 @@
 	  })
 	} catch(e) {}
 
+  // Analytics
+  $(window).load(function() {
+    $('a.has-gtm').on('click', function(event) {
+      event.preventDefault();
+      // fire GTM event
+      var $this = $(this);
+      var data = $this.data();
+      var gtmID = $('body').data('gtmId');
+      if(gtmID && window.gtag) {
+        if(data['gtmConversion']) {
+          gtag('event', 'conversion', {
+            'send_to': gtmID + '/' + data['gtmConversion'],
+          });
+        }
+        if(data['gtmEventCategory']) {
+          gtag('event', 'click', {
+            'event_category': data['gtmEventCategory'],
+            'event_label': data['gtmEventLabel'],
+          });
+        }
+      }
+    });
+  });
+
 		// end ENCAPSULATE
 })(jQuery);

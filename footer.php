@@ -6,6 +6,7 @@
  *
  * @package understrap
  */
+  $footer_gtm_ga_config = get_field('gtm_ga', 'option');
 ?>
 
 <div class="wrapper pattern-overlay opacity-80" id="wrapper-footer">
@@ -26,7 +27,17 @@
                 <footer id="colophon" class="site-footer" role="contentinfo">
                     <ul class="site-info">
                         <li><?php the_field('phone_number', 'option') ?></li>
-                        <li><a href="mailto:<?php the_field('email_address', 'option') ?>"><?php the_field('email_address', 'option') ?></a></li>
+                        <li>
+                          <a 
+                            href="mailto:<?php the_field('email_address', 'option') ?>"
+                            data-gtm-conversion="<?= $footer_gtm_ga_config['conversion_ids']['email_address'] ?>"
+                            data-gtm-event-label="<?= the_field('email_address', 'option') ?>"
+                            data-gtm-event-category="footer-email"
+                            class="has-gtm"
+                          >
+                              <?php the_field('email_address', 'option') ?>
+                            </a>
+                        </li>
                         <li><?php the_field('address', 'option') ?></li>
                         <?php
                           if(get_field('facebook', 'option')):
@@ -45,7 +56,7 @@
                           endif;
                         ?>
                     </ul>
-                    &copy; <?php echo date('Y'); ?> forth group. Site by <a href="http://www.ico-ya.com" target="_blank">icoya</a>.
+                    &copy; <?php echo date('Y'); ?> forth group.
                 </footer><!-- #colophon -->
 
             </div><!--col end -->
@@ -57,6 +68,15 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
+<?php 
+  $scripts = get_field('site_scripts', 'option');
+  if($scripts['footer_scripts']):
+?>
+<script>
+  <?= $scripts['footer_scripts'] ?>
+</script>
+<?php endif; ?>
 
 </body>
 
