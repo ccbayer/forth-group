@@ -42,7 +42,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '<?= $gtm_id ?>');
-  gtag('config', '<?= $gtm_id ?>/<?= $gta_ga_config['conversion_ids']['phone_number'] ?>', {
+  gtag('config', '<?= $gtm_id ?>/<?= $gtm_ga_config['conversion_ids']['phone_number'] ?>', {
     'phone_conversion_number': '312-379-0400'
   });
 </script>
