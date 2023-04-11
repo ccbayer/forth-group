@@ -30,7 +30,8 @@
                           <a href="tel:+1-<?= str_replace('.','-', get_field('phone_number', 'option')); ?>"
                             data-gtm-conversion="<?= $footer_gtm_ga_config['conversion_ids']['phone_number'] ?>"
                             data-gtm-event-label="<?= the_field('phone_number', 'option') ?>"
-                            data-gtm-event-category="footer-phone">
+                            data-gtm-event-category="footer-phone"
+                            class="has-gtm">
                             <?php the_field('phone_number', 'option') ?>
                           </a>
                           </li>

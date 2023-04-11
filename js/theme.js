@@ -4410,7 +4410,7 @@ if (typeof jQuery === 'undefined') {
   // Analytics
   $(window).load(function() {
     $('a.has-gtm').on('click', function(event) {
-      event.preventDefault();
+      console.log('gtm fired');
       // fire GTM event
       var $this = $(this);
       var data = $this.data();
