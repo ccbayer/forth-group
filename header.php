@@ -49,7 +49,7 @@
 <?php wp_head(); ?>
 <?php 
   $scripts = get_field('site_scripts', 'option');
-  if($scripts['header_scripts']):
+  if(!empty($scripts) && $scripts['header_scripts']):
 ?>
 <script>
   <?= $scripts['header_scripts'] ?>
