@@ -42,14 +42,16 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '<?= $gtm_id ?>');
+  <?php if($gtm_ga_config['conversion_ids']['phone_number']): ?>
   gtag('config', '<?= $gtm_id ?>/<?= $gtm_ga_config['conversion_ids']['phone_number'] ?>', {
     'phone_conversion_number': '312-379-0400'
   });
+  <?php endif; ?>
 </script>
 <?php wp_head(); ?>
 <?php 
   $scripts = get_field('site_scripts', 'option');
-  if($scripts['header_scripts']):
+  if(!empty($scripts) && $scripts['header_scripts']):
 ?>
 <script>
   <?= $scripts['header_scripts'] ?>
