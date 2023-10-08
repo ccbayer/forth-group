@@ -79,7 +79,7 @@
 
 <?php 
   $scripts = get_field('site_scripts', 'option');
-  if($scripts['footer_scripts']):
+  if(!empty($scripts) && $scripts['footer_scripts']):
 ?>
 <script>
   <?= $scripts['footer_scripts'] ?>
