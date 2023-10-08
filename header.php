@@ -42,9 +42,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '<?= $gtm_id ?>');
+  <?php if($gtm_ga_config['conversion_ids']['phone_number']): ?>
   gtag('config', '<?= $gtm_id ?>/<?= $gtm_ga_config['conversion_ids']['phone_number'] ?>', {
     'phone_conversion_number': '312-379-0400'
   });
+  <?php endif; ?>
 </script>
 <?php wp_head(); ?>
 <?php 

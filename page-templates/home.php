@@ -11,14 +11,14 @@ get_header(); ?>
 
 <?php
   $hero = get_field('hero_image');
-  $heroImage = 'style="background-image: url('.$hero[0]['hero_image_desktop']['url'].')"';
+  $heroImage = 'style="background-image: url('.$hero[0]['hero_image_desktop']['url'].')"; background-size: cover;';
   if(get_field('show_hero_video') && get_field('hero_video')):
     $heroImage = '';
   endif;
 ?>
 
 <div class="wrapper" id="home-page-wrapper">
-    <div class="home-banner pattern-overlay opacity-45" <?php echo $hero;?>>
+    <div class="home-banner pattern-overlay opacity-45" <?php echo $heroImage; ?>>
         <div class="container">
           <?php if(get_field('show_hero_video') && get_field('hero_video')): ?>
             <div class="video-container">
