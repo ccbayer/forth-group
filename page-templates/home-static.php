@@ -27,6 +27,7 @@ get_header(); ?>
               <video poster="<?php echo $hero[0]['hero_image_desktop']['url']; ?>" playsinline autoplay muted loop>
                 <source src="<?php echo $video['url']; ?>">
               </video>
+              <button style="z-index: 1000;">Play Pause</button>
             </div>
           <?php endif; ?>
             <div class="row">

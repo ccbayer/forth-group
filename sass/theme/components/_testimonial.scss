@@ -29,7 +29,7 @@
 			display: block;
 			margin: 40px auto;
 			color: $dark;
-		},
+		}
 		&:after {
 			content: no-close-quote;
 		}
@@ -61,7 +61,7 @@
 				margin: 0 15px;
 				padding: 15px 0;
 				a {
-					display: inline-block;;
+					display: inline-block;
 					width: 45px;
 					height: 3px;
 					background: $gray;
