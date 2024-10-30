@@ -198,5 +198,34 @@
     });
   });
 
+	$('button.play-pause').on('click', function() {
+		const $this = $(this);
+		const target = $this.data('target');
+		const $iconPlay = $this.find('.icon-play');
+		const $iconPause = $this.find('.icon-pause');
+		const $srSpan = $this.find('span');
+		const $player = $('#' + target).get(0);
+	
+		if (!$player) return;  // Exit if the player is not found
+	
+		var label = 'Pause Video';
+		if ($player.paused) {
+			$player.play();
+			$iconPause.removeClass('d-none');
+			$iconPlay.addClass('d-none');
+			label = 'Pause Video';
+		} else {
+			$player.pause();
+			$iconPlay.removeClass('d-none');
+			$iconPause.addClass('d-none');
+			label = 'Play Video';
+		}
+	
+		$this.attr('title', label);
+		$this.attr('aria-label', label);
+		$srSpan.html(label);
+	});
+	
+
 		// end ENCAPSULATE
 })(jQuery);

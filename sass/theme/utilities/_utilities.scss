@@ -57,6 +57,10 @@
 	clear: both;
 }
 
+.d-none {
+	display: none !important;
+}
+
 .hide-above-phablet {
 	display: none;
 	@include mq($max-width: $tablet-min) {
