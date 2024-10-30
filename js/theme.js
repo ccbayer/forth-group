@@ -4369,11 +4369,9 @@ if (typeof jQuery === 'undefined') {
 
 	// testimonial nav
 	$(function() {
-		$('.testimonial-nav a').on('click', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-			var $target = $(this).attr('href');
-			$('blockquote').add('.testimonial-nav a').removeClass('active');
+		$('.testimonial-nav button').on('click', function() {
+			var $target = $(this).attr('data-target');
+			$('blockquote').add('.testimonial-nav button').removeClass('active');
 			$(this).add($target).addClass('active');
 		});
 

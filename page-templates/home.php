@@ -55,81 +55,55 @@ get_header(); ?>
             <div class="row">
                 <div class="col-md-8 offset-md-2 introduction">
                     <h2 class="tk"><?php the_field('subheadline'); ?></h2>
-					               <?php the_field('introduction'); ?>
-	                </div>
+                         <?php the_field('introduction'); ?>
+                  </div>
             </div>
             <?php
-	        	$icon_group = get_field('icon_group');
-	        	if($icon_group):
-	        ?>
+            $icon_group = get_field('icon_group');
+            if($icon_group):
+          ?>
             <div class="row" id="icon-group">
-	            <?php foreach($icon_group as $icon): ?>
+              <?php foreach($icon_group as $icon): ?>
                 <figure class="col-md-3 col-sm-6 col-xs-sm">
-                      <?php
-                        if($icon['link']):
-                          echo '<a href="'.$icon['link'].'">';
-                        endif;
-                      ?>
-                    <img src="<?php echo $icon['icon']['url']; ?>" alt="" class="<?php echo $icon['css_classes'] ?>" data-rjs="2">
-                    <?php
-                      if($icon['link']):
-                        echo '</a>';
-                      endif;
-                    ?>
-                    <figcaption class="tk"><?php echo $icon['caption']; ?></figcaption>
+                <?php if($icon['link']): ?>
+                    <a href="<?= $icon['link'] ?>">
+                <?php endif; ?>
+                      <img src="<?= $icon['icon']['url']; ?>" alt="" class="<?= $icon['css_classes'] ?>" data-rjs="2">
+                      <figcaption class="tk"><?= $icon['caption']; ?></figcaption>
+                <?php if($icon['link']): ?>
+                    </a>
+                <?php endif; ?>
                 </figure>
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>
         </div>
     </div>
+    <?php 
+      $testimonials = get_field('testimonials');
+      $video = get_field('video_url');
+      if(!empty($testimonials) || !empty($video)):
+    ?>
     <div class="content-wrapper bg-light-green">
-        <div class="container testimonial-wrapper">
-            <div class="row">
-                <div class="col-md-7">
-				<?php
-	        		$testimonials = get_field('testimonials');
-	        		if($testimonials):
-                echo '<div class="testimonial-inner-wrapper">';
-	        			for($i = 0; $i < sizeof($testimonials); $i++):
-                  $active = '';
-                  if($i === 0):
-                    $active = 'active';
-                  endif;
-	        	?>
-                    <blockquote id="testimonial-<?php echo $i ?>" class="<?php echo $active; ?>">
-                        <p><?php echo $testimonials[$i]['testimonial_copy']; ?></p>
-                        <footer><?php echo $testimonials[$i]['testimonial_author']; ?></footer>
-                    </blockquote>
-                <?php
-                endfor;
-	          	endif;
-	            ?>
-            </div>
-              <?php
-                  if(sizeof($testimonials) > 1):
-                    echo '<div class="testimonial-nav"><ul>';
-                    for($i = 0; $i < sizeof($testimonials); $i++):
-                      $active = '';
-                      if($i === 0):
-                        $active = 'active';
-                      endif;
-                      echo '<li><a href="#testimonial-'.$i.'" class="'.$active.'"><span class="sr-only">View Testimonial '.$i.'</span></a></li>';
-                    endfor;
-                    echo '</ul></div>';
-                  endif;
-                  echo '</div>';
-              ?>
-                <?php if(get_field('video_url')): ?>
-                <div class="col-md-5">
-                  <div class="video-inner-wrapper">
-                    <iframe src="<?php echo the_field('video_url'); ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                  </div>
-                </div>
-              <?php endif; ?>
-            </div>
+      <div class="container testimonial-wrapper">
+        <div class="row">
+          <?php 
+            if(!empty($testimonials)):
+              get_template_part( 'partials/home-testimonials', null, [
+                'testimonials' => $testimonials,
+              ]);
+            endif;
+          ?>
+          <?php 
+            if(!empty($video)):
+              get_template_part( 'partials/home-video', null, [
+                'video' => $video,
+              ]);
+            endif;
+          ?>
         </div>
-    </div>
+      </div>
+    <?php endif; ?>
 </div><!-- Wrapper end -->
 
 <?php get_footer(); ?>
