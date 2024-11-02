@@ -28,11 +28,13 @@
 	visibility: hidden;
 }
 
+
 .fade-in,
 .tk {
 	opacity: 0;
 	transition: opacity .25s ease-in-out;
-	&.on {
+	&.on, 
+	html.wf-active & {
 		opacity: 1;
 	}
 }

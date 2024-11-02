@@ -18,8 +18,7 @@
     'target' => get_field('new_tab', 'option') ? '_blank' : '_self',
   ];
 ?>
-
-<div class="wrapper pattern-overlay opacity-80" id="wrapper-footer">
+<footer class="wrapper pattern-overlay opacity-80" id="wrapper-footer" aria-label="Site Footer">
 
     <div class="container">
 
@@ -40,7 +39,7 @@
             </div>
           <?php endif; ?>
             <div class="col-md-8">
-                <footer id="colophon" class="site-footer" aria-label="Site Footer">
+                <div id="colophon" class="site-footer" aria-label="Site Legal Footer">
                     <ul class="site-info">
                         <li>
                           <a href="tel:+1-<?= str_replace('.','-', get_field('phone_number', 'option')); ?>"
@@ -87,13 +86,13 @@
                         ?>
                     </ul>
                     &copy; <?php echo date('Y'); ?> forth group.
-                </footer><!-- #colophon -->
+                </div><!-- #colophon -->
 
             </div><!--col end -->
         </div><!-- row end -->
 
     </div><!-- container end -->
-</div><!-- wrapper end -->
+</footer><!-- wrapper end -->
 
 </div><!-- #page -->
 

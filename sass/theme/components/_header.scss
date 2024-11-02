@@ -2,7 +2,7 @@ header.site-header {
 	position: fixed;
 	width: 100%;
 	z-index: 200;
-	background: rgba($black, .3);
+	background: rgba($black, .55);
 	transition: background .25s ease-in-out;
 	border-bottom: 1px solid $white;
 	a[href^="tel:"] {

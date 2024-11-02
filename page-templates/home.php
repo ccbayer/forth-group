@@ -16,9 +16,9 @@ get_header(); ?>
     $heroImage = '';
   endif;
 ?>
-
+<main id="content">
 <div class="wrapper" id="home-page-wrapper">
-    <div class="home-banner pattern-overlay opacity-45" <?php echo $heroImage; ?>>
+    <header class="home-banner pattern-overlay opacity-45" <?php echo $heroImage; ?> aria-label="Home Page Heading">
         <div class="container">
           <?php if(get_field('show_hero_video') && get_field('hero_video')): ?>
             <div class="video-container">
@@ -49,8 +49,8 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="content-wrapper bg-white">
+    </header>
+    <section class="content-wrapper bg-white" aria-label="Introduction">
         <div class="container introduction-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2 introduction">
@@ -78,13 +78,13 @@ get_header(); ?>
             </div>
             <?php endif; ?>
         </div>
-    </div>
+    </section>
     <?php 
       $testimonials = get_field('testimonials');
       $video = get_field('video_url');
       if(!empty($testimonials) || !empty($video)):
     ?>
-    <div class="content-wrapper bg-light-green">
+    <section class="content-wrapper bg-light-green" aria-label="Testimonials">
       <div class="container testimonial-wrapper">
         <div class="row">
           <?php 
@@ -103,7 +103,7 @@ get_header(); ?>
           ?>
         </div>
       </div>
-    <?php endif; ?>
-</div><!-- Wrapper end -->
-
+    </section>
+  <?php endif; ?>
+</main>
 <?php get_footer(); ?>

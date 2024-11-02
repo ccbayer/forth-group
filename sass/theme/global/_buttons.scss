@@ -1,19 +1,19 @@
 .btn {
   @include bree;
-  border: 2px solid $green;
+  border: 2px solid $medium-green;
   text-align: none;
   background: $white;
   box-sizing: border-box;
-  color: $green;
+  color: $medium-green;
   text-transform: uppercase;
   border-radius: 0;
   font-size: 22px;
   padding: 16px 42px;
   transition: all .25s ease-in-out;
   &:hover {
-    background: $green;
+    background: $medium-green;
     border: {
-      color: $green;
+      color: $medium-green;
     }
     color: $white;
   }
