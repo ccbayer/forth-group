@@ -11,10 +11,10 @@
 		h1,
 		h2 {
 			@include bree;
-			color: $green;
+			color: $medium-green;
 			font-size: 34px;
 			text-align: center;
-			@include line-after($green);
+			@include line-after($medium-green);
 		}
 		h1 {
 			text-transform: uppercase;
@@ -29,6 +29,24 @@
 	figure {
 		margin-top: 40px;
 		text-align: center;
+		a {
+			text-decoration: none;
+			display: block;
+			&:hover {
+				text-decoration: underline;
+			}
+			&:focus {
+				border-radius: 1rem;
+				background-color: $light-green;
+				outline: none;
+				img {
+					outline: 4px solid $dark-blue;
+				}
+				figcaption {
+					text-decoration: underline;
+				}
+			}
+		}
 		img {
 			width: 100%;
 			max-width: 140px;

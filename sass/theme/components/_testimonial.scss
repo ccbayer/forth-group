@@ -43,10 +43,11 @@
 				padding: 0 30px;
 			}
 		}
-		footer {
+		p.bq-footer {
 			 @include raleway(bold);
 			 font-size: 18px;
 			 text-align: center;
+			 font-style: normal;
 		}
 	}
 	.testimonial-nav {
@@ -60,16 +61,44 @@
 				display: inline-block;
 				margin: 0 15px;
 				padding: 15px 0;
-				a {
+				button {
+					border: none;
 					display: inline-block;
 					width: 45px;
-					height: 3px;
-					background: $gray;
-					&.active {
-						background: $green;
+					height: 45px;
+					background: transparent;
+					position: relative;
+					&::before {
+						content: "";
+						width: 100%;
+						transform: scaleX(0.75);
+						height: 4px;
+						transition: all 0.25s ease-in-out;
+						position: absolute;
+						background: $gray;
+						top: 50%;
+						margin-top: -1.5px;
+					}
+					&.active,
+					&:active {
+						&::before {
+							height: 6px;
+							background: $medium-green;
+							width: 100%;
+							transform: skewX(10deg);
+						}
 					}
 				}
 			}
 		}
 	}
+}
+
+@keyframes soft-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px); /* Adjust the height as needed */
+  }
 }

@@ -128,5 +128,8 @@ $btn-padding: 58px;
 			color: $dark-green;
 			transform: scale(1.15);
 		}
+		&:focus {
+			outline: 2px solid $dark-green;
+		}
 	}
 }

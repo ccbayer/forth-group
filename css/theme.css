@@ -7212,7 +7212,10 @@ a.skip-link {
   opacity: 0;
   transition: opacity .25s ease-in-out; }
   .fade-in.on,
-  .tk.on {
+  html.wf-active .fade-in,
+  .tk.on,
+  html.wf-active
+  .tk {
     opacity: 1; }
 
 .centered {
@@ -7336,19 +7339,19 @@ input[type="submit"] {
 .btn {
   font-family: "bree-serif", serif;
   font-weight: 400;
-  border: 2px solid #80AE37;
+  border: 2px solid #5C7C27;
   text-align: none;
   background: #FFF;
   box-sizing: border-box;
-  color: #80AE37;
+  color: #5C7C27;
   text-transform: uppercase;
   border-radius: 0;
   font-size: 22px;
   padding: 16px 42px;
   transition: all .25s ease-in-out; }
   .btn:hover {
-    background: #80AE37;
-    border-color: #80AE37;
+    background: #5C7C27;
+    border-color: #5C7C27;
     color: #FFF; }
   .btn.btn2 {
     float: left;
@@ -7378,7 +7381,7 @@ header.site-header {
   position: fixed;
   width: 100%;
   z-index: 200;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.55);
   transition: background .25s ease-in-out;
   border-bottom: 1px solid #FFF; }
   header.site-header a[href^="tel:"] {
@@ -7400,14 +7403,18 @@ header.site-header {
         font-family: "Raleway", sans-serif;
         font-weight: bold;
         text-transform: uppercase;
-        background: #80AE37;
+        background: #5C7C27;
         color: #FFF;
         font-size: 14px;
         display: block;
         line-height: 42px;
         text-decoration: none;
+        transition: all 0.25s ease-in-out;
         padding-left: 24px;
         padding-right: 24px; }
+        header.site-header .header-btn-wrapper ul li a.nav-link:hover {
+          background: #395212;
+          color: #FFF; }
         @media only screen and (max-width: 1280px) {
           header.site-header .header-btn-wrapper ul li a.nav-link {
             padding: 0 10px; } }
@@ -7664,6 +7671,8 @@ header.site-header {
       outline-offset: 4px;
       color: #395212;
       transform: scale(1.15); }
+    .play-pause-container button:focus {
+      outline: 2px solid #395212; }
 
 .backpage-banner {
   width: 100%;
@@ -7718,7 +7727,7 @@ header.site-header {
   .introduction-wrapper .introduction h2 {
     font-family: "bree-serif", serif;
     font-weight: 400;
-    color: #80AE37;
+    color: #5C7C27;
     font-size: 34px;
     text-align: center; }
     .introduction-wrapper .introduction h1:after,
@@ -7728,7 +7737,7 @@ header.site-header {
       margin: 30px auto;
       width: 65px;
       height: 2px;
-      background: #80AE37; }
+      background: #5C7C27; }
   .introduction-wrapper .introduction h1 {
     text-transform: uppercase; }
   .introduction-wrapper .introduction p {
@@ -7739,6 +7748,19 @@ header.site-header {
   .introduction-wrapper figure {
     margin-top: 40px;
     text-align: center; }
+    .introduction-wrapper figure a {
+      text-decoration: none;
+      display: block; }
+      .introduction-wrapper figure a:hover {
+        text-decoration: underline; }
+      .introduction-wrapper figure a:focus {
+        border-radius: 1rem;
+        background-color: #E5EEE4;
+        outline: none; }
+        .introduction-wrapper figure a:focus img {
+          outline: 4px solid #062467; }
+        .introduction-wrapper figure a:focus figcaption {
+          text-decoration: underline; }
     .introduction-wrapper figure img {
       width: 100%;
       max-width: 140px;
@@ -7797,11 +7819,12 @@ header.site-header {
       @media only screen and (max-width: 1024px) {
         .testimonial-wrapper blockquote p {
           padding: 0 30px; } }
-    .testimonial-wrapper blockquote footer {
+    .testimonial-wrapper blockquote p.bq-footer {
       font-family: "Raleway", sans-serif;
       font-weight: bold;
       font-size: 18px;
-      text-align: center; }
+      text-align: center;
+      font-style: normal; }
   .testimonial-wrapper .testimonial-nav ul {
     list-style: none;
     text-align: center;
@@ -7812,13 +7835,35 @@ header.site-header {
       display: inline-block;
       margin: 0 15px;
       padding: 15px 0; }
-      .testimonial-wrapper .testimonial-nav ul li a {
+      .testimonial-wrapper .testimonial-nav ul li button {
+        border: none;
         display: inline-block;
         width: 45px;
-        height: 3px;
-        background: #55595c; }
-        .testimonial-wrapper .testimonial-nav ul li a.active {
-          background: #80AE37; }
+        height: 45px;
+        background: transparent;
+        position: relative; }
+        .testimonial-wrapper .testimonial-nav ul li button::before {
+          content: "";
+          width: 100%;
+          transform: scaleX(0.75);
+          height: 4px;
+          transition: all 0.25s ease-in-out;
+          position: absolute;
+          background: #55595c;
+          top: 50%;
+          margin-top: -1.5px; }
+        .testimonial-wrapper .testimonial-nav ul li button.active::before, .testimonial-wrapper .testimonial-nav ul li button:active::before {
+          height: 6px;
+          background: #5C7C27;
+          width: 100%;
+          transform: skewX(10deg); }
+
+@keyframes soft-bounce {
+  0%, 100% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-4px);
+    /* Adjust the height as needed */ } }
 
 .video-inner-wrapper {
   position: relative;
@@ -8343,29 +8388,29 @@ img.circle-icon-animate {
           line-height: 55px; } }
 
 #wrapper-footer {
-  background-color: #FFF;
+  background-color: #333;
   position: relative; }
 
-footer.site-footer {
+.site-footer {
   color: #FFF;
   padding: 35px 0;
   font-size: 12px; }
-  footer.site-footer a {
+  .site-footer a {
     color: #FFF; }
-    footer.site-footer a:hover {
+    .site-footer a:hover {
       text-decoration: underline; }
-  footer.site-footer ul {
+  .site-footer ul {
     margin: 0;
     padding: 0;
     color: #FFF;
     list-style-type: none; }
-    footer.site-footer ul li {
+    .site-footer ul li {
       font-size: 18px;
       display: inline-block;
       padding-right: 15px;
       padding-left: 10px;
       position: relative; }
-      footer.site-footer ul li:after {
+      .site-footer ul li:after {
         content: "";
         position: absolute;
         height: 16px;
@@ -8373,17 +8418,17 @@ footer.site-footer {
         top: 8px;
         right: 0;
         background-color: #80AE37; }
-      footer.site-footer ul li.social {
+      .site-footer ul li.social {
         padding-left: 15px;
         padding-right: 0; }
-        footer.site-footer ul li.social:after {
+        .site-footer ul li.social:after {
           display: none; }
-      footer.site-footer ul li:first-of-type {
+      .site-footer ul li:first-of-type {
         padding-left: 0; }
-      footer.site-footer ul li a {
+      .site-footer ul li a {
         color: #FFF;
         text-decoration: none; }
-        footer.site-footer ul li a:hover, footer.site-footer ul li a:active {
+        .site-footer ul li a:hover, .site-footer ul li a:active {
           text-decoration: underline; }
 
 .maintenance-callout {
@@ -8401,7 +8446,7 @@ footer.site-footer {
   width: 376px;
   padding: 21px 35px 10px 35px;
   box-shadow: 1px -1px 30px rgba(0, 0, 0, 0.85); }
-  .maintenance-callout h4 {
+  .maintenance-callout h2 {
     font-weight: bold;
     font-size: 18px; }
   .maintenance-callout p {

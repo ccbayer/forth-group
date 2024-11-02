@@ -4369,11 +4369,9 @@ if (typeof jQuery === 'undefined') {
 
 	// testimonial nav
 	$(function() {
-		$('.testimonial-nav a').on('click', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-			var $target = $(this).attr('href');
-			$('blockquote').add('.testimonial-nav a').removeClass('active');
+		$('.testimonial-nav button').on('click', function() {
+			var $target = $(this).attr('data-target');
+			$('blockquote').add('.testimonial-nav button').removeClass('active');
 			$(this).add($target).addClass('active');
 		});
 
@@ -4390,22 +4388,6 @@ if (typeof jQuery === 'undefined') {
 			retinajs( $('img.retina') );
 		}
 	});
-	// typekit fade in loading
-	try {
-	  Typekit.load({
-	    loading: function() {
-	      // Javascript to execute when fonts start loading
-	    },
-	    active: function() {
-	      // Javascript to execute when fonts become active
-				$('.tk').removeClass('visibility-none').addClass('on');
-	    },
-	    inactive: function() {
-	      // Javascript to execute when fonts become inactive
-				$('.tk').removeClass('visibility-none').addClass('on');
-	    }
-	  })
-	} catch(e) {}
 
   // Analytics
   $(window).load(function() {
@@ -4462,3 +4444,34 @@ if (typeof jQuery === 'undefined') {
 
 		// end ENCAPSULATE
 })(jQuery);
+
+function loadTypekitWithFallback() {
+  const checkInterval = 250; // Interval to check for Typekit (in milliseconds)
+  const maxWaitTime = 1500;  // Maximum wait time (in milliseconds)
+  let elapsedTime = 0;
+
+  // Check if Typekit is loaded
+  const checkTypekit = setInterval(() => {
+    if (window.Typekit) {
+      clearInterval(checkTypekit);
+      try {
+        Typekit.load({
+          active: function () {
+            document.querySelectorAll('.tk').forEach(el => el.classList.add('on'));
+          }
+        });
+      } catch (e) {
+        console.error("Typekit load failed:", e);
+      }
+    } else {
+      elapsedTime += checkInterval;
+      if (elapsedTime >= maxWaitTime) {
+        clearInterval(checkTypekit);
+        console.warn("Typekit failed to load within timeout. Forcing font visibility.");
+        document.querySelectorAll('.tk').forEach(el => el.classList.add('on'));
+      }
+    }
+  }, checkInterval);
+}
+
+loadTypekitWithFallback();
