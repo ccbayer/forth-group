@@ -1,4 +1,5 @@
 <div class="bg-<?php the_sub_field('background_color'); ?> figures-four-up-wrapper">
+    <h2 class="sr-only">Services</h2>
     <div class="container">
         <div class="row">
             <?php

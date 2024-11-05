@@ -18,7 +18,7 @@
 			&:after {
 				content: '';
 				position: absolute;
-				background-color: $green;
+				background-color: $nav-light-green;
 				width: 0;
 				height: 3px;
 				bottom: -15px;
@@ -59,7 +59,7 @@
 			&.active {
 				position: relative;
 				a {
-					color: $green;
+					color: $nav-light-green;
 				}
 				&:after {
 					width: 100%;

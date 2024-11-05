@@ -7,16 +7,21 @@ $tabwidth: 33.33333%;
 	@include mq($max-width: $tablet-min) {
 		padding: 15px 0;
 	}
-	h2 {
+	h2.section-heading {
 		@include bree;
 		text-align: center;
 		color: $dark;
 		font-size: 30px;
 	}
-	ul.nav.nav-tabs {
+	ul[role="tablist"] {
 		padding-top: 30px;
 		border-bottom: 1px solid $black;
 		list-style-type: none;
+		&:after {
+			content: "";
+			clear: both;
+			display: table;
+		}
 		&.count-4 {
 			li {
 				width: 25% !important;
@@ -34,8 +39,9 @@ $tabwidth: 33.33333%;
 			@include mq($max-width: $tablet-min) {
 				width: 100%;
 			}
-			a {
+			button {
 				background: $light-green;
+				border: none;
 				display: block;
 				max-width: 250px;
 				padding: 10px 20px;
@@ -47,11 +53,12 @@ $tabwidth: 33.33333%;
 				position: relative;
 				@include breakpoint(screen($tablet, 'lessthan')) {
 					max-width: none;
+					width: 100%;
 				}
 				&:after {
 					content: '';
 					position: absolute;
-					background: green;
+					background: $medium-green;
 					width: 0;
 					height: 3px;
 					bottom: 0;
@@ -61,19 +68,19 @@ $tabwidth: 33.33333%;
 					transition: all .25s ease-out;
 				}
 			}
-			&.active a {
-				background: $green;
+			&.active button {
+				background: $medium-green;
 				color: $white;
 			}
 			&:hover {
-				a {
+				button {
 					&:after {
 						width: 100%;
 						margin-left: 0;
 						transition: all .25s ease-out;
 					}
 				}
-				&.active a:after {
+				&.active button:after {
 					color: $white;
 				}
 			}
@@ -85,14 +92,13 @@ $tabwidth: 33.33333%;
 			@include bree;
 			float: left;
 			width: 23%;
-			color: $green;
+			color: $medium-green;
 			text-transform: uppercase;
 			span {
 				display: block;
 				font-size: 100px;
 				line-height: .5;
 				margin-bottom: 50px;
-				opacity: .4;
 			}
 			@include mq($max-width: $phablet-max) {
 				width: 100%;
