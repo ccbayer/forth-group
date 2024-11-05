@@ -1,7 +1,7 @@
 @import "forth-slider";
 
 .tabbed-carousel-wrapper {
-	h2 {
+	h2.section-heading {
 		text-align: center;
 	}
 	.intro-content {
@@ -20,8 +20,22 @@
 	.tab-pane {
 		clear: both;
 		padding: 50px 0 0 0;
+		button[data-toggle="modal"] {
+			background: none;
+			border: none;
+			@include mq($max-width: $phablet-max) {
+				width: 100%;
+				text-align: center;
+			}
+		}
 		.owl-carousel.forth-slider {
 			display: none;
+			.owl-item img {
+				aspect-ratio: 1;
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
 		}
 		&.active {
 			.owl-carousel.forth-slider {

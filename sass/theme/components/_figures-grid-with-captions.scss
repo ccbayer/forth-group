@@ -11,6 +11,9 @@
 		figcaption {
 			padding: 0 30px;
 			text-align: center;
+			.content {
+				transition: height 0.25s ease-in-out;
+			}
 			h3 {
 				@include bree;
 				font-size: 18px;
@@ -26,8 +29,29 @@
 					text-decoration: underline;
 				}
 			}
-			.more-mobile {
-				display: none;
+
+			button {
+				border: 1px solid $light-green;
+				background: $white;
+				color: $dark-green;
+				font-weight: bold;
+				padding: 0.25rem 0.75rem;
+				border-radius: 2rem;
+				display: block;
+				margin: 1rem auto;
+				outline: 0px solid $medium-green;
+				transition: all 0.25s ease-in-out;
+				&:hover {
+					border: 1px solid $medium-green;
+				}
+				&:focus {
+					border: 1px solid $medium-green;
+					outline: 2px solid $medium-green;
+				}
+				&:active {
+					outline: 2px solid $medium-green;
+					outline-offset: 0;
+				}
 			}
 		}
 	}

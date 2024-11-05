@@ -123,12 +123,12 @@
 		$('.readMoreLess').on('click', function(event) {
 			event.preventDefault();
 			var $this = $(this);
-			var target = $this.attr('href');
-			var toggleAll = $this.data('toggleAll');
-			var hideOthers = $this.data('hideOthers');
+			var target = $this.attr('aria-controls');
+			var state = $this.attr('aria-expanded');
 			toggleText($this);
 			if(target) {
-					$(target).toggle();
+					$('#' + target).toggleClass('d-none');
+					$this.attr('aria-expanded', state === 'true' ? 'false' : 'true');
 				}
 		});
 
@@ -208,6 +208,56 @@
 		$srSpan.html(label);
 	});
 	
+	// 11/2/24: refactored tabs to be more accessible
+	function setActiveTab($tab) {
+    var $siblings = $tab.siblings('button');
+    var target = $tab.attr('aria-controls');
+    var $target = $('#' + target);
+    var $wrapper = $tab.closest('[data-tab-container]');
+    var $tabPanes = $wrapper.find('.tab-pane');
+
+    if ($target) {
+        $siblings.attr('aria-selected', 'false');
+        $wrapper.find('li').removeClass('active');
+ 				$tabPanes.removeClass('active');
+
+        $tab.attr('aria-selected', 'true').focus();
+        $tab.parent('li').addClass('active');
+        $target.addClass('active');
+    }
+	}
+	$('[data-tab-container] button[role="tab"]').on('click', function() {
+		setActiveTab($(this));
+	});
+
+	$('[data-tab-container] button[role="tab"],[data-tab-container] button[role="tab"]').on('keydown', function(e) {
+    var $this = $(this);
+    var $tabs = $this.closest('[data-tab-container]').find('button[role="tab"]');
+    var currentIndex = $tabs.index($this);
+    var newIndex;
+
+    if (e.key === 'ArrowLeft') {
+        newIndex = (currentIndex === 0) ? $tabs.length - 1 : currentIndex - 1;
+    } else if (e.key === 'ArrowRight') {
+        newIndex = (currentIndex === $tabs.length - 1) ? 0 : currentIndex + 1;
+    } else {
+        return; // Exit if not left or right arrow key
+    }
+
+    e.preventDefault(); // Prevent default scroll behavior
+    setActiveTab($tabs.eq(newIndex));
+});
+
+// Modal updates
+$('.tabbed-carousel-wrapper #modal').on('show.bs.modal', function (e) {
+	var $modalTrigger = $(e.relatedTarget);
+	var $modalTarget = $(e.currentTarget);
+	var $modalTitle = $modalTarget.find('.modal-title');
+	var $modalImg = $modalTarget.find('.modal-body img');
+	$modalImg.attr('src', $modalTrigger.attr('data-img'));
+	$modalTitle.html($modalTrigger.attr('data-label'));
+	$triggerTabPane = $modalTrigger.closest('.tab-pane');
+})
 
 		// end ENCAPSULATE
 })(jQuery);

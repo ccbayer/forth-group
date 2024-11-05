@@ -21,15 +21,22 @@
 	.item {
 		margin: 10px;
 	}
+	.owl-stage-outer {
+		@include mq($max-width: $phone-max) {
+			max-width: 90%;
+			margin: 0 auto;
+		}
+	}
 	.owl-nav {
 		display: block !important; //override
-		position: relative;
+		position: static;
 		.owl-prev,
 		.owl-next {
 			height: 40px;
 			width: 40px;
 			position: absolute;
-			top: -161px;
+			top: 50%;
+			margin-top: -20px;
 			color: $green;
 			border-radius: 50%;
 			background-color: transparent;
@@ -50,10 +57,13 @@
 			}
 		}
 		.owl-prev {
-			left: -50px;
+			left: -10px;
+			@include mq($max-width: $phone-max) {
+				left: -20px;
+			}
 		}
 		.owl-next {
-			right: -50px;
+			right: -10px;
 			span {
 				left: auto;
 				right: -2px;
