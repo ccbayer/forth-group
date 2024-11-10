@@ -59,7 +59,7 @@
                       foreach($gallery[$i]['gallery_images'] as $img):
                       ?>
                       <div class="item">
-                        <button data-toggle="modal" data-target="#modal" data-img="<?= $img['gallery_image']['sizes']['large'] ?>" data-label="<?= $gallery[$i]['gallery_label'] ?>">
+                        <button data-toggle="modal" data-target="#modal" data-img="<?= $img['gallery_image']['sizes']['large'] ?>" data-label="<?= $gallery[$i]['gallery_label'] ?>" aria-label="View Enlarged version of this photo">
                           <img src="<?php echo $img['gallery_image']['sizes']['medium'] ?>" alt="">
                         </button>
                       </div>
@@ -81,7 +81,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close Modal">
               <span aria-hidden="true">&times;</span>
             </button>
             <h2 class="modal-title h4" id="modal-title"><?= $gallery[0]['gallery_label'] ?></h2>
