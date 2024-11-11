@@ -303,3 +303,22 @@ function loadTypekitWithFallback() {
 }
 
 loadTypekitWithFallback();
+
+// map image
+function displayMap() {
+	var accessToken = 'pk.eyJ1IjoiY2NiYXllciIsImEiOiJjbTNjNDJndnUxd2M1Mmlwd3B5b3FkY2hqIn0.T2-bnCgtPHl4p9OLuhWTFQ';
+	var lon = '-87.626265';
+	var lat = '41.855647';
+	var zoom = 15;
+	var width = 750;
+	var height = 500;
+	var pinColor = '395212'; // options: red, blue, green, etc.
+	var markerLabel = 'f'; // single letter or number
+	var mapUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s-${markerLabel}+${pinColor}(${lon},${lat})/${lon},${lat},${zoom}/${width}x${height}?access_token=${accessToken}`;
+	// Display in an <img> element
+	var imgElement = document.getElementById('mapimg');
+	if (imgElement) {
+			imgElement.src = mapUrl;
+	}
+}
+displayMap();
