@@ -8257,19 +8257,16 @@ img.circle-icon-animate {
     .side-tabbed-content-wrapper .intro h2,
     .side-tabbed-content-wrapper .intro p {
       text-align: center; }
-  .side-tabbed-content-wrapper .side-nav ul {
-    margin-bottom: 30px;
-    padding: 0 15px;
-    list-style-type: none; }
-    @media only screen and (max-width: 769px) {
-      .side-tabbed-content-wrapper .side-nav ul {
-        display: none; } }
-    .side-tabbed-content-wrapper .side-nav ul li {
-      padding: 35px 0;
-      border-bottom: 1px solid #80AE37;
-      padding-left: 45px; }
-      .side-tabbed-content-wrapper .side-nav ul li:first-of-type {
-        border-top: 1px solid #80AE37; }
+  .side-tabbed-content-wrapper .side-nav {
+    position: sticky;
+    top: 120px; }
+    .side-tabbed-content-wrapper .side-nav ul {
+      margin-bottom: 30px;
+      padding: 0 15px;
+      list-style-type: none; }
+      @media only screen and (max-width: 769px) {
+        .side-tabbed-content-wrapper .side-nav ul {
+          display: none; } }
       .side-tabbed-content-wrapper .side-nav ul li span {
         display: none; }
       .side-tabbed-content-wrapper .side-nav ul li.active {
@@ -8290,17 +8287,23 @@ img.circle-icon-animate {
           @media only screen and (max-width: 1024px) {
             .side-tabbed-content-wrapper .side-nav ul li.active span {
               transform: rotate(90deg); } }
-      .side-tabbed-content-wrapper .side-nav ul li a {
+      .side-tabbed-content-wrapper .side-nav ul li button {
+        border: none;
+        border-bottom: 1px solid #80AE37;
         font-family: "bree-serif", serif;
         font-weight: 400;
+        background: transparent;
+        padding: 35px 45px;
+        text-align: left;
+        width: 100%;
         font-size: 18px;
         color: #333;
         text-decoration: none;
         display: inline-block;
         transition: all .25s ease-in-out; }
-        .side-tabbed-content-wrapper .side-nav ul li a:hover {
-          padding-left: 5px;
-          color: #8c8c8c; }
+        .side-tabbed-content-wrapper .side-nav ul li button:hover {
+          padding-left: 55px;
+          text-decoration: underline; }
   .side-tabbed-content-wrapper .content-wrapper {
     padding: 0 15px;
     transition: height .5s ease-in-out; }
@@ -8314,8 +8317,11 @@ img.circle-icon-animate {
       border: 1px solid #80AE37;
       background: #FFF;
       padding: 30px 50px; }
+      .side-tabbed-content-wrapper .content-wrapper .content-item h2 {
+        margin-bottom: 16px; }
       .side-tabbed-content-wrapper .content-wrapper .content-item.active {
-        display: block; }
+        display: block;
+        margin-bottom: 20px; }
       .side-tabbed-content-wrapper .content-wrapper .content-item a.btn {
         margin: 15px auto;
         max-width: 80%;
@@ -8336,6 +8342,9 @@ img.circle-icon-animate {
     padding: 35px 0;
     color: #333;
     text-decoration: none;
+    background: transparent;
+    border: none;
+    width: 100%;
     border-bottom: 1px solid #80AE37; }
     .side-tabbed-content-wrapper .main-tab-content-wrapper .tab-switch span {
       display: inline-block;
@@ -8370,39 +8379,51 @@ img.circle-icon-animate {
     line-height: 24px;
     color: #333; }
 
-.icon-buttons a.icon-button {
-  display: block;
-  width: 100%;
-  background-color: #FFF;
-  border: 6px solid #E5EEE4;
-  margin: 0 35px;
-  padding: 22px 35px;
-  min-height: 157px;
-  color: #80AE37;
-  transition: all .25s ease-in-out;
-  text-decoration: none; }
-  .icon-buttons a.icon-button::after {
-    content: "";
-    display: table;
-    clear: both; }
-  .icon-buttons a.icon-button:hover {
-    background-color: #E5EEE4; }
-  @media only screen and (max-width: 1024px) {
-    .icon-buttons a.icon-button {
-      margin: 15px auto; } }
-  .icon-buttons a.icon-button img {
-    vertical-align: middle;
-    float: left;
-    margin-right: 20px; }
-  .icon-buttons a.icon-button span {
-    float: left;
-    display: block;
-    width: 50%;
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 26px;
-    padding: 20px 0 0 0; }
+.icon-buttons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .icon-buttons a.icon-button {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    background-color: #FFF;
+    border: 6px solid #E5EEE4;
+    gap: 16px;
+    padding: 22px 35px;
+    min-height: 157px;
+    color: #5C7C27;
+    transition: all .25s ease-in-out;
+    outline: 4px solid transparent;
+    text-decoration: none;
+    -ms-flex-align: center;
+        align-items: center; }
+    .icon-buttons a.icon-button::after {
+      content: "";
+      display: table;
+      clear: both; }
+    .icon-buttons a.icon-button:hover {
+      border-color: #5C7C27;
+      background-color: #E5EEE4; }
+    .icon-buttons a.icon-button:focus {
+      outline: 4px solid #395212; }
+    @media only screen and (max-width: 1024px) {
+      .icon-buttons a.icon-button {
+        margin: 15px auto; } }
+    .icon-buttons a.icon-button img {
+      -ms-flex: 1 1 75px;
+          flex: 1 1 75px;
+      max-width: 75px; }
+    .icon-buttons a.icon-button span.label-icon {
+      font-family: "Raleway", sans-serif;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 26px;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .feedback-form-wrapper form {
   padding: 50px 0;

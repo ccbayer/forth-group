@@ -10,6 +10,8 @@
 	}
 	// nav
 	.side-nav {
+		position: sticky;
+		top: 120px;
 		ul {
 			margin-bottom: 30px;
 			padding: 0 15px;
@@ -18,12 +20,6 @@
 				display: none;
 			}
 			li {
-				padding: 35px 0;
-				border-bottom: 1px solid $green;
-				&:first-of-type {
-					border-top: 1px solid $green;
-				}
-				padding-left: 45px;
 				span {
 					display: none;
 				}
@@ -47,16 +43,22 @@
 						}
 					}
 				}
-				a {
+				button {
+					border: none;
+					border-bottom: 1px solid $green;
 					@include bree;
+					background: transparent;
+					padding: 35px 45px;
+					text-align: left;
+					width: 100%;
 					font-size: 18px;
 					color: $dark;
 					text-decoration: none;
 					display: inline-block;
 					transition: all .25s ease-in-out;
 					&:hover {
-						padding-left: 5px;
-						color: lighten($dark, 35%);
+						padding-left: 55px;
+						text-decoration: underline;
 					}
 				}
 			}
@@ -76,8 +78,12 @@
 			border: 1px solid $green;
 			background: $white;
 			padding: 30px 50px;
+			h2 {
+				margin-bottom: 16px;
+			}
 			&.active {
 				display: block;
+				margin-bottom: 20px;
 			}
 			a.btn {
 				margin: 15px auto;
@@ -103,6 +109,9 @@
 		padding: 35px 0;
 		color: $dark;
 		text-decoration: none;
+		background: transparent;
+		border: none;
+		width: 100%;
 		border-bottom: 1px solid $green;
 		span {
 			display: inline-block;

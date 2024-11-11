@@ -4271,28 +4271,39 @@ if (typeof jQuery === 'undefined') {
 			event.preventDefault();
 			var
 				$this = $(this),
-				$target = $this.attr('href'),
-				isSmall = $this.parent().is('li') ? false : true
+				$target = $this.attr('data-target'),
+				isSmall = $this.parent().is('li') ? false : true,
+				$wrapper = $this.closest('.side-tabbed-content-wrapper')
 			;
 			// turn off all navs
 			$('.side-nav ul li').add('.tab-switch').removeClass('active');
+			$('.side-nav ul li .tab-switch').attr('aria-selected', 'false');
+			$('.main-tab-content-wrapper .tab-switch').attr('aria-expanded', 'false');
 			// enable this nav
 			$this.addClass('active');
-			$('.tab-switch[href="' + $target + '"]').parent('li').addClass('active');
+			if($this.hasClass('sidebar')) {
+				$this.attr('aria-selected', 'true');
+			} else {
+				$this.attr('aria-expanded', 'true');
+			}
+			$('.tab-switch[data-target="' + $target + '"]').parent('li').addClass('active');
 
 			// load content
-			$this.closest('.side-tabbed-content-wrapper').find('.content-item.active').removeClass('active');
-			$($target).addClass('active');
+			if($target === '#content-all') {
+				$wrapper.find('.content-item').addClass('active');
+			} else {
+				$wrapper.find('.content-item.active').removeClass('active');
+				$($target).addClass('active');
+			}
 			// scroll to top of element
 			if(isSmall) {
 				var top = $($target).offset().top - 300;
-				console.log(top);
 				$('html, body').animate({
-		        	scrollTop: top
+					scrollTop: top
 				}, 500);
 			} else {
 				$('html, body').animate({
-		        	scrollTop: $('.side-tabbed-content-wrapper').offset().top
+							scrollTop: $('.side-tabbed-content-wrapper').offset().top
 				}, 500);
 			}
 		});
@@ -4525,3 +4536,22 @@ function loadTypekitWithFallback() {
 }
 
 loadTypekitWithFallback();
+
+// map image
+function displayMap() {
+	var accessToken = 'pk.eyJ1IjoiY2NiYXllciIsImEiOiJjbTNjNDJndnUxd2M1Mmlwd3B5b3FkY2hqIn0.T2-bnCgtPHl4p9OLuhWTFQ';
+	var lon = '-87.626265';
+	var lat = '41.855647';
+	var zoom = 15;
+	var width = 750;
+	var height = 500;
+	var pinColor = '395212'; // options: red, blue, green, etc.
+	var markerLabel = 'f'; // single letter or number
+	var mapUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s-${markerLabel}+${pinColor}(${lon},${lat})/${lon},${lat},${zoom}/${width}x${height}?access_token=${accessToken}`;
+	// Display in an <img> element
+	var imgElement = document.getElementById('mapimg');
+	if (imgElement) {
+			imgElement.src = mapUrl;
+	}
+}
+displayMap();

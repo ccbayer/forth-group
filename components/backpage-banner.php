@@ -4,9 +4,7 @@
 	$tablet = $images[0]['tablet_image'] ? $images[0]['tablet_image']['url'] : $images[0]['desktop_image']['sizes']['tablet-banner-cropped'];
 	$phablet = $images[0]['phablet_image'] ? $images[0]['phablet_image']['url'] : $images[0]['desktop_image']['sizes']['phablet-banner-cropped'];
 	$mobile = $images[0]['mobile_image'] ? $images[0]['mobile_image']['url'] : $images[0]['desktop_image']['sizes']['mobile-banner-cropped'];
-
 	$bgset = $mobile.' [(max-width: 480px)] | '.$phablet.' [(max-width: 768px)] | '.$tablet. ' [(max-width:1024px)] | '. $desktop;
-
 ?>
 <div class="backpage-banner pattern-overlay opacity-45 lazyload" data-bgset="<?php echo $bgset; ?>"></div>
 
@@ -27,12 +25,13 @@
 				foreach($buttons as $button):
 					$link = $button['link_type'] === 'Internal' ? $button['internal_link'] : $button['external_link'];
 					$target = $button['link_type'] === 'Internal' ? '_self' : '_blank';
-
 	        ?>
 	        	<div class="col-md-4">
 		            <a href="<?php echo $link; ?>" class="icon-button" target="<?php $target ?>">
 			            <img src="<?php echo $button['icon']['url'] ?>" alt="" class="retina" data-rjs="2"/>
-			            <span><?php echo $button['label'] ?> &raquo;</span>
+			            <span class="label-icon">
+                      <?php echo $button['label'] ?> <span class="icon">&raquo;</span>
+                  </span>
 		            </a>
 	        	</div>
             	<?php endforeach; ?>

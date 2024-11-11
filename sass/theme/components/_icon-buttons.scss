@@ -1,36 +1,40 @@
 .icon-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	a.icon-button {
 		@include clearfix;
-		display: block;
+		display: flex;
 		width: 100%;
 		background-color: $white;
 		border: 6px solid $light-green;
-		margin: 0 35px;
+		gap: 16px;
 		padding: 22px 35px;
 		min-height: 157px;
-		color: $green;
+		color: $medium-green;
 		transition: all .25s ease-in-out;
+		outline: 4px solid transparent;
 		text-decoration: none;
+		align-items: center;
 		&:hover {
+			border-color: $medium-green;
 			background-color: $light-green;
-
+		}
+		&:focus {
+			outline: 4px solid $dark-green;
 		}
 		@include mq($max-width: $tablet-max) {
 			margin: 15px auto;
 		}
 		img {
-			vertical-align: middle;
-			float: left;
-			margin-right: 20px;
+			flex: 1 1 75px;
+			max-width: 75px;
 		}
-		span {
-			float: left;
-			display: block;
-			width: 50%;
+		span.label-icon {
 			@include raleway(bold);
 			font-size: 24px;
 			line-height: 26px;
-			padding: 20px 0 0 0;
+			align-items: center;
 		}
 	}
 }
