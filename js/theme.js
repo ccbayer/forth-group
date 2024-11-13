@@ -4555,3 +4555,25 @@ function displayMap() {
 	}
 }
 displayMap();
+
+// Mutation observer to target GTM tracking iframes and set aria-hidden if they are not visible
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    mutation.addedNodes.forEach((node) => {
+      if (node.nodeType === 1 && node.tagName === 'IFRAME' && !node.hasAttribute('title')) {
+        const iframeStyle = window.getComputedStyle(node);
+        
+        // Check if the iframe is hidden (display: none or visibility: hidden); if so, it can be ignored since it's likely not used for users
+        if (iframeStyle.display === 'none' || iframeStyle.visibility === 'hidden') {
+          node.setAttribute('aria-hidden', 'true');
+        }
+      }
+    });
+  });
+});
+
+// Start observing the document for child additions
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});

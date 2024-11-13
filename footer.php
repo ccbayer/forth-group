@@ -62,39 +62,41 @@
                             </a>
                         </li>
                         <li><?php the_field('address', 'option') ?></li>
-                        <?php
-                          if(get_field('facebook', 'option')):
-                        ?>
-                        <li class="social">
-                            <a href="<?php the_field('facebook', 'option') ?>" target="_blank" title="Follow Forth Group on Facebook">
-                              <span class="sr-only">Follow Forth Group on Facebook</span>
-                              <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-fb.png" alt="Facebook"/>
-                            </a>
-                        </li>
-                        <?php
-                          endif;
-                          if(get_field('twitter', 'option')):
-                        ?>
-                        <li class="social">
-                            <a href="<?php the_field('twitter', 'option') ?>" target="_blank" title="Follow Forth Group on Twitter / X">
-                              <span class="sr-only">Follow Forth Group on Twitter / X</span>
-                              <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-twitter.png" alt="Twitter"/>
-                            </a>
-                        </li>
-                        <?php
-                          endif;
-                        ?>
                     </ul>
-                    &copy; <?php echo date('Y'); ?> forth group.
                 </div><!-- #colophon -->
 
             </div><!--col end -->
         </div><!-- row end -->
-
     </div><!-- container end -->
+  <div class="cai">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <figure>
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/cai-logo-white.png" alt="Community Association Institute"/>
+            <figcaption>Forth Group is a proud member of the <a href="https://www.caionline.org/" target="_blank" title="Visit Community Association Institute">Community Association Institute</a>.</figcaption>
+          </figure>
+        </div>
+        <div class="col-md-4 offset-md-4">
+          &copy; <?php echo date('Y'); ?> Forth Group. All Rights Reserved.
+          <nav aria-label="Legal Nav">
+                <?php
+                  wp_nav_menu([
+                    'theme_location' => 'footer-legal',
+                    'container_class' => 'footer-legal',
+                    'menu_class' => '',
+                    'fallback_cb' => '',
+                    'menu_id' => 'footer-legal',
+                    'walker' => new wp_bootstrap_navwalker()
+                  ]); ?>
+              </nav>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer><!-- wrapper end -->
-
 </div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 

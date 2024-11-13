@@ -33,6 +33,11 @@
 				right: 0;
 				background-color: $green;
 			}
+			&:last-of-type {
+				&::after {
+					display: none;
+				}
+			}
 			&.social {
 				padding-left: 15px;
 				padding-right: 0;
@@ -50,6 +55,44 @@
 				&:active {
 					text-decoration: underline;
 				}
+			}
+		}
+	}
+}
+
+.cai {
+	position: relative;
+	z-index: 10;
+	color: $white;
+	font-size: 0.75rem;
+	a {
+		color: $white;
+		font-size: 0.75rem;
+	}
+	.container {
+		padding: 2rem 0;
+	}
+	.row {
+		display: flex;
+	}
+	figure {
+		img {
+			height: auto;
+			max-width: 175px;
+		}
+		figcaption {
+			margin: 1rem 0 0 0;
+		}
+	}
+	.col-md-4.offset-md-4 {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: end;
+		justify-content: end;
+		nav {
+			display: inline-block;
+			ul li.menu-item {
+				float: none;
 			}
 		}
 	}

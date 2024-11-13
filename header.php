@@ -25,6 +25,12 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico">
+
+<script
+  type="text/javascript"
+  src="https://app.termly.io/resource-blocker/69e766f3-4e48-4747-be3d-17d88bded27e?autoBlock=on"
+></script>
+
 <!-- typekit -->
 <script src="https://use.typekit.net/awh1ivy.js" async></script>
 <script>
