@@ -3,14 +3,12 @@
   background-image: url('../img/pattern.jpg');
   border: 5px solid $white;
   border-radius: 10px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-width: 0;
   position: absolute;
   top: -31px;
   right: -5px;
-  bottom: 0;
+  bottom: -31px;
   width: 376px;
+  z-index: 20;
   padding: 21px 35px 10px 35px;
   box-shadow: 1px -1px 30px rgba($black, .85);
   h2 {

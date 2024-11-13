@@ -1,0 +1,48 @@
+body.page-template-content-page {
+  main {
+    padding: 150px 0 0 0;
+    .wrapper {
+      padding: 1rem 0 5rem;
+    }
+
+    p,
+    li {
+      margin: 0 0 1rem 0;
+      line-height: 1.25;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid $light-green;
+    }
+
+    table {
+      border: 1px solid $light-green;
+      thead {
+        background-color: $dark-green;
+        color: $white;
+        padding: 0.25rem;
+        th {
+          font-size: 18px;
+          padding: 0.5rem;
+        }
+      }
+      tbody {
+        tr {
+          margin: 0.5rem 0;
+          &:nth-of-type(2n) {
+            background-color: $light-green;
+          }
+        }
+        td {
+          padding: 0.5rem;
+        }
+      }
+    }
+
+  }
+}

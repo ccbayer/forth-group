@@ -8486,6 +8486,8 @@ img.circle-icon-animate {
         top: 8px;
         right: 0;
         background-color: #80AE37; }
+      .site-footer ul li:last-of-type::after {
+        display: none; }
       .site-footer ul li.social {
         padding-left: 15px;
         padding-right: 0; }
@@ -8499,19 +8501,49 @@ img.circle-icon-animate {
         .site-footer ul li a:hover, .site-footer ul li a:active {
           text-decoration: underline; }
 
+.cai {
+  position: relative;
+  z-index: 10;
+  color: #FFF;
+  font-size: 0.75rem; }
+  .cai a {
+    color: #FFF;
+    font-size: 0.75rem; }
+  .cai .container {
+    padding: 2rem 0; }
+  .cai .row {
+    display: -ms-flexbox;
+    display: flex; }
+  .cai figure img {
+    height: auto;
+    max-width: 175px; }
+  .cai figure figcaption {
+    margin: 1rem 0 0 0; }
+  .cai .col-md-4.offset-md-4 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: end;
+        align-content: end;
+    -ms-flex-pack: end;
+        justify-content: end; }
+    .cai .col-md-4.offset-md-4 nav {
+      display: inline-block; }
+      .cai .col-md-4.offset-md-4 nav ul li.menu-item {
+        float: none; }
+
 .maintenance-callout {
   color: #FFF;
   background-image: url("../img/pattern.jpg");
   border: 5px solid #FFF;
   border-radius: 10px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-width: 0;
   position: absolute;
   top: -31px;
   right: -5px;
-  bottom: 0;
+  bottom: -31px;
   width: 376px;
+  z-index: 20;
   padding: 21px 35px 10px 35px;
   box-shadow: 1px -1px 30px rgba(0, 0, 0, 0.85); }
   .maintenance-callout h2 {
@@ -8629,3 +8661,34 @@ img.circle-icon-animate {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
     font-size: 30px; }
+
+body.page-template-content-page main {
+  padding: 150px 0 0 0; }
+  body.page-template-content-page main .wrapper {
+    padding: 1rem 0 5rem; }
+  body.page-template-content-page main p,
+  body.page-template-content-page main li {
+    margin: 0 0 1rem 0;
+    line-height: 1.25; }
+  body.page-template-content-page main h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #E5EEE4; }
+  body.page-template-content-page main table {
+    border: 1px solid #E5EEE4; }
+    body.page-template-content-page main table thead {
+      background-color: #395212;
+      color: #FFF;
+      padding: 0.25rem; }
+      body.page-template-content-page main table thead th {
+        font-size: 18px;
+        padding: 0.5rem; }
+    body.page-template-content-page main table tbody tr {
+      margin: 0.5rem 0; }
+      body.page-template-content-page main table tbody tr:nth-of-type(2n) {
+        background-color: #E5EEE4; }
+    body.page-template-content-page main table tbody td {
+      padding: 0.5rem; }
