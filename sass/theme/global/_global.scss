@@ -7,4 +7,12 @@ a {
 	&.btn {
 		text-decoration: none;
 	}
+	p & {
+		&[target="_blank"] {
+			@include anchor-icon('new-window');
+		}
+		&[download] {
+			@include anchor-icon('download');
+		}
+	}
 }

@@ -17,6 +17,20 @@
     }
     color: $white;
   }
+	&[download] {
+		@include anchor-icon('download', '-green', 'large');
+    &:after {
+      margin-left: 10px;
+      margin-bottom: 0;
+    }
+    &:hover {
+		  @include anchor-icon('download', '-white', 'large');
+      &:after {
+        margin-left: 10px;
+        margin-bottom: 0;
+      }
+    }
+	}
   &.btn2 {
     float: left;
     margin: 0 20px;

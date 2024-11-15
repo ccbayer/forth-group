@@ -68,6 +68,9 @@
 	a {
 		color: $white;
 		font-size: 0.75rem;
+		&[target="_blank"] {
+			@include anchor-icon('new-window', '-white');
+		}
 	}
 	.container {
 		padding: 2rem 0;

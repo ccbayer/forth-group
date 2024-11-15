@@ -7277,6 +7277,36 @@ a {
   text-decoration: underline; }
   a.btn {
     text-decoration: none; }
+  p a[target="_blank"] {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+        align-items: center;
+    gap: 4px; }
+    p a[target="_blank"]::after {
+      display: inline-block;
+      content: "";
+      background-image: url("../img/icon-new-window.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      margin-bottom: 2px; }
+  p a[download] {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+        align-items: center;
+    gap: 4px; }
+    p a[download]::after {
+      display: inline-block;
+      content: "";
+      background-image: url("../img/icon-download.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      margin-bottom: 2px; }
 
 h1 {
   font-family: "bree-serif", serif;
@@ -7353,6 +7383,42 @@ input[type="submit"] {
     background: #5C7C27;
     border-color: #5C7C27;
     color: #FFF; }
+  .btn[download] {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+        align-items: center;
+    gap: 4px; }
+    .btn[download]::after {
+      display: inline-block;
+      content: "";
+      background-image: url("../img/icon-download-green.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      margin-bottom: 2px; }
+    .btn[download]:after {
+      margin-left: 10px;
+      margin-bottom: 0; }
+    .btn[download]:hover {
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -ms-flex-align: center;
+          align-items: center;
+      gap: 4px; }
+      .btn[download]:hover::after {
+        display: inline-block;
+        content: "";
+        background-image: url("../img/icon-download-white.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 2px; }
+      .btn[download]:hover:after {
+        margin-left: 10px;
+        margin-bottom: 0; }
   .btn.btn2 {
     float: left;
     margin: 0 20px; }
@@ -7381,13 +7447,14 @@ header.site-header {
   position: fixed;
   width: 100%;
   z-index: 200;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.6);
+  filter: blur(0.25);
   transition: background .25s ease-in-out;
   border-bottom: 1px solid #FFF; }
   header.site-header a[href^="tel:"] {
     color: #FFF; }
   header.site-header.active, header.site-header.faded {
-    background: rgba(0, 0, 0, 0.8); }
+    background: rgba(0, 0, 0, 0.85); }
   header.site-header .logo {
     max-width: 200px;
     margin-top: 15px; }
@@ -7428,12 +7495,29 @@ header.site-header {
             padding: 0 5px;
             font-size: 12px;
             margin: .1em; } }
+        header.site-header .header-btn-wrapper ul li a.nav-link[target="_blank"] {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-align: center;
+              align-items: center;
+          gap: 4px; }
+          header.site-header .header-btn-wrapper ul li a.nav-link[target="_blank"]::after {
+            display: inline-block;
+            content: "";
+            background-image: url("../img/icon-new-window-white.svg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 16px;
+            height: 16px;
+            margin-bottom: 2px;
+            transform: padding-left 0.25s ease-in-out; }
     @media (max-width: 768px) {
       header.site-header .header-btn-wrapper {
         display: none; } }
 
 .navbar {
-  padding: 0; }
+  padding: 0;
+  position: relative; }
   .navbar #main-menu {
     float: right;
     margin-top: -30px;
@@ -8509,6 +8593,21 @@ img.circle-icon-animate {
   .cai a {
     color: #FFF;
     font-size: 0.75rem; }
+    .cai a[target="_blank"] {
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -ms-flex-align: center;
+          align-items: center;
+      gap: 4px; }
+      .cai a[target="_blank"]::after {
+        display: inline-block;
+        content: "";
+        background-image: url("../img/icon-new-window-white.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        margin-bottom: 2px; }
   .cai .container {
     padding: 2rem 0; }
   .cai .row {
