@@ -25,12 +25,17 @@
 				foreach($buttons as $button):
 					$link = $button['link_type'] === 'Internal' ? $button['internal_link'] : $button['external_link'];
 					$target = $button['link_type'] === 'Internal' ? '_self' : '_blank';
+          $icon = '&raquo;';
+          if($target === '_blank') {
+            $icon = '<svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-external-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /><path d="M11 13l9 -9" /><path d="M15 4h5v5" /></svg>';
+            $icon_class = ' download';
+          }
 	        ?>
 	        	<div class="col-md-4">
-		            <a href="<?php echo $link; ?>" class="icon-button" target="<?php $target ?>">
+		            <a href="<?php echo $link; ?>" class="icon-button <?= $icon_class ?>" target="<?= $target ?>">
 			            <img src="<?php echo $button['icon']['url'] ?>" alt="" class="retina" data-rjs="2"/>
 			            <span class="label-icon">
-                      <?php echo $button['label'] ?> <span class="icon">&raquo;</span>
+                      <?php echo $button['label'] ?> <span class="icon"><?= $icon; ?></span>
                   </span>
 		            </a>
 	        	</div>

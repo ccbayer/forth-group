@@ -29,8 +29,8 @@ get_header();
           </a>
 				</div>
 				<div class="col-md-5 contact-info">
-					<h2>Forth Group</h2>
           <address>
+					  <p class="h2 tk">Forth Group</p>
 					  <?php the_field('address');?>
           </address>
 					<p><a href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a></p>
