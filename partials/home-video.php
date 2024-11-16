@@ -1,6 +1,6 @@
-<?php 
-  $video = $args['video'];
-  if(!empty($video)):
+<?php
+$video = $args['video'];
+if (!empty($video)):
 ?>
   <div class="col-md-5">
     <div class="video-inner-wrapper">
