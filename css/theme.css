@@ -7549,7 +7549,7 @@ header.site-header {
       .navbar #main-menu li:after {
         content: "";
         position: absolute;
-        background-color: #c3dd98;
+        background-color: #e6ffbb;
         width: 0;
         height: 3px;
         bottom: -15px;
@@ -7575,7 +7575,7 @@ header.site-header {
       .navbar #main-menu li:hover, .navbar #main-menu li.current-menu-item, .navbar #main-menu li.current-page-ancestor, .navbar #main-menu li.active {
         position: relative; }
         .navbar #main-menu li:hover a, .navbar #main-menu li.current-menu-item a, .navbar #main-menu li.current-page-ancestor a, .navbar #main-menu li.active a {
-          color: #c3dd98; }
+          color: #e6ffbb; }
         .navbar #main-menu li:hover:after, .navbar #main-menu li.current-menu-item:after, .navbar #main-menu li.current-page-ancestor:after, .navbar #main-menu li.active:after {
           width: 100%;
           margin-left: 0;
