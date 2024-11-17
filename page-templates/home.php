@@ -46,7 +46,7 @@ endif;
         <div class="row">
           <div class="col-md-6 offset-md-3" id="home-content">
             <h1 class="tk"><?= acf_esc_html(get_field('main_headline')) ?></h1>
-            <a href="<?= esc_url(get_field('call_to_action_link')); ?>" class="btn tk"><?php the_field('call_to_action_text'); ?></a>
+            <a href="<?= esc_url(get_field('call_to_action_link')); ?>" class="btn tk"><?= esc_html(get_field('call_to_action_text')); ?></a>
           </div>
         </div>
       </div>
