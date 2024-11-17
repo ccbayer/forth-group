@@ -1,56 +1,55 @@
 @import "forth-slider";
 
 .tabbed-carousel-wrapper {
-	h2.section-heading {
-		text-align: center;
-	}
-	.intro-content {
-		text-align: center;
-	}
-	ul.nav.nav-tabs {
-		li {
-			@include mq($max-width: 1120px) {
-				font-size: 1em !important;
-			}
-			@include mq($max-width: $tablet-max) {
-				font-size: .8em;
-			}
-		}
-	}
-	.tab-pane {
-		clear: both;
-		padding: 50px 0 0 0;
-		button[data-toggle="modal"] {
-			background: none;
-			border: none;
-			@include mq($max-width: $phablet-max) {
-				width: 100%;
-				text-align: center;
-			}
-		}
-		.owl-carousel.forth-slider {
-			display: none;
-			.owl-item img {
-				aspect-ratio: 1;
-				width: 100%;
-				height: auto;
-				object-fit: cover;
-			}
-		}
-		&.active {
-			.owl-carousel.forth-slider {
-				display: block;
-				.item {
-					cursor: pointer;
-				}
-			}
-		}
-	}
+  h2.section-heading {
+    text-align: center;
+  }
+  .intro-content {
+    text-align: center;
+  }
+  ul.nav.nav-tabs {
+    li {
+      @include mq($max-width: 1120px) {
+        font-size: 1em !important;
+      }
+      @include mq($max-width: $tablet-max) {
+        font-size: 0.8em;
+      }
+    }
+  }
+  .tab-pane {
+    clear: both;
+    padding: 50px 0 0 0;
+    button[data-toggle="modal"] {
+      background: none;
+      border: none;
+      @include mq($max-width: $phablet-max) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .owl-carousel.forth-slider {
+      display: none;
+      .owl-item img {
+        aspect-ratio: 1;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    &.active {
+      .owl-carousel.forth-slider {
+        display: block;
+        .item {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 
-	.modal {
-		.modal-body {
-			text-align: center;
-		}
-	}
-
+  .modal {
+    .modal-body {
+      text-align: center;
+    }
+  }
 }

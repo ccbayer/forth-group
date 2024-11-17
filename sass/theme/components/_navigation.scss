@@ -1,168 +1,167 @@
 .navbar {
-	padding: 0;
-	position: relative;
-	#main-menu {
-		@include clearfix();
-		float: right;
-		margin: {
-			top: -30px;
-			bottom: 15px;
-			left: -15px;
-		}
-		@include mq($max-width: $tablet-min) {
-			width: 100%;
-			float: none;
-			margin: 15px 0;
-		}
-		li {
-			position: relative;
-			&:after {
-				content: '';
-				position: absolute;
-				background-color: $nav-light-green;
-				width: 0;
-				height: 3px;
-				bottom: -15px;
-				left: 0;
-				right: 0;
-				margin-left: 50%;
-				transition: all .25s ease-out;
-			}
-			&.hide-above-tablet {
-				padding: 0;
-			}
-			@include breakpoint(screen($tablet, lessthan)) {
-				&:after {
-					bottom: -5px;
-				}
-			}
-			a {
-				@include raleway(bold);
-				color: $white;
-				font-size: 16px;
-				text-transform: uppercase;
-				letter-spacing: -.005em;
-				text-decoration: none;
-			}
-			padding: {
-				left: 20px;
-				right: 20px;
-			}
-			&:last-of-type {
-				padding-right: 0;
-			}
-			&.nav-btn {
-				display: none;
-			}
-			&:hover,
-			&.current-menu-item,
-			&.current-page-ancestor,
-			&.active {
-				position: relative;
-				a {
-					color: $nav-light-green;
-				}
-				&:after {
-					width: 100%;
-					margin-left: 0;
-					transition: all .25s ease-out;
-				}
-			}
-			@include mq($max-width: $desktop-max) {
-				padding: {
-					left: 10px;
-					right: 10px;
-				}
-				a {
-					margin: 0;
-				}
-			}
-			@include mq($max-width: $tablet-max) {
-				display: inline-block;
-				a {
-					font-size: 12px;
-				}
-			}
-			@include mq($max-width: $tablet-min) {
-				width: 50%;
-				float: left;
-				margin: 0 0 15px 0;
-				&.pull-right {
-					float: right;
-					padding-right: 0;
-				}
-				&.nav-btn {
-					display: block;
-					/* &:last-of-type {
+  padding: 0;
+  position: relative;
+  #main-menu {
+    @include clearfix();
+    float: right;
+    margin: {
+      top: -30px;
+      bottom: 15px;
+      left: -15px;
+    }
+    @include mq($max-width: $tablet-min) {
+      width: 100%;
+      float: none;
+      margin: 15px 0;
+    }
+    li {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        background-color: $nav-light-green;
+        width: 0;
+        height: 3px;
+        bottom: -15px;
+        left: 0;
+        right: 0;
+        margin-left: 50%;
+        transition: all 0.25s ease-out;
+      }
+      &.hide-above-tablet {
+        padding: 0;
+      }
+      @include breakpoint(screen($tablet, lessthan)) {
+        &:after {
+          bottom: -5px;
+        }
+      }
+      a {
+        @include raleway(bold);
+        color: $white;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: -0.005em;
+        text-decoration: none;
+      }
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+      &:last-of-type {
+        padding-right: 0;
+      }
+      &.nav-btn {
+        display: none;
+      }
+      &:hover,
+      &.current-menu-item,
+      &.current-page-ancestor,
+      &.active {
+        position: relative;
+        a {
+          color: $nav-light-green;
+        }
+        &:after {
+          width: 100%;
+          margin-left: 0;
+          transition: all 0.25s ease-out;
+        }
+      }
+      @include mq($max-width: $desktop-max) {
+        padding: {
+          left: 10px;
+          right: 10px;
+        }
+        a {
+          margin: 0;
+        }
+      }
+      @include mq($max-width: $tablet-max) {
+        display: inline-block;
+        a {
+          font-size: 12px;
+        }
+      }
+      @include mq($max-width: $tablet-min) {
+        width: 50%;
+        float: left;
+        margin: 0 0 15px 0;
+        &.pull-right {
+          float: right;
+          padding-right: 0;
+        }
+        &.nav-btn {
+          display: block;
+          /* &:last-of-type {
 						width: 100%;
 					}
 					*/
-					a {
-						@include raleway(bold);
-						text-align: center;
-						text-transform: uppercase;
-						background: $green;
-						color: $white;
-						font-size: 14px;
-						display: block;
-						line-height: 42px;
-						text-decoration: none;
-						padding: 0;
-					}
-				}
-				a {
-					padding: 0;
-					font-size: 16px;
-				}
-				&.active,
-				&:hover,
-				&.current-menu-item {
-					&:after {
-						display: none;
-					}
-				}
-			}
-			@include mq($max-width: $phone-max) {
-				width: 100%;
-				float: none;
-				padding: 0;
-				&.pull-right {
-					float: none;
-					padding-right: 0;
-				}
-			}
-		}
-	}
-	.navbar-brand {
-		margin-top: -32px;
-		@include breakpoint(screen($tablet, lessthan)) {
-			float: none;
-			text-align: left;
-			img {
-				display: block;
-				max-width: 180px;
-			}
-		}
-	}
-	.navbar-toggle {
-		position: absolute;
-		right: 0;
-		top: 0;
-		z-index: 10000;
-		color: $white;
-		font-size: 50px;
-		transition: all .25s ease-in-out;
-		transform: rotate(45deg);
-		&.active {
-			transform: rotate(0deg);
-		}
-	}
+          a {
+            @include raleway(bold);
+            text-align: center;
+            text-transform: uppercase;
+            background: $green;
+            color: $white;
+            font-size: 14px;
+            display: block;
+            line-height: 42px;
+            text-decoration: none;
+            padding: 0;
+          }
+        }
+        a {
+          padding: 0;
+          font-size: 16px;
+        }
+        &.active,
+        &:hover,
+        &.current-menu-item {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      @include mq($max-width: $phone-max) {
+        width: 100%;
+        float: none;
+        padding: 0;
+        &.pull-right {
+          float: none;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  .navbar-brand {
+    margin-top: -32px;
+    @include breakpoint(screen($tablet, lessthan)) {
+      float: none;
+      text-align: left;
+      img {
+        display: block;
+        max-width: 180px;
+      }
+    }
+  }
+  .navbar-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    color: $white;
+    font-size: 50px;
+    transition: all 0.25s ease-in-out;
+    transform: rotate(45deg);
+    &.active {
+      transform: rotate(0deg);
+    }
+  }
 }
 
-
 .navwrap {
-	@include mq($max-width: $tablet-min) {
-		width: 100% !important;
-		margin-top: 0;
-	}
+  @include mq($max-width: $tablet-min) {
+    width: 100% !important;
+    margin-top: 0;
+  }
 }

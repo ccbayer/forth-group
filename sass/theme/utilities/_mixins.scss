@@ -1,32 +1,31 @@
-@mixin line-after($color: #000, $margin: 30px ) {
-	&:after {
-		content: "";
-		display: block;
-		margin: $margin auto;
-		width: 65px;
-		height: 2px;
-		background: $color;
-	}
+@mixin line-after($color: #000, $margin: 30px) {
+  &:after {
+    content: "";
+    display: block;
+    margin: $margin auto;
+    width: 65px;
+    height: 2px;
+    background: $color;
+  }
 }
 
-@mixin anchor-icon($icon: 'new-window', $color: '', $size: 'small') {
-	$dimension: 16px;
-	@if $size == 'large' {
-		$dimension: 24px;
-	}
+@mixin anchor-icon($icon: "new-window", $color: "", $size: "small") {
+  $dimension: 16px;
+  @if $size == "large" {
+    $dimension: 24px;
+  }
 
-
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
-	&::after {
-		display: inline-block;
-		content: "";
-		background-image: url('../img/icon-#{$icon}#{$color}.svg');
-		background-size: 100%;
-		background-repeat: no-repeat;
-		width: $dimension;
-		height: $dimension;
-		margin-bottom: 2px;
-	}
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  &::after {
+    display: inline-block;
+    content: "";
+    background-image: url("../img/icon-#{$icon}#{$color}.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: $dimension;
+    height: $dimension;
+    margin-bottom: 2px;
+  }
 }

@@ -5,17 +5,17 @@
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
-$brand-primary:         #895cd1; //#ff6d5a
+$brand-primary: #895cd1; //#ff6d5a
 
-$green: #80AE37;
+$green: #80ae37;
 $purple: #062467;
 $mid-grey: #333;
-$white: #FFF;
+$white: #fff;
 $black: #000;
 $dark: $mid-grey;
-$light-green: #E5EEE4;
+$light-green: #e5eee4;
 $nav-light-green: #c3dd98;
-$medium-green: #5C7C27;
+$medium-green: #5c7c27;
 $dark-green: #395212;
 $dark-blue: #062467;
 
@@ -23,19 +23,17 @@ $background-color: $white;
 $link-color: $dark-blue;
 
 // Basics of a navbar
-$navbar-height:                    140px;
-$navbar-margin-bottom:             0px;
-$navbar-border-radius:             0px;
-
+$navbar-height: 140px;
+$navbar-margin-bottom: 0px;
+$navbar-border-radius: 0px;
 
 // bootstrap overrides
 $container-max-widths: (
   sm: 576px,
   md: 720px,
   lg: 940px,
-  xl: 1280px
+  xl: 1280px,
 );
-
 
 /* BREAKPOINTS */
 $phone-min: 320px;
@@ -48,38 +46,36 @@ $phablet-min: $phone-max + 1;
 $phablet-max: $tablet-min - 1;
 
 $desktop: (
-	min: $desktop-min,
-	max: max-width $desktop-max,
-	lessthan: max-width $desktop-min,
-	morethan: $desktop-max
+  min: $desktop-min,
+  max: max-width $desktop-max,
+  lessthan: max-width $desktop-min,
+  morethan: $desktop-max,
 );
 
 $tablet: (
-	range: $tablet-min $tablet-max,
-	min: $tablet-min,
-	max: max-width $tablet-max,
-	lessthan: max-width $tablet-min,
-	morethan: $tablet-max
+  range: $tablet-min $tablet-max,
+  min: $tablet-min,
+  max: max-width $tablet-max,
+  lessthan: max-width $tablet-min,
+  morethan: $tablet-max,
 );
 
 $phablet: (
-	range: $phablet-min $phablet-max,
-	min: $phablet-min,
-	max: max-width $phablet-max,
-	lessthan: max-width $phablet-min,
-	morethan: $phablet-max
+  range: $phablet-min $phablet-max,
+  min: $phablet-min,
+  max: max-width $phablet-max,
+  lessthan: max-width $phablet-min,
+  morethan: $phablet-max,
 );
-
 
 $phone: (
-	range: $phone-min $phone-max,
-	min: $phone-min,
-	max: max-width $phone-max,
-	lessthan: max-width $phone-min,
-	morethan: $phone-max
+  range: $phone-min $phone-max,
+  min: $phone-min,
+  max: max-width $phone-max,
+  lessthan: max-width $phone-min,
+  morethan: $phone-max,
 );
 
-
 @function screen($device, $param) {
-	@return map-get($device, $param)
+  @return map-get($device, $param);
 }

@@ -1,121 +1,120 @@
-
 $tabwidth: 33.33333%;
 
 .tabs-wrapper,
 .tabbed-carousel-wrapper {
-	padding: 30px;
-	@include mq($max-width: $tablet-min) {
-		padding: 15px 0;
-	}
-	h2.section-heading {
-		@include bree;
-		text-align: center;
-		color: $dark;
-		font-size: 30px;
-	}
-	ul[role="tablist"] {
-		padding-top: 30px;
-		border-bottom: 1px solid $black;
-		list-style-type: none;
-		&:after {
-			content: "";
-			clear: both;
-			display: table;
-		}
-		&.count-4 {
-			li {
-				width: 25% !important;
-				@include mq($max-width: $tablet-min) {
-					width: 100% !important;
-				}
-			}
-		}
-		li {
-			@include bree;
-			font-size: 20px;
-			display: block;
-			float: left;
-			width: $tabwidth;
-			@include mq($max-width: $tablet-min) {
-				width: 100%;
-			}
-			button {
-				background: $light-green;
-				border: none;
-				display: block;
-				max-width: 250px;
-				padding: 10px 20px;
-				margin: 0 auto;
-				color: $dark;
-				text-decoration: none;
-				text-transform: uppercase;
-				text-align: center;
-				position: relative;
-				@include breakpoint(screen($tablet, 'lessthan')) {
-					max-width: none;
-					width: 100%;
-				}
-				&:after {
-					content: '';
-					position: absolute;
-					background: $medium-green;
-					width: 0;
-					height: 3px;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					margin-left: 50%;
-					transition: all .25s ease-out;
-				}
-			}
-			&.active button {
-				background: $medium-green;
-				color: $white;
-			}
-			&:hover {
-				button {
-					&:after {
-						width: 100%;
-						margin-left: 0;
-						transition: all .25s ease-out;
-					}
-				}
-				&.active button:after {
-					color: $white;
-				}
-			}
-		}
-	}
-	.tab-pane {
-		padding: 50px 0;
-		h3 {
-			@include bree;
-			float: left;
-			width: 23%;
-			color: $medium-green;
-			text-transform: uppercase;
-			span {
-				display: block;
-				font-size: 100px;
-				line-height: .5;
-				margin-bottom: 50px;
-			}
-			@include mq($max-width: $phablet-max) {
-				width: 100%;
-				float: none;
-			}
-		}
-		.tab-content {
-			float: left;
-			width: 75%;
-			margin-left: 2%;
-			font-size: 18px;
-			line-height: 26px;
-			color: $dark;
-			@include mq($max-width: $phablet-max) {
-				width: 100%;
-				float: none;
-			}
-		}
-	}
+  padding: 30px;
+  @include mq($max-width: $tablet-min) {
+    padding: 15px 0;
+  }
+  h2.section-heading {
+    @include bree;
+    text-align: center;
+    color: $dark;
+    font-size: 30px;
+  }
+  ul[role="tablist"] {
+    padding-top: 30px;
+    border-bottom: 1px solid $black;
+    list-style-type: none;
+    &:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    &.count-4 {
+      li {
+        width: 25% !important;
+        @include mq($max-width: $tablet-min) {
+          width: 100% !important;
+        }
+      }
+    }
+    li {
+      @include bree;
+      font-size: 20px;
+      display: block;
+      float: left;
+      width: $tabwidth;
+      @include mq($max-width: $tablet-min) {
+        width: 100%;
+      }
+      button {
+        background: $light-green;
+        border: none;
+        display: block;
+        max-width: 250px;
+        padding: 10px 20px;
+        margin: 0 auto;
+        color: $dark;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        @include breakpoint(screen($tablet, "lessthan")) {
+          max-width: none;
+          width: 100%;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          background: $medium-green;
+          width: 0;
+          height: 3px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin-left: 50%;
+          transition: all 0.25s ease-out;
+        }
+      }
+      &.active button {
+        background: $medium-green;
+        color: $white;
+      }
+      &:hover {
+        button {
+          &:after {
+            width: 100%;
+            margin-left: 0;
+            transition: all 0.25s ease-out;
+          }
+        }
+        &.active button:after {
+          color: $white;
+        }
+      }
+    }
+  }
+  .tab-pane {
+    padding: 50px 0;
+    h3 {
+      @include bree;
+      float: left;
+      width: 23%;
+      color: $medium-green;
+      text-transform: uppercase;
+      span {
+        display: block;
+        font-size: 100px;
+        line-height: 0.5;
+        margin-bottom: 50px;
+      }
+      @include mq($max-width: $phablet-max) {
+        width: 100%;
+        float: none;
+      }
+    }
+    .tab-content {
+      float: left;
+      width: 75%;
+      margin-left: 2%;
+      font-size: 18px;
+      line-height: 26px;
+      color: $dark;
+      @include mq($max-width: $phablet-max) {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
 }
