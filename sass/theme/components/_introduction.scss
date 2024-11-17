@@ -1,67 +1,66 @@
-
 .introduction-wrapper {
-	padding: 35px 0 65px 0;
-	.introduction {
-		.intro-copy {
-			padding: 0 80px;
-			@include mq($max-width: $tablet-min) {
-				padding: 0 15px;
-			}
-		}
-		h1,
-		h2 {
-			@include bree;
-			color: $medium-green;
-			font-size: 34px;
-			text-align: center;
-			@include line-after($medium-green);
-		}
-		h1 {
-			text-transform: uppercase;
-		}
-		p {
-			color: $dark;
-			font-size: 18px;
-			line-height: 26px;
-			text-align: center;
-		}
-	}
-	figure {
-		margin-top: 40px;
-		text-align: center;
-		a {
-			text-decoration: none;
-			display: block;
-			&:hover {
-				text-decoration: underline;
-			}
-			&:focus {
-				border-radius: 1rem;
-				background-color: $light-green;
-				outline: none;
-				img {
-					outline: 4px solid $dark-blue;
-				}
-				figcaption {
-					text-decoration: underline;
-				}
-			}
-		}
-		img {
-			width: 100%;
-			max-width: 140px;
-			height: auto;
-		}
-		figcaption {
-			@include bree;
-			max-width: 166px;
-			margin: 0 auto;
-			display: block;
-			text-transform: uppercase;
-			color: $dark;
-			font-size: 18px;
-			line-height: 20px;
-			padding-top: 20px;
-		}
-	}
+  padding: 35px 0 65px 0;
+  .introduction {
+    .intro-copy {
+      padding: 0 80px;
+      @include mq($max-width: $tablet-min) {
+        padding: 0 15px;
+      }
+    }
+    h1,
+    h2 {
+      @include bree;
+      color: $medium-green;
+      font-size: 34px;
+      text-align: center;
+      @include line-after($medium-green);
+    }
+    h1 {
+      text-transform: uppercase;
+    }
+    p {
+      color: $dark;
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+    }
+  }
+  figure {
+    margin-top: 40px;
+    text-align: center;
+    a {
+      text-decoration: none;
+      display: block;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:focus {
+        border-radius: 1rem;
+        background-color: $light-green;
+        outline: none;
+        img {
+          outline: 4px solid $dark-blue;
+        }
+        figcaption {
+          text-decoration: underline;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      max-width: 140px;
+      height: auto;
+    }
+    figcaption {
+      @include bree;
+      max-width: 166px;
+      margin: 0 auto;
+      display: block;
+      text-transform: uppercase;
+      color: $dark;
+      font-size: 18px;
+      line-height: 20px;
+      padding-top: 20px;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 .maintenance-callout {
   color: $white;
-  background-image: url('../img/pattern.jpg');
+  background-image: url("../img/pattern.jpg");
   border: 5px solid $white;
   border-radius: 10px;
   position: absolute;
@@ -10,7 +10,7 @@
   width: 376px;
   z-index: 20;
   padding: 21px 35px 10px 35px;
-  box-shadow: 1px -1px 30px rgba($black, .85);
+  box-shadow: 1px -1px 30px rgba($black, 0.85);
   h2 {
     font-weight: bold;
     font-size: 18px;

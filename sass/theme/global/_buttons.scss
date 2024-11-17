@@ -9,7 +9,7 @@
   border-radius: 0;
   font-size: 22px;
   padding: 16px 42px;
-  transition: all .25s ease-in-out;
+  transition: all 0.25s ease-in-out;
   &:hover {
     background: $medium-green;
     border: {
@@ -17,20 +17,20 @@
     }
     color: $white;
   }
-	&[download] {
-		@include anchor-icon('download', '-green', 'large');
+  &[download] {
+    @include anchor-icon("download", "-green", "large");
     &:after {
       margin-left: 10px;
       margin-bottom: 0;
     }
     &:hover {
-		  @include anchor-icon('download', '-white', 'large');
+      @include anchor-icon("download", "-white", "large");
       &:after {
         margin-left: 10px;
         margin-bottom: 0;
       }
     }
-	}
+  }
   &.btn2 {
     float: left;
     margin: 0 20px;
