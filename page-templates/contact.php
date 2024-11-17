@@ -32,12 +32,20 @@ get_header();
               <p class="h2 tk">Forth Group</p>
               <?= acf_esc_html(get_field('address')); ?>
             </address>
-            <p>
-              <a href="tel:<?= acf_esc_html(get_field('phone')); ?>" title="Click or Tap to Call Us">
-                <?= acf_esc_html(get_field('phone')); ?>
-              </a>
-            </p>
-            <?= acf_esc_html(get_field('directions')); ?>
+            <?php
+            $phone = get_field('phone');
+            $phone_label = !empty(get_field('phone_label')) ? get_field('phone_label') : $phone;
+            if (!empty($phone)):
+            ?>
+              <p>
+                <a href="tel:<?= acf_esc_html($phone); ?>" title="<?= esc_attr('Click or Tap to Call Us at ' . $phone); ?>">
+                  <?= acf_esc_html($phone_label); ?>
+                </a>
+              </p>
+            <?php endif; ?>
+            <?php if (!empty(get_field('directions'))): ?>
+              <?= acf_esc_html(get_field('directions')); ?>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -56,8 +64,8 @@ get_header();
         <div class="container">
           <div class="row">
             <h2 class="tk">Email or Call</h2>
-            <p class="h4 centered"><a href="mailto:info@forthgrp.com">info@forthgrp.com</a></p>
-            <p class="h4 centered">312-379-0400</p>
+            <p class="h4 centered"><a href="mailto:info@forthgrp.com" title="Email Forth Group">info@forthgrp.com</a></p>
+            <p class="h4 centered"><a href="tel:312-379-0400" title="Call Forth Group">312-379-0400</a></p>
           </div>
         </div>
       </div>

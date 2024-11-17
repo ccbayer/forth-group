@@ -7823,6 +7823,36 @@ header.site-header {
     @media only screen and (max-width: 768px) {
       .bp-cta-wrapper .btn {
         margin: 10px 20px; } }
+    .bp-cta-wrapper .btn[target="_blank"] {
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -ms-flex-align: center;
+          align-items: center;
+      gap: 4px; }
+      .bp-cta-wrapper .btn[target="_blank"]::after {
+        display: inline-block;
+        content: "";
+        background-image: url("../img/icon-new-window-green.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 2px; }
+      .bp-cta-wrapper .btn[target="_blank"]:hover {
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -ms-flex-align: center;
+            align-items: center;
+        gap: 4px; }
+        .bp-cta-wrapper .btn[target="_blank"]:hover::after {
+          display: inline-block;
+          content: "";
+          background-image: url("../img/icon-new-window-white.svg");
+          background-size: 100%;
+          background-repeat: no-repeat;
+          width: 24px;
+          height: 24px;
+          margin-bottom: 2px; }
 
 .introduction-wrapper {
   padding: 35px 0 65px 0; }

@@ -29,5 +29,12 @@
     @include mq($max-width: $tablet-min) {
       margin: 10px 20px;
     }
+    &[target="_blank"] {
+      @include anchor-icon("new-window", "-green", "large");
+
+      &:hover {
+        @include anchor-icon("new-window", "-white", "large");
+      }
+    }
   }
 }
