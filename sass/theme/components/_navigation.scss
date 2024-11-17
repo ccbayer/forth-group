@@ -81,24 +81,23 @@
         }
       }
       @include mq($max-width: $tablet-min) {
-        width: 50%;
-        float: left;
-        margin: 0 0 15px 0;
+        width: 100%;
+        float: none;
+        padding: 0;
         &.pull-right {
-          float: right;
+          float: none;
           padding-right: 0;
         }
         &.nav-btn {
           display: block;
-          /* &:last-of-type {
-						width: 100%;
-					}
-					*/
+          width: 100%;
+          margin: 1rem 0;
           a {
             @include raleway(bold);
+            @include button-new-window(center);
             text-align: center;
             text-transform: uppercase;
-            background: $green;
+            background: $medium-green;
             color: $white;
             font-size: 14px;
             display: block;
@@ -108,7 +107,7 @@
           }
         }
         a {
-          padding: 0;
+          padding: 0 0 0.5rem 0;
           font-size: 16px;
         }
         &.active,
@@ -117,15 +116,6 @@
           &:after {
             display: none;
           }
-        }
-      }
-      @include mq($max-width: $phone-max) {
-        width: 100%;
-        float: none;
-        padding: 0;
-        &.pull-right {
-          float: none;
-          padding-right: 0;
         }
       }
     }

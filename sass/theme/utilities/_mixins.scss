@@ -29,3 +29,23 @@
     margin-bottom: 2px;
   }
 }
+
+@mixin button-new-window($align: flex-start) {
+  &[target="_blank"] {
+    display: flex;
+    align-items: center;
+    justify-content: $align;
+    gap: 4px;
+    &::after {
+      display: inline-block;
+      content: "";
+      background-image: url("../img/icon-new-window-white.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      margin-bottom: 2px;
+      transform: padding-left 0.25s ease-in-out;
+    }
+  }
+}

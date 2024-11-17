@@ -26,6 +26,7 @@ header.site-header {
       li {
         a.nav-link {
           @include raleway(bold);
+          @include button-new-window;
           text-transform: uppercase;
           background: $medium-green;
           color: $white;
@@ -57,22 +58,6 @@ header.site-header {
             padding: 0 5px;
             font-size: 12px;
             margin: 0.1em;
-          }
-          &[target="_blank"] {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            &::after {
-              display: inline-block;
-              content: "";
-              background-image: url("../img/icon-new-window-white.svg");
-              background-size: 100%;
-              background-repeat: no-repeat;
-              width: 16px;
-              height: 16px;
-              margin-bottom: 2px;
-              transform: padding-left 0.25s ease-in-out;
-            }
           }
         }
       }
