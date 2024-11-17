@@ -4594,6 +4594,7 @@ const observer = new MutationObserver((mutations) => {
           iframeStyle.visibility === "hidden"
         ) {
           node.setAttribute("aria-hidden", "true");
+          node.setAttribute("title", "Tracking iFrame");
         }
       }
     });
