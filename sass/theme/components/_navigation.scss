@@ -113,8 +113,14 @@
         &.active,
         &:hover,
         &.current-menu-item {
+          padding-left: 1.125rem;
           &:after {
-            display: none;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 100%;
+            left: 0;
+            top: 50%;
+            margin-top: -0.5rem;
           }
         }
       }

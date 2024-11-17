@@ -7636,8 +7636,15 @@ header.site-header {
           .navbar #main-menu li a {
             padding: 0 0 0.5rem 0;
             font-size: 16px; }
-          .navbar #main-menu li.active:after, .navbar #main-menu li:hover:after, .navbar #main-menu li.current-menu-item:after {
-            display: none; } }
+          .navbar #main-menu li.active, .navbar #main-menu li:hover, .navbar #main-menu li.current-menu-item {
+            padding-left: 1.125rem; }
+            .navbar #main-menu li.active:after, .navbar #main-menu li:hover:after, .navbar #main-menu li.current-menu-item:after {
+              width: 0.5rem;
+              height: 0.5rem;
+              border-radius: 100%;
+              left: 0;
+              top: 50%;
+              margin-top: -0.5rem; } }
   .navbar .navbar-brand {
     margin-top: -32px; }
     @media (max-width: 768px) {
