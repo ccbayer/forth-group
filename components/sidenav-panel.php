@@ -46,7 +46,7 @@ $tabpanel_id = uniqid('tabpanel-');
           </button>
           <div class="content-wrapper" aria-role="region" aria-label="<?= esc_attr($tabs[$i]['tab_label']); ?>">
             <div class="content-item <?= esc_attr($class); ?>" id="content-<?= esc_attr($n); ?>">
-              <?= acf_esc_html($tabs[$i]['tab_content']); ?>
+              <?= $tabs[$i]['tab_content']; ?>
             </div>
           </div>
         <?php } ?>

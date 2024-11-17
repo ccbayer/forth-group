@@ -33,7 +33,7 @@ get_header();
               <?= acf_esc_html(get_field('address')); ?>
             </address>
             <p>
-              <a href="tel:<?= acf_esc_htmls(get_field('phone')); ?>" title="Click or Tap to Call Us">
+              <a href="tel:<?= acf_esc_html(get_field('phone')); ?>" title="Click or Tap to Call Us">
                 <?= acf_esc_html(get_field('phone')); ?>
               </a>
             </p>

@@ -20,9 +20,7 @@ $maintenance_request = [
 ];
 ?>
 <footer class="wrapper pattern-overlay opacity-80" id="wrapper-footer" aria-label="Site Footer">
-
   <div class="container">
-
     <div class="row rel">
       <?php if ($maintenance_request['enabled']): ?>
         <div class="maintenance-callout">
@@ -79,18 +77,20 @@ $maintenance_request = [
         </div>
         <div class="col-md-4 offset-md-4">
           &copy; <?php echo date('Y'); ?> Forth Group. All Rights Reserved.
-          <nav aria-label="Legal Nav">
-            <?php
-            wp_nav_menu([
-              'theme_location' => 'footer-legal',
-              'container_class' => 'footer-legal',
-              'menu_class' => '',
-              'fallback_cb' => '',
-              'menu_id' => 'footer-legal',
-              'walker' => new wp_bootstrap_navwalker()
-            ]); ?>
-          </nav>
         </div>
+      </div>
+      <div class="row">
+        <nav aria-label="Legal Nav">
+          <?php
+          wp_nav_menu([
+            'theme_location' => 'footer-legal',
+            'container_class' => 'footer-legal',
+            'menu_class' => '',
+            'fallback_cb' => '',
+            'menu_id' => 'footer-legal',
+            'walker' => new wp_bootstrap_navwalker()
+          ]); ?>
+        </nav>
       </div>
     </div>
   </div>
