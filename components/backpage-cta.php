@@ -11,7 +11,8 @@ if ($show):
           <h2 class="h3"><?= acf_esc_html(get_field('bottom_cta_text')); ?></h2>
         </div>
         <div class="col-md-12 btn-wrapper">
-          <a class="btn tk" href="<?= $link; ?>" target=<?= $target ?>><?php the_field('bottom_cta_button_label'); ?> &raquo;</a>
+          <a class="btn tk" href="<?= $link; ?>" target=<?= $target ?>>
+            <?= acf_esc_html(get_field('bottom_cta_button_label')); ?> &raquo;</a>
           <?php
           // is there a secondary CTA?
           if (get_field('secondary_bottom_cta')):

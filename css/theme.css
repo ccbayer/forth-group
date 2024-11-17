@@ -7929,6 +7929,7 @@ header.site-header {
         .testimonial-wrapper .testimonial-nav ul li button::before {
           content: "";
           width: 100%;
+          left: 0;
           transform: scaleX(0.75);
           height: 4px;
           transition: all 0.25s ease-in-out;
@@ -7936,11 +7937,21 @@ header.site-header {
           background: #55595c;
           top: 50%;
           margin-top: -1.5px; }
+        .testimonial-wrapper .testimonial-nav ul li button:focus {
+          outline: none; }
+          .testimonial-wrapper .testimonial-nav ul li button:focus::before {
+            outline: 2px solid #395212;
+            outline-offset: 2px; }
         .testimonial-wrapper .testimonial-nav ul li button.active::before, .testimonial-wrapper .testimonial-nav ul li button:active::before {
-          height: 6px;
           background: #5C7C27;
-          width: 100%;
-          transform: skewX(10deg); }
+          border-radius: 100%;
+          transform: none;
+          width: 12px;
+          height: 12px;
+          left: 50%;
+          top: 50%;
+          margin-left: -6px;
+          margin-top: -6px; }
 
 @keyframes soft-bounce {
   0%, 100% {

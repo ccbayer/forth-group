@@ -71,6 +71,7 @@
 					&::before {
 						content: "";
 						width: 100%;
+						left: 0;
 						transform: scaleX(0.75);
 						height: 4px;
 						transition: all 0.25s ease-in-out;
@@ -79,13 +80,25 @@
 						top: 50%;
 						margin-top: -1.5px;
 					}
+					&:focus {
+						outline: none;
+						&::before {
+							outline: 2px solid $dark-green;
+							outline-offset: 2px;
+						}
+					}
 					&.active,
 					&:active {
 						&::before {
-							height: 6px;
 							background: $medium-green;
-							width: 100%;
-							transform: skewX(10deg);
+							border-radius: 100%;
+							transform: none;
+							width: 12px;
+							height: 12px;
+							left: 50%;
+							top: 50%;
+							margin-left: -6px;
+							margin-top: -6px;
 						}
 					}
 				}

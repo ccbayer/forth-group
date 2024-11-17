@@ -13,6 +13,8 @@ function readMore($input, $limit)
     return $input;
   }
 }
+$read_more = 'Read More';
+$read_less = 'Read Less';
 
 ?>
 
@@ -62,11 +64,11 @@ function readMore($input, $limit)
                   type="button"
                   aria-expanded="false"
                   class="readMoreLess"
-                  data-toggle-on="Read More +"
-                  aria-controls="<?= esc_attr($moreId) ?>"
-                  data-toggle-off="Read Less -"
+                  data-toggle-on="<?= esc_attr($read_more); ?>"
+                  aria-controls="<?= esc_attr($moreId); ?>"
+                  data-toggle-off="<?= esc_attr($read_less); ?>"
                   aria-label="Read More About <?= esc_attr($figs[$i]['label']) ?>">
-                  Read More +
+                  <?= esc_html($read_more); ?>
                 </button>
               </figcaption>
             </figure>

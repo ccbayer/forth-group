@@ -29,9 +29,9 @@ if (!empty($testimonials)):
               <button
                 data-target="#testimonial-<?= $i ?>"
                 class="<?= esc_attr($active) ?>"
-                aria-label="View Testimonial <?= esc_attr($i) ?>"
-                title="View Testimonial <?= esc_attr($i) ?>">
-                <span class="sr-only">View Testimonial <?= acf_esc_html($i); ?></span>
+                aria-label="View Testimonial <?= esc_attr($i + 1) ?>"
+                title="View Testimonial <?= esc_attr($i + 1) ?>">
+                <span class="sr-only">View Testimonial <?= acf_esc_html($i + 1); ?></span>
               </button>
             </li>
           <?php endfor; ?>
