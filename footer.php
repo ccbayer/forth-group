@@ -99,7 +99,6 @@ $maintenance_request = [
 
 
 <?php wp_footer(); ?>
-
 <?php
 $scripts = get_field('site_scripts', 'option');
 if (!empty($scripts) && $scripts['footer_scripts']):
