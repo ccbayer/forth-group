@@ -25,6 +25,12 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico">
+
+<script
+  type="text/javascript"
+  src="https://app.termly.io/resource-blocker/69e766f3-4e48-4747-be3d-17d88bded27e?autoBlock=on"
+></script>
+
 <!-- typekit -->
 <script src="https://use.typekit.net/awh1ivy.js" async></script>
 <script>
@@ -62,61 +68,59 @@
 <body <?php body_class(); ?> data-gtm-id="<?= $gtm_id ?>">
 
 <div id="page" class="hfeed site">
-    <header class="site-header">
-        <!-- ******************* The Navbar Area ******************* -->
-        <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
-
-            <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
-            <nav class="navbar site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-
-
-                    <div class="container">
-                        <div class="row">
-                          <div class="col-md-8 offset-md-4">
-                            <?php wp_nav_menu(
-                                array(
-                                    'theme_location' => 'header-btn',
-                                    'container_class' => 'header-btn-wrapper clearfix',
-                                    'menu_class' => '',
-                                    'fallback_cb' => '',
-                                    'menu_id' => 'header-btn-menu',
-                                    'walker' => new wp_bootstrap_navwalker()
-                                    ));
-                            ?>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-4 col-xs-6 col-sm-6">
-                              <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forth-group-logo.png" class="logo" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-                          </div>
-                          <div class="col-md-8 col-xs-6 col-sm-6">
-                              <div class="navbar-header clearfix">
-                                  <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-
-                                  <button class="navbar-toggle hide-above-phablet" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar">
-                                      <span class="sr-only">Toggle navigation</span>
-                                      &times;
-                                  </button>
-
-
-                              </div>
-                          </div>
-                          <div class="col-sm-12 pull-right navwrap">
-                            <?php wp_nav_menu(
-                                    array(
-                                        'theme_location' => 'main',
-                                        'container_class' => 'collapse navbar-toggleable-lttablet exCollapsingNavbar',
-                                        'menu_class' => 'nav navbar-nav',
-                                        'fallback_cb' => '',
-                                        'menu_id' => 'main-menu',
-                                        'walker' => new wp_bootstrap_navwalker()
-                                    )
-                            ); ?>
-                          </div>
-                        </div>
-                    </div> <!-- .container -->
-
-            </nav><!-- .site-navigation -->
-
-        </div><!-- .wrapper-navbar end -->
-    </header>
+  <header class="site-header">
+  <!-- ******************* The Navbar Area ******************* -->
+  <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
+    <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
+      <div class="navbar site-navigation">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-4">
+              <nav aria-label="Utility Nav">
+                <?php
+                  wp_nav_menu([
+                    'theme_location' => 'header-btn',
+                    'container_class' => 'header-btn-wrapper clearfix',
+                    'menu_class' => '',
+                    'fallback_cb' => '',
+                    'menu_id' => 'header-btn-menu',
+                    'walker' => new wp_bootstrap_navwalker()
+                  ]); ?>
+              </nav>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-4 col-xs-6 col-sm-6">
+                  <a class="navbar-brand"
+                    href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Return to <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> Home" rel="home">
+                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forth-group-logo.png" class="logo" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> Logo">
+                      <span class="sr-only">Return to <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> Home</span>
+                  </a>
+              </div>
+              <div class="col-md-8 col-xs-6 col-sm-6">
+                  <div class="navbar-header clearfix">
+                      <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+                      <button class="navbar-toggle hide-above-phablet" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar">
+                          <span class="sr-only">Toggle navigation</span>
+                          &times;
+                      </button>
+                  </div>
+              </div>
+              <div class="col-sm-12 pull-right navwrap">
+                <nav aria-label="Primary Navigation">
+                  <?php
+                    wp_nav_menu([
+                      'theme_location' => 'main',
+                      'container_class' => 'collapse navbar-toggleable-lttablet exCollapsingNavbar',
+                      'menu_class' => 'nav navbar-nav',
+                      'fallback_cb' => '',
+                      'menu_id' => 'main-menu',
+                      'walker' => new wp_bootstrap_navwalker()
+                    ]); ?>
+                </nav>
+              </div>
+            </div>
+        </div> <!-- .container -->
+      </div><!-- .site-navigation -->
+  </div><!-- .wrapper-navbar end -->
+</header>

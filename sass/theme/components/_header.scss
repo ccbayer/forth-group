@@ -1,62 +1,69 @@
 header.site-header {
-	position: fixed;
-	width: 100%;
-	z-index: 200;
-	background: rgba($black, .3);
-	transition: background .25s ease-in-out;
-	border-bottom: 1px solid $white;
-	a[href^="tel:"] {
-		color: $white;
-	}
-	&.active,
-	&.faded {
-		background: rgba($black, .8);
-	}
-	.logo {
-		max-width: 200px;
-		margin-top: 15px;
-	}
-	// header btns
-	.header-btn-wrapper {
-		@include clearfix;
-		float: right;
-		ul {
-			padding: 0;
-			li {
-				a.nav-link {
-					@include raleway(bold);
-					text-transform: uppercase;
-					background: $green;
-					color: $white;
-					font-size: 14px;
-					display: block;
-					line-height: 42px;
-					text-decoration: none;
-					padding: {
-						left: 24px;
-						right: 24px;
-					}
-					// less than 1280
-					@include mq($max-width: $desktop-max) {
-						padding: 0 10px;
-					}
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+  background: rgba($black, 0.6);
+  filter: blur(0.25);
+  transition: background 0.25s ease-in-out;
+  border-bottom: 1px solid $white;
+  a[href^="tel:"] {
+    color: $white;
+  }
+  &.active,
+  &.faded {
+    background: rgba($black, 0.85);
+  }
+  .logo {
+    max-width: 200px;
+    margin-top: 15px;
+  }
+  // header btns
+  .header-btn-wrapper {
+    @include clearfix;
+    float: right;
+    ul {
+      padding: 0;
+      li {
+        a.nav-link {
+          @include raleway(bold);
+          @include button-new-window;
+          text-transform: uppercase;
+          background: $medium-green;
+          color: $white;
+          font-size: 14px;
+          display: block;
+          line-height: 42px;
+          text-decoration: none;
+          transition: all 0.25s ease-in-out;
+          padding: {
+            left: 24px;
+            right: 24px;
+          }
+          &:hover {
+            background: $dark-green;
+            color: $white;
+          }
+          // less than 1280
+          @include mq($max-width: $desktop-max) {
+            padding: 0 10px;
+          }
 
-					// between 768 and 1025 (tablet)
-					@include mq($min-width: 865px, $max-width: $desktop-min) {
-						padding: 0 7px;
-						font-size: 13px;
-						margin: 0 .25rem
-					}
-					@include mq($min-width: $tablet-min, $max-width: 865px) {
-						padding: 0 5px;
-						font-size: 12px;
-						margin: .1em;
-					}
-				}
-			}
-		}
-		@include breakpoint(screen($tablet, lessthan)) {
-			display: none;
-		}
-	}
+          // between 768 and 1025 (tablet)
+          @include mq($min-width: 865px, $max-width: $desktop-min) {
+            padding: 0 7px;
+            font-size: 13px;
+            margin: 0 0.25rem;
+          }
+          @include mq($min-width: $tablet-min, $max-width: 865px) {
+            padding: 0 5px;
+            font-size: 12px;
+            margin: 0.1em;
+          }
+        }
+      }
+    }
+    @include breakpoint(screen($tablet, lessthan)) {
+      display: none;
+    }
+  }
 }

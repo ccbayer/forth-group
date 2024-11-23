@@ -1,75 +1,118 @@
 .testimonial-wrapper {
-	padding: 80px 0 110px 0;
-	.testimonial-inner-wrapper {
-		position: relative;
-		overflow: hidden;
-		@include mq($max-width: $phablet-min) {
-			height: 480px;
-		}
-	}
-	blockquote {
-		position: relative;
-		text-align: center;
-		quotes: "“" "”" "“" "”";
-		transition: all .25s ease-in-out;
-		top: 0;
-		opacity: 0;
-		height: 0;
-		display: none;
-		&.active {
-			display: block;
-			height: auto;
-			opacity: 1;
-		}
-		&:before {
-			@include raleway(bold);
-			content: open-quote;
-			font-size: 100px;
-			line-height: 0;
-			display: block;
-			margin: 40px auto;
-			color: $dark;
-		},
-		&:after {
-			content: no-close-quote;
-		}
-		p {
-			@include raleway;
-			font-style: italic;
-			font-size: 18px;
-			text-align: center;
-			padding: 0 70px 0 40px;
-			@include mq($max-width: $tablet-max) {
-				padding: 0 30px;
-			}
-		}
-		footer {
-			 @include raleway(bold);
-			 font-size: 18px;
-			 text-align: center;
-		}
-	}
-	.testimonial-nav {
-		ul {
-			list-style: none;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-			li {
-				cursor: pointer;
-				display: inline-block;
-				margin: 0 15px;
-				padding: 15px 0;
-				a {
-					display: inline-block;;
-					width: 45px;
-					height: 3px;
-					background: $gray;
-					&.active {
-						background: $green;
-					}
-				}
-			}
-		}
-	}
+  padding: 80px 0 110px 0;
+  .testimonial-inner-wrapper {
+    position: relative;
+    overflow: hidden;
+    @include mq($max-width: $phablet-min) {
+      height: 480px;
+    }
+  }
+  blockquote {
+    position: relative;
+    text-align: center;
+    quotes: "“" "”" "“" "”";
+    transition: all 0.25s ease-in-out;
+    top: 0;
+    opacity: 0;
+    height: 0;
+    display: none;
+    &.active {
+      display: block;
+      height: auto;
+      opacity: 1;
+    }
+    &:before {
+      @include raleway(bold);
+      content: open-quote;
+      font-size: 100px;
+      line-height: 0;
+      display: block;
+      margin: 40px auto;
+      color: $dark;
+    }
+    &:after {
+      content: no-close-quote;
+    }
+    p {
+      @include raleway;
+      font-style: italic;
+      font-size: 18px;
+      text-align: center;
+      padding: 0 70px 0 40px;
+      @include mq($max-width: $tablet-max) {
+        padding: 0 30px;
+      }
+    }
+    p.bq-footer {
+      @include raleway(bold);
+      font-size: 18px;
+      text-align: center;
+      font-style: normal;
+    }
+  }
+  .testimonial-nav {
+    ul {
+      list-style: none;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      li {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 15px;
+        padding: 15px 0;
+        button {
+          border: none;
+          display: inline-block;
+          width: 45px;
+          height: 45px;
+          background: transparent;
+          position: relative;
+          &::before {
+            content: "";
+            width: 100%;
+            left: 0;
+            transform: scaleX(0.75);
+            height: 4px;
+            transition: all 0.25s ease-in-out;
+            position: absolute;
+            background: $gray;
+            top: 50%;
+            margin-top: -1.5px;
+          }
+          &:focus {
+            outline: none;
+            &::before {
+              outline: 2px solid $dark-green;
+              outline-offset: 2px;
+            }
+          }
+          &.active,
+          &:active {
+            &::before {
+              background: $medium-green;
+              border-radius: 100%;
+              transform: none;
+              width: 12px;
+              height: 12px;
+              left: 50%;
+              top: 50%;
+              margin-left: -6px;
+              margin-top: -6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes soft-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px); /* Adjust the height as needed */
+  }
 }

@@ -1,90 +1,95 @@
 .pattern-overlay {
-	position: relative;
-	&:before {
-		content: '';
-		background: {
-			image: url('../img/pattern.jpg');
-		}
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		width: 100%;
-	}
-	&.opacity-45 {
-		&:before {
-			opacity: .45;
-		}
-	}
-	&.opacity-80 {
-		&:before {
-			opacity: .8;
-		}
-	}
+  position: relative;
+  &:before {
+    content: "";
+    background: {
+      image: url("../img/pattern.jpg");
+    }
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  &.opacity-45 {
+    &:before {
+      opacity: 0.45;
+    }
+  }
+  &.opacity-80 {
+    &:before {
+      opacity: 0.8;
+    }
+  }
 }
 
 .visibility-none {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .fade-in,
 .tk {
-	opacity: 0;
-	transition: opacity .25s ease-in-out;
-	&.on {
-		opacity: 1;
-	}
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  &.on,
+  html.wf-active & {
+    opacity: 1;
+  }
 }
 
 .centered {
-	text-align: center;
+  text-align: center;
 }
 
 .bg-white {
-	background: $white;
+  background: $white;
 }
 
 .bg-light-green {
-	background: $light-green;
+  background: $light-green;
 }
 
 .rel {
-	position: relative;
+  position: relative;
 }
 
 .clear {
-	clear: both;
+  clear: both;
+}
+
+.d-none {
+  display: none !important;
 }
 
 .hide-above-phablet {
-	display: none;
-	@include mq($max-width: $tablet-min) {
-		display: block;
-	}
+  display: none;
+  @include mq($max-width: $tablet-min) {
+    display: block;
+  }
 }
 .hide-above-tablet-portrait {
-	display: none !important;
-	@include mq($max-width: $tablet-min) {
-		display: block !important;
-	}
+  display: none !important;
+  @include mq($max-width: $tablet-min) {
+    display: block !important;
+  }
 }
 .hide-below-tablet {
-	@include mq($max-width: $tablet-max) {
-		display: none;
-	}
+  @include mq($max-width: $tablet-max) {
+    display: none;
+  }
 }
 .hide-above-tablet {
-	@include mq($min-width: $desktop-min) {
-		display: none !important;
-	}
-	@include mq($max-width: $tablet-max) {
-		display: block;
-	}
+  @include mq($min-width: $desktop-min) {
+    display: none !important;
+  }
+  @include mq($max-width: $tablet-max) {
+    display: block;
+  }
 }
 
 .navbar-toggleable-lttablet {
-	@include mq($min-width: $tablet-min + 1) {
-		display: block !important;
-	}
+  @include mq($min-width: $tablet-min + 1) {
+    display: block !important;
+  }
 }

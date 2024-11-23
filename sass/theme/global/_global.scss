@@ -1,10 +1,18 @@
 body {
-	font-family: $raleway;
+  font-family: $raleway;
 }
 
 a {
-	text-decoration: underline;
-	&.btn {
-		text-decoration: none;
-	}
+  text-decoration: underline;
+  &.btn {
+    text-decoration: none;
+  }
+  p & {
+    &[target="_blank"] {
+      @include anchor-icon("new-window");
+    }
+    &[download] {
+      @include anchor-icon("download");
+    }
+  }
 }
