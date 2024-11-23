@@ -1,10 +1,10 @@
-$icon-green: #80AD41;
-$icon-blue: #3D6392;
-$icon-dkblue: #232C63;
+$icon-green: #80ad41;
+$icon-blue: #3d6392;
+$icon-dkblue: #232c63;
 $icon-grey: #777878;
 
 img.circle-icon-animate {
-  transition: all .33s ease-in-out;
+  transition: all 0.33s ease-in-out;
   border-radius: 50%;
   border: 1px solid transparent;
   &:hover {
@@ -18,7 +18,6 @@ img.circle-icon-animate {
   &.icon-grey {
     &:hover {
       background-color: lighten($icon-grey, 35%);
-
     }
   }
   &.icon-blue {

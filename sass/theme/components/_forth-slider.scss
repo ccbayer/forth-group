@@ -1,67 +1,77 @@
 .owl-carousel.forth-slider,
 .owl-theme.forth-slider {
-	padding: {
-		left: 30px;
-		right: 30px;
-	}
-	.owl-dots {
-		.owl-dot {
-			span {
-				border-radius: 0;
-				width: 45px;
-				height: 2px;
-			}
-			&.active {
-				span {
-					background: $green;
-				}
-			}
-		}
-	}
-	.item {
-		margin: 10px;
-	}
-	.owl-nav {
-		display: block !important; //override
-		position: relative;
-		.owl-prev,
-		.owl-next {
-			height: 40px;
-			width: 40px;
-			position: absolute;
-			top: -161px;
-			color: $green;
-			border-radius: 50%;
-			background-color: transparent;
-			border: 3px solid $green;
-			line-height: 30px;
-			font-size: 18px;
-			transition: all .25s ease-in-out;
-			span {
-				position: relative;
-				left: -2px;
-				top: -1px;
-			}
-			&:hover {
-				background: $green;
-				span {
-					color: $white;
-				}
-			}
-		}
-		.owl-prev {
-			left: -50px;
-		}
-		.owl-next {
-			right: -50px;
-			span {
-				left: auto;
-				right: -2px;
-			}
-		}
-	}
-	.owl-prev.disabled,
-	.owl-next.disabled {
-		display: none !important;
-	}
+  padding: {
+    left: 30px;
+    right: 30px;
+  }
+  .owl-dots {
+    .owl-dot {
+      span {
+        border-radius: 0;
+        width: 45px;
+        height: 2px;
+      }
+      &.active {
+        span {
+          background: $green;
+        }
+      }
+    }
+  }
+  .item {
+    margin: 10px;
+  }
+  .owl-stage-outer {
+    @include mq($max-width: $phone-max) {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+  .owl-nav {
+    display: block !important; //override
+    position: static;
+    .owl-prev,
+    .owl-next {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: 50%;
+      margin-top: -20px;
+      color: $green;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 3px solid $green;
+      line-height: 30px;
+      font-size: 18px;
+      transition: all 0.25s ease-in-out;
+      span {
+        position: relative;
+        left: -2px;
+        top: -1px;
+      }
+      &:hover {
+        background: $green;
+        span {
+          color: $white;
+        }
+      }
+    }
+    .owl-prev {
+      left: -10px;
+      @include mq($max-width: $phone-max) {
+        left: -20px;
+      }
+    }
+    .owl-next {
+      right: -10px;
+      span {
+        left: auto;
+        right: -2px;
+      }
+    }
+  }
+  .owl-prev.disabled,
+  .owl-next.disabled {
+    display: none !important;
+  }
 }

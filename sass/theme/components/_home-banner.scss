@@ -1,101 +1,135 @@
 $btn-padding: 58px;
 .home-banner {
-	position: relative;
-	width: 100%;
-	padding-top: 284px;
-	height: 640px;
-	// percentage:
-	$percentage: percentage(284px / 640px);
-	background: {
-		size: cover;
-		color: $dark;
-	//	image: url(../img/main-banner-bg.jpg);
-	}
-	@include mq($max-width: $tablet-max) {
-		padding: {
-			top: $percentage / 2;
-			bottom: $percentage / 2;
-		}
-		height: auto;
-		overflow: hidden;
-	}
-	text-align: center;
-	h1 {
-		color: $white;
-		text-transform: uppercase;
-		font-size: 65px;
-		line-height: 78px;
-		letter-spacing: .05em;
-		@include mq($max-width: $tablet-max) {
-			font-size: 56px;
-			line-height: 1;
-		}
-		@include mq($max-width: $tablet-min) {
-			padding-top: 30px;
-		}
-		@include mq($max-width: $phone-max) {
-			font-size: 32px;
-			padding-top: 145px;
-		}
-	}
-	a.btn {
-		color: $white;
-		background: transparent;
-		font-size: 18px;
-		margin-top: 45px;
-		text-transform: uppercase;
-		text-decoration: none;
-		padding: {
-			left: $btn-padding;
-			right: $btn-padding;
-		}
-		border: {
-			radius: 0;
-			color: $white;
-			width: 3px;
-		}
-		transition: all .25s ease-in-out;
-		&:hover {
-			background: $green;
-			border-color: $green;
-		}
-	}
-	#home-content {
-		position: relative;
-		z-index: 100;
-	}
-	//video
-	.video-container {
-		overflow: hidden;
-		position: absolute;
-		height: 640px;
-		width: 100%;
-		top: 0;
-		left: 0;
-		z-index: 1;
-		background: {
-			color: $dark;
-		}
-		.video-pattern {
-			background-image: url(../img/darkdenim.png);
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			z-index: 10;
-			position: absolute;
-		}
-		video {
-			z-index: 5;
-			width: 100%    !important;
-			height: auto   !important;
-		}
-		@include mq($max-width: $tablet-max) {
-			height: 100%;
-			opacity: .8;
-			video {
-				width: auto !important;
-			}
-		}
-	}
+  position: relative;
+  width: 100%;
+  padding-top: 284px;
+  height: 640px;
+  // percentage:
+  $percentage: percentage(284px / 640px);
+  background: {
+    size: cover;
+    color: $dark;
+    //	image: url(../img/main-banner-bg.jpg);
+  }
+  @include mq($max-width: $tablet-max) {
+    padding: {
+      top: $percentage / 2;
+      bottom: $percentage / 2;
+    }
+    height: auto;
+    overflow: hidden;
+  }
+  text-align: center;
+  h1 {
+    color: $white;
+    text-transform: uppercase;
+    font-size: 65px;
+    line-height: 78px;
+    letter-spacing: 0.05em;
+    @include mq($max-width: $tablet-max) {
+      font-size: 56px;
+      line-height: 1;
+    }
+    @include mq($max-width: $tablet-min) {
+      padding-top: 30px;
+    }
+    @include mq($max-width: $phone-max) {
+      font-size: 32px;
+      padding-top: 145px;
+    }
+  }
+  a.btn {
+    color: $white;
+    background: transparent;
+    font-size: 18px;
+    margin-top: 45px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: {
+      left: $btn-padding;
+      right: $btn-padding;
+    }
+    border: {
+      radius: 0;
+      color: $white;
+      width: 3px;
+    }
+    transition: all 0.25s ease-in-out;
+    &:hover {
+      background: $green;
+      border-color: $green;
+    }
+  }
+  #home-content {
+    position: relative;
+    z-index: 100;
+  }
+  //video
+  .video-container {
+    overflow: hidden;
+    position: absolute;
+    height: 640px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: {
+      color: $dark;
+    }
+    .video-pattern {
+      background-image: url(../img/darkdenim.png);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      position: absolute;
+    }
+    video {
+      z-index: 5;
+      width: 100% !important;
+      height: auto !important;
+    }
+    @include mq($max-width: $tablet-max) {
+      height: 100%;
+      opacity: 0.8;
+      video {
+        width: auto !important;
+      }
+    }
+  }
+}
+
+.play-pause-container {
+  position: absolute;
+  z-index: 1000;
+  bottom: 10px;
+  left: 10px;
+  button {
+    border-radius: 100%;
+    background: $white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    transition: all 0.33s ease-in-out;
+    transform: scale(1);
+    &:hover {
+      background-color: $light-green;
+      outline: 2px solid rgba($white, 0.5);
+      outline-offset: 4px;
+      color: $dark-green;
+      transform: scale(1.15);
+    }
+    &:focus {
+      outline: 2px solid $light-green;
+      outline-offset: 2px;
+    }
+  }
 }
