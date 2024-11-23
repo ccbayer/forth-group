@@ -65,6 +65,7 @@ require get_template_directory() . '/inc/bootstrap-wp-gallery.php';
 register_nav_menus( array(
 	'header-btn' => 'Header Navigation Buttons',
 	'main' => 'Main Menu',
+  'footer-legal' => 'Footer Legal'
 ) );
 
 

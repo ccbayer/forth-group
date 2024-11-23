@@ -22,11 +22,10 @@ var browserSyncOptions = {
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
-var watch = require('gulp-watch');
 var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+var terser = require('gulp-terser');
 var merge2 = require('merge2');
 var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
@@ -102,7 +101,7 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/forth-group.js'
     ])
     .pipe(concat('theme.min.js'))
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(gulp.dest('./js/'));
 
   gulp.src([
@@ -132,7 +131,7 @@ gulp.task('scripts', function() {
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task('watch', ['sass', 'scripts'], function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
-//    gulp.watch('./css/theme.css', ['cssnano']);
+    gulp.watch('./css/theme.css', ['cssnano']);
     gulp.watch('./src/**/*.js', ['scripts']);
 });
 
